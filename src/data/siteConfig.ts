@@ -10,8 +10,8 @@ export const siteConfig = {
   calendlyUrl: import.meta.env.VITE_CALENDLY_URL || "https://calendly.com/faiz-studio/30min",
   email: "hello@faiz.studio",
   socials: {
-    github: "https://github.com/faiz-studio",
-    linkedin: "https://linkedin.com/in/faiz-dev",
+    github: "https://github.com/IsacSmile",
+    linkedin: "https://www.linkedin.com/in/faiz-imam/",
     email: "mailto:hello@faiz.studio"
   },
   targetLocations: ["United States", "United Kingdom", "Canada", "Australia", "Western Europe", "UAE"],

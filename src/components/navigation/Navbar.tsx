@@ -110,58 +110,66 @@ export const Navbar: React.FC = () => {
           type="button"
           aria-label="Toggle Navigation Menu"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-sm text-editorial bg-studio-surface border border-studio-border focus:outline-none"
+          className="md:hidden p-2 rounded-sm text-editorial bg-studio-surface border border-studio-border focus:outline-none transition-transform duration-200 active:scale-95"
         >
-          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {mobileMenuOpen ? (
+            <X className="w-5 h-5 transition-transform duration-200 rotate-90" />
+          ) : (
+            <Menu className="w-5 h-5 transition-transform duration-200" />
+          )}
         </button>
       </div>
 
-      {/* Mobile Drawer Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-[61px] bg-paper border-b border-studio-border p-6 transition-all">
-          <nav className="flex flex-col gap-4 text-sm font-medium">
-            {navLinks.map((link) => (
-              <React.Fragment key={link.name}>
-                {link.href.startsWith('/#') ? (
-                  <a
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-editorial hover:text-terracotta py-2.5 border-b border-studio-border flex items-center justify-between uppercase font-mono text-xs tracking-wider"
-                  >
-                    <span>{link.name}</span>
-                    <ArrowRight className="w-4 h-4 text-editorial-muted" />
-                  </a>
-                ) : (
-                  <Link
-                    to={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-editorial hover:text-terracotta py-2.5 border-b border-studio-border flex items-center justify-between uppercase font-mono text-xs tracking-wider"
-                  >
-                    <span>{link.name}</span>
-                    <ArrowRight className="w-4 h-4 text-editorial-muted" />
-                  </Link>
-                )}
-              </React.Fragment>
-            ))}
+      {/* Mobile Drawer Menu with Smooth Slide & Fade Transition */}
+      <div
+        className={`md:hidden fixed inset-x-0 top-[61px] bg-paper/95 backdrop-blur-md border-b border-studio-border p-6 shadow-2xl transition-all duration-300 ease-out transform ${
+          mobileMenuOpen
+            ? 'opacity-100 translate-y-0 pointer-events-auto'
+            : 'opacity-0 -translate-y-4 pointer-events-none'
+        }`}
+      >
+        <nav className="flex flex-col gap-4 text-sm font-medium">
+          {navLinks.map((link) => (
+            <React.Fragment key={link.name}>
+              {link.href.startsWith('/#') ? (
+                <a
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-editorial hover:text-terracotta py-2.5 border-b border-studio-border flex items-center justify-between uppercase font-mono text-xs tracking-wider transition-colors"
+                >
+                  <span>{link.name}</span>
+                  <ArrowRight className="w-4 h-4 text-editorial-muted" />
+                </a>
+              ) : (
+                <Link
+                  to={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-editorial hover:text-terracotta py-2.5 border-b border-studio-border flex items-center justify-between uppercase font-mono text-xs tracking-wider transition-colors"
+                >
+                  <span>{link.name}</span>
+                  <ArrowRight className="w-4 h-4 text-editorial-muted" />
+                </Link>
+              )}
+            </React.Fragment>
+          ))}
 
-            <div className="pt-2 flex items-center justify-between text-xs font-mono text-editorial-muted">
-              <span>Location:</span>
-              <span className="font-bold text-editorial">Kerala, India · Remotely Worldwide</span>
-            </div>
+          <div className="pt-2 flex items-center justify-between text-xs font-mono text-editorial-muted">
+            <span>Location:</span>
+            <span className="font-bold text-editorial">Kerala, India · Remotely Worldwide</span>
+          </div>
 
-            <div className="pt-2">
-              <Button
-                href="/contact"
-                variant="primary"
-                fullWidth
-                icon={<Calendar className="w-4 h-4" />}
-              >
-                Book a Call
-              </Button>
-            </div>
-          </nav>
-        </div>
-      )}
+          <div className="pt-2">
+            <Button
+              href="/contact"
+              variant="primary"
+              fullWidth
+              icon={<Calendar className="w-4 h-4" />}
+            >
+              Book a Call
+            </Button>
+          </div>
+        </nav>
+      </div>
     </header>
   );
 };
