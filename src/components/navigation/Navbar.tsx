@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Calendar, ArrowRight, MapPin } from 'lucide-react';
-import { Button } from '../ui/Button';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -79,7 +78,7 @@ export const Navbar: React.FC = () => {
               >
                 {link.name}
                 {isActive && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-terracotta rounded-full"></span>
+                  <span className="absolute -bottom-0.5 left-0 right-0 h-[1.5px] bg-terracotta rounded-full"></span>
                 )}
               </Link>
             );
@@ -151,18 +150,18 @@ export const Navbar: React.FC = () => {
 
           <div className="pt-2 flex items-center justify-between text-xs font-mono text-editorial-muted">
             <span>Location:</span>
-            <span className="font-bold text-editorial">Kerala, India · Remotely Worldwide</span>
+            <span className="font-bold text-editorial text-right">Kerala, India · Worldwide</span>
           </div>
 
           <div className="pt-2">
-            <Button
-              href="/contact"
-              variant="primary"
-              fullWidth
-              icon={<Calendar className="w-4 h-4" />}
+            <Link
+              to="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full py-3 bg-dark hover:bg-terracotta text-paper rounded-full text-xs font-mono font-bold transition-all flex items-center justify-center gap-2 shadow-md"
             >
-              Book a Call
-            </Button>
+              <Calendar className="w-4 h-4" />
+              <span>Book a Call</span>
+            </Link>
           </div>
         </nav>
       </div>
