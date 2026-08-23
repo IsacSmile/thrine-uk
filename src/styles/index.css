@@ -21,6 +21,8 @@
     background-color: #F5F3EE;
     color: #171714;
     scroll-behavior: smooth;
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
@@ -28,6 +30,7 @@
     color: #171714;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    touch-action: manipulation;
   }
 
   /* Subtle minimal scrollbar */
