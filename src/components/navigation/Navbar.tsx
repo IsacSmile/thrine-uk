@@ -39,8 +39,8 @@ export const Navbar: React.FC = () => {
         isScrolled ? 'bg-transparent' : 'bg-transparent'
       }`}
     >
-      <div className={`max-w-7xl mx-auto bg-paper/95 backdrop-blur-md border border-studio-border/70 rounded-full px-4 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between transition-all duration-300 ${
-        isScrolled ? 'shadow-lg border-studio-border/90' : 'shadow-none border-studio-border/50'
+      <div className={`max-w-7xl mx-auto bg-transparent backdrop-blur-md rounded-full px-4 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between transition-all duration-300 border ${
+        isScrolled ? 'border-studio-border/80 shadow-sm bg-paper/50' : 'border-studio-border/30 bg-transparent'
       }`}>
         {/* Studio Logo */}
         <Link to="/" className="group flex items-center focus:outline-none pl-1" aria-label="Thrine Home">
