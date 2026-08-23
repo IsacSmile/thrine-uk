@@ -4,15 +4,25 @@ import { SectionHeading } from '../ui/SectionHeading';
 import { projects } from '../../data/projects';
 import { ProjectCard } from '../projects/ProjectCard';
 
-export const SelectedWork: React.FC = () => {
+interface SelectedWorkProps {
+  showHeading?: boolean;
+  className?: string;
+}
+
+export const SelectedWork: React.FC<SelectedWorkProps> = ({ 
+  showHeading = true,
+  className = "py-20 bg-paper border-b border-studio-border"
+}) => {
   return (
-    <section id="work" className="py-20 bg-paper border-b border-studio-border">
+    <section id="work" className={className}>
       <Container>
-        <SectionHeading
-          eyebrow="02 / SELECTED WORK"
-          title="Featured Case Studies"
-          subtitle="Real business software systems engineered for revenue growth, automated bookings, and streamlined operations."
-        />
+        {showHeading && (
+          <SectionHeading
+            eyebrow="02 / SELECTED WORK"
+            title="Featured Case Studies"
+            subtitle="Real business software systems engineered for revenue growth, automated bookings, and streamlined operations."
+          />
+        )}
 
         <div className="space-y-12">
           {projects.map((project, index) => (
