@@ -21,7 +21,7 @@ interface Particle {
 }
 
 export const ParticleText: React.FC<ParticleTextProps> = ({
-  text = 'thrine',
+  text = "We're Thrine",
   color = '#B84A32',
   particleSize = 1.8,
   gap = 3.2,
@@ -46,7 +46,7 @@ export const ParticleText: React.FC<ParticleTextProps> = ({
     const init = (scatter = false) => {
       const container = canvas.parentElement;
       const width = container ? container.clientWidth : 800;
-      const height = Math.min(width * 0.34, 230);
+      const height = Math.min(width * 0.3, 220);
 
       const dpr = window.devicePixelRatio || 1;
       canvas.width = width * dpr;
@@ -64,7 +64,7 @@ export const ParticleText: React.FC<ParticleTextProps> = ({
       if (!offCtx) return;
 
       // Font matching the main logo: Extra Bold/Black rounded sans-serif
-      const fontSize = Math.min(width * 0.22, 170);
+      const fontSize = Math.min(width / (text.length * 0.65), 140);
       offCtx.font = `900 ${fontSize}px "Plus Jakarta Sans", "Outfit", "Inter", sans-serif`;
       offCtx.textAlign = 'center';
       offCtx.textBaseline = 'middle';
