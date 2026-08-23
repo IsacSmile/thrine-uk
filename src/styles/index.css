@@ -1,0 +1,74 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    --background: #F5F3EE;
+    --foreground: #171714;
+    --muted-foreground: #6F6D66;
+    --dark: #191A17;
+    --dark-foreground: #F5F3EE;
+    --accent: #B84A32;
+    --border: #D9D6CE;
+    --dark-border: #34352F;
+    --surface: #ECE9E1;
+    color-scheme: light;
+  }
+  
+  html {
+    font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #F5F3EE;
+    color: #171714;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #F5F3EE;
+    color: #171714;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Subtle minimal scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F5F3EE;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D9D6CE;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6F6D66;
+  }
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(23, 23, 20, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(23, 23, 20, 0.03) 1px, transparent 1px);
+  }
+  
+  .border-divider {
+    border-color: #D9D6CE;
+  }
+
+  .border-dark-divider {
+    border-color: #34352F;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
