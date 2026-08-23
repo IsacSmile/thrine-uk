@@ -7,6 +7,7 @@ export interface Project {
   industry: string;
   type: string;
   clientName: string;
+  clientLogo?: string;
   clientLocation: string;
   timeline: string;
   status: string;
@@ -55,6 +56,7 @@ export const projects: Project[] = [
     industry: "Travel & Tourism",
     type: "Web Application & Booking System",
     clientName: "Travel Hault & Excursions",
+    clientLogo: "/images/client-travel-halt-logo.png",
     clientLocation: "Dubai, UAE & Kerala, India",
     timeline: "6 Weeks",
     status: "Live in Production",
@@ -161,7 +163,8 @@ export const projects: Project[] = [
     category: "Food / Ordering",
     industry: "Food & Hospitality",
     type: "E-Commerce & Ordering System",
-    clientName: "Crust & Crumble Bakery",
+    clientName: "myhomelycakes.com",
+    clientLogo: "/images/client-homely-cakes-logo.png",
     clientLocation: "Trivandrum, India",
     timeline: "8 Weeks",
     status: "Live in Production",

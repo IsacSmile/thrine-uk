@@ -18,9 +18,20 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
     <div className="py-14 border-b border-studio-border last:border-b-0 space-y-8">
       {/* Top Client Metadata Bar */}
       <div className="bg-studio-surface border border-studio-border p-4 rounded-sm grid grid-cols-2 md:grid-cols-6 gap-4 text-xs font-mono">
-        <div>
-          <span className="text-terracotta uppercase tracking-wider block text-[10px] mb-0.5">Client</span>
-          <span className="font-bold text-editorial truncate block">{project.clientName}</span>
+        <div className="flex items-center gap-3">
+          {project.clientLogo && (
+            <div className="h-8 min-w-[36px] max-w-[90px] flex items-center justify-center p-1 bg-paper/80 border border-studio-border/60 rounded-sm shrink-0">
+              <img 
+                src={project.clientLogo} 
+                alt={project.clientName} 
+                className="max-h-full max-w-full object-contain" 
+              />
+            </div>
+          )}
+          <div className="min-w-0">
+            <span className="text-terracotta uppercase tracking-wider block text-[10px] mb-0.5">Client</span>
+            <span className="font-bold text-editorial truncate block">{project.clientName}</span>
+          </div>
         </div>
         <div>
           <span className="text-terracotta uppercase tracking-wider block text-[10px] mb-0.5">Industry</span>
