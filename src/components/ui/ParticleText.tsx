@@ -23,7 +23,7 @@ export const ParticleText: React.FC<ParticleTextProps> = ({
   text = 'THRINE',
   color = '#B84A32',
   particleSize = 1.8,
-  gap = 3.5,
+  gap = 3.2,
   className = ''
 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -36,12 +36,13 @@ export const ParticleText: React.FC<ParticleTextProps> = ({
 
     let animationFrameId: number;
     let particles: Particle[] = [];
-    const mouse = { x: -1000, y: -1000, radius: 100 };
+    const mouse = { x: -1000, y: -1000, radius: 120 };
+    let lastScrollY = window.scrollY;
 
-    const init = () => {
+    const init = (scatter = true) => {
       const container = canvas.parentElement;
       const width = container ? container.clientWidth : 800;
-      const height = Math.min(width * 0.32, 220);
+      const height = Math.min(width * 0.34, 230);
 
       const dpr = window.devicePixelRatio || 1;
       canvas.width = width * dpr;
@@ -58,9 +59,9 @@ export const ParticleText: React.FC<ParticleTextProps> = ({
       const offCtx = offscreen.getContext('2d');
       if (!offCtx) return;
 
-      // Font sizing
-      const fontSize = Math.min(width * 0.18, 150);
-      offCtx.font = `900 ${fontSize}px "Inter", "Plus Jakarta Sans", sans-serif`;
+      // Font matching the logo: Extra Bold/Black rounded sans-serif
+      const fontSize = Math.min(width * 0.21, 165);
+      offCtx.font = `900 ${fontSize}px "Plus Jakarta Sans", "Outfit", "Inter", sans-serif`;
       offCtx.textAlign = 'center';
       offCtx.textBaseline = 'middle';
       offCtx.fillStyle = '#ffffff';
@@ -77,13 +78,17 @@ export const ParticleText: React.FC<ParticleTextProps> = ({
           const index = (y * width + x) * 4;
           const alpha = pixels[index + 3];
           if (alpha > 128) {
+            // Initial scatter burst if initialized for first render / scroll-in
+            const initX = scatter ? x + (Math.random() - 0.5) * 250 : x;
+            const initY = scatter ? y + (Math.random() - 0.5) * 250 : y;
+
             particles.push({
-              x: x + (Math.random() - 0.5) * 30,
-              y: y + (Math.random() - 0.5) * 30,
+              x: initX,
+              y: initY,
               originX: x,
               originY: y,
-              vx: (Math.random() - 0.5) * 2,
-              vy: (Math.random() - 0.5) * 2,
+              vx: scatter ? (Math.random() - 0.5) * 12 : 0,
+              vy: scatter ? (Math.random() - 0.5) * 12 : 0,
               size: particleSize,
               color: color
             });
@@ -92,17 +97,68 @@ export const ParticleText: React.FC<ParticleTextProps> = ({
       }
     };
 
-    init();
+    init(true);
 
+    // Trigger particle scatter burst on scroll-into-view, hover, or click
+    const triggerScatterBurst = (intensity = 10) => {
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * intensity + 3;
+        p.vx += Math.cos(angle) * speed;
+        p.vy += Math.sin(angle) * speed;
+      }
+    };
+
+    // 1. Trigger when scrolled into view (IntersectionObserver)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            triggerScatterBurst(14);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(canvas);
+
+    // 2. Trigger particle wave perturbation on active scrolling
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const deltaY = currentScrollY - lastScrollY;
+      lastScrollY = currentScrollY;
+
+      if (Math.abs(deltaY) > 2) {
+        const factor = Math.min(Math.abs(deltaY) * 0.12, 5);
+        for (let i = 0; i < particles.length; i++) {
+          if (Math.random() > 0.65) {
+            particles[i].vy += (Math.random() - 0.5) * factor;
+            particles[i].vx += (Math.random() - 0.5) * (factor * 0.5);
+          }
+        }
+      }
+    };
+
+    // 3. Trigger on mouse move / hover / click
     const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
       mouse.x = e.clientX - rect.left;
       mouse.y = e.clientY - rect.top;
     };
 
+    const handleMouseEnter = () => {
+      triggerScatterBurst(8);
+    };
+
     const handleMouseLeave = () => {
       mouse.x = -1000;
       mouse.y = -1000;
+    };
+
+    const handleClick = () => {
+      triggerScatterBurst(16);
     };
 
     const handleTouchMove = (e: TouchEvent) => {
@@ -114,9 +170,12 @@ export const ParticleText: React.FC<ParticleTextProps> = ({
     };
 
     canvas.addEventListener('mousemove', handleMouseMove);
+    canvas.addEventListener('mouseenter', handleMouseEnter);
     canvas.addEventListener('mouseleave', handleMouseLeave);
+    canvas.addEventListener('click', handleClick);
     canvas.addEventListener('touchmove', handleTouchMove);
-    window.addEventListener('resize', init);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', () => init(false));
 
     const render = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -124,7 +183,7 @@ export const ParticleText: React.FC<ParticleTextProps> = ({
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
 
-        // Calculate distance to mouse
+        // Mouse repulsion force
         const dx = mouse.x - p.x;
         const dy = mouse.y - p.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
@@ -132,17 +191,17 @@ export const ParticleText: React.FC<ParticleTextProps> = ({
         if (dist < mouse.radius) {
           const force = (mouse.radius - dist) / mouse.radius;
           const angle = Math.atan2(dy, dx);
-          const pushX = -Math.cos(angle) * force * 10;
-          const pushY = -Math.sin(angle) * force * 10;
+          const pushX = -Math.cos(angle) * force * 12;
+          const pushY = -Math.sin(angle) * force * 12;
           p.vx += pushX;
           p.vy += pushY;
         }
 
-        // Spring force towards origin
+        // Spring force pulling back to origin
         const homeDx = p.originX - p.x;
         const homeDy = p.originY - p.y;
-        p.vx += homeDx * 0.07;
-        p.vy += homeDy * 0.07;
+        p.vx += homeDx * 0.08;
+        p.vy += homeDy * 0.08;
 
         // Friction / Damping
         p.vx *= 0.82;
@@ -164,10 +223,14 @@ export const ParticleText: React.FC<ParticleTextProps> = ({
 
     return () => {
       cancelAnimationFrame(animationFrameId);
+      observer.disconnect();
       canvas.removeEventListener('mousemove', handleMouseMove);
+      canvas.removeEventListener('mouseenter', handleMouseEnter);
       canvas.removeEventListener('mouseleave', handleMouseLeave);
+      canvas.removeEventListener('click', handleClick);
       canvas.removeEventListener('touchmove', handleTouchMove);
-      window.removeEventListener('resize', init);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', () => init(false));
     };
   }, [text, color, particleSize, gap]);
 
