@@ -62,14 +62,6 @@
   .border-dark-divider {
     border-color: #34352F;
   }
-
-  .crisp-image {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    image-rendering: high-quality;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
