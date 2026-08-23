@@ -43,7 +43,7 @@ export const BrowserFrame: React.FC<BrowserFrameProps> = ({
       </div>
 
       {/* Screen Viewport */}
-      <div className="relative bg-paper overflow-x-auto overflow-y-hidden">
+      <div className="relative bg-paper overflow-x-auto overflow-y-auto max-h-[490px]">
         {children}
       </div>
     </div>

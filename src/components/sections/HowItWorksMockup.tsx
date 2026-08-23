@@ -72,11 +72,11 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
     // STEP 1: STORE EXECUTIVE DASHBOARD
     case 'bakery-admin-overview':
       return (
-        <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
+        <div className="w-full bg-[#FAF8F5] flex justify-center items-start">
           <ZoomableImage 
             src="/images/mockups/step1_overview.png" 
             alt="Store Executive Dashboard Screenshot"
-            className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain"
+            className="w-full h-auto min-w-[650px] block rounded-sm shadow-sm"
           />
         </div>
       );
@@ -84,11 +84,11 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
     // STEP 2: PRODUCTS & CATEGORIES CATALOG
     case 'bakery-admin-catalog':
       return (
-        <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
+        <div className="w-full bg-[#FAF8F5] flex justify-center items-start">
           <ZoomableImage 
             src="/images/mockups/step2_catalog.png" 
             alt="Products Catalog Screenshot"
-            className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain"
+            className="w-full h-auto min-w-[650px] block rounded-sm shadow-sm"
           />
         </div>
       );
@@ -96,11 +96,11 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
     // STEP 3: EDIT CAKE DETAILS & PHOTOS MODAL
     case 'bakery-admin-modal':
       return (
-        <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
+        <div className="w-full bg-[#FAF8F5] flex justify-center items-start">
           <ZoomableImage 
             src="/images/mockups/step3_modal.png" 
             alt="Edit Cake Details & Photos Modal Screenshot"
-            className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain"
+            className="w-full h-auto min-w-[650px] block rounded-sm shadow-sm"
           />
         </div>
       );
@@ -108,11 +108,11 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
     // STEP 4: TEAM & BAKERS MANAGEMENT
     case 'bakery-admin-team':
       return (
-        <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
+        <div className="w-full bg-[#FAF8F5] flex justify-center items-start">
           <ZoomableImage 
             src="/images/mockups/step4_team.png" 
             alt="Team & Bakers Management Screenshot"
-            className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain"
+            className="w-full h-auto min-w-[650px] block rounded-sm shadow-sm"
           />
         </div>
       );
@@ -120,11 +120,11 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
     // STEP 5: OCCASION OFFERS MANAGER
     case 'bakery-admin-offers':
       return (
-        <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
+        <div className="w-full bg-[#FAF8F5] flex justify-center items-start">
           <ZoomableImage 
             src="/images/mockups/step5_offers.png" 
             alt="Occasion Offers Manager Screenshot"
-            className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain"
+            className="w-full h-auto min-w-[650px] block rounded-sm shadow-sm"
           />
         </div>
       );
@@ -132,11 +132,11 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
     // STEP 6: NEWSLETTER SUBSCRIBERS
     case 'bakery-admin-subscribers':
       return (
-        <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
+        <div className="w-full bg-[#FAF8F5] flex justify-center items-start">
           <ZoomableImage 
             src="/images/mockups/step6_subscribers.png" 
             alt="Newsletter Subscribers Screenshot"
-            className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain"
+            className="w-full h-auto min-w-[650px] block rounded-sm shadow-sm"
           />
         </div>
       );
@@ -144,7 +144,7 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
     // STEP 7: SETTINGS (SHOW BOTH SETTINGS SCREENSHOT IMAGES)
     case 'bakery-admin-settings':
       return (
-        <div className="w-full bg-[#FAF8F5] overflow-x-auto p-2 space-y-4">
+        <div className="w-full bg-[#FAF8F5] p-2 space-y-4">
           {/* Settings Section 1: Hero Banner & Slides Manager */}
           <div className="space-y-1.5">
             <div className="text-[10px] font-mono text-[#E07A26] font-bold uppercase tracking-wider px-1">
@@ -153,7 +153,7 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
             <ZoomableImage 
               src="/images/mockups/step7_settings_part1.png" 
               alt="Settings Part 1 Hero Banner Manager Screenshot"
-              className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain"
+              className="w-full h-auto min-w-[650px] block rounded-sm shadow-sm"
             />
           </div>
 
@@ -165,7 +165,7 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
             <ZoomableImage 
               src="/images/mockups/step7_settings_part2.png" 
               alt="Settings Part 2 Admin Credentials Screenshot"
-              className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain"
+              className="w-full h-auto min-w-[650px] block rounded-sm shadow-sm"
             />
           </div>
         </div>
