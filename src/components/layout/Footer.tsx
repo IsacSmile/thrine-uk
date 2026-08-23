@@ -13,10 +13,12 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-dark-border">
           {/* Column 1: Studio Identity & Location */}
           <div className="md:col-span-2 space-y-4">
-            <Link to="/" className="inline-flex items-center focus:outline-none" aria-label="Faiz Studio Home">
-              <span className="font-mono text-xl font-bold tracking-tight text-paper">
-                FAIZ <span className="text-terracotta">/</span> STUDIO
-              </span>
+            <Link to="/" className="inline-flex items-center focus:outline-none" aria-label="Thrine Home">
+              <img 
+                src="/images/thrine-logo-red-text.png" 
+                alt="Thrine" 
+                className="h-8 sm:h-9 w-auto object-contain transition-transform hover:scale-105"
+              />
             </Link>
             
             <p className="text-xs sm:text-sm text-paper/70 leading-relaxed max-w-md">
@@ -101,7 +103,7 @@ export const Footer: React.FC = () => {
             </button>
           </div>
           <div>
-            © 2026 FAIZ / STUDIO. All client work 100% owned by clients.
+            © 2026 Thrine Studio. All client work 100% owned by clients.
           </div>
         </div>
       </Container>
@@ -125,7 +127,7 @@ export const Footer: React.FC = () => {
             {activeModal === 'privacy' ? (
               <div className="text-xs text-editorial-muted leading-relaxed space-y-3 font-sans">
                 <p>
-                  At FAIZ / STUDIO, we respect client confidentiality. We do not track users or monetize personal information.
+                  At Thrine Studio, we respect client confidentiality. We do not track users or monetize personal information.
                 </p>
                 <p>
                   Information collected via discovery booking widgets or direct email is used exclusively for project scoping, communication, and client support.

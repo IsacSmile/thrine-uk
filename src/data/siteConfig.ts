@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "FAIZ / STUDIO",
+  name: "Thrine Studio",
   founder: "Al-Nishat Siddique",
   founderRole: "Founder",
   leadDev: "Faiz I",
@@ -20,7 +20,7 @@ export const siteConfig = {
       linkedin: "https://www.linkedin.com/in/faiz-imam/"
     }
   ],
-  title: "FAIZ / STUDIO — We build the digital systems behind businesses.",
+  title: "Thrine Studio — We build the digital systems behind businesses.",
   tagline: "We build the digital systems behind businesses.",
   location: "Based in India · Working worldwide",
   positioning: "Independent digital engineering studio designing and building websites, booking platforms, ordering systems, and internal business tools for growing service companies.",
