@@ -44,18 +44,13 @@ export const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Studio Logo */}
-        <Link to="/" className="group flex items-center gap-2.5 focus:outline-none">
-          <div className="h-8 px-2.5 bg-[#c8251d] rounded-sm flex items-center justify-center transition-transform group-hover:scale-105 shadow-sm">
+        <Link to="/" className="group flex items-center focus:outline-none" aria-label="Thrine Home">
+          <div className="h-10 px-3.5 bg-[#c8251d] rounded-md flex items-center justify-center transition-all duration-200 group-hover:scale-[1.03] group-hover:bg-[#d92921] shadow-sm">
             <img 
               src="/images/thrine-logo-transparent.png" 
               alt="Thrine Logo" 
-              className="h-5 w-auto object-contain"
+              className="h-6 w-auto object-contain drop-shadow-sm"
             />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-bold tracking-tight text-editorial text-sm font-sans uppercase">
-              THRINE <span className="text-editorial-muted font-normal text-xs tracking-widest ml-1">/ STUDIO</span>
-            </span>
           </div>
         </Link>
 
