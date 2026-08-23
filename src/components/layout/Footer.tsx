@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Mail, ArrowUpRight, Code2, Globe, MapPin, X } from 'lucide-react';
 import { siteConfig } from '../../data/siteConfig';
 import { Container } from '../ui/Container';
+import { ParticleText } from '../ui/ParticleText';
 
 export const Footer: React.FC = () => {
   const [activeModal, setActiveModal] = useState<'privacy' | 'terms' | null>(null);
@@ -114,10 +115,15 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
+        {/* Interactive Particle Text Branding */}
+        <div className="py-8 border-b border-dark-border">
+          <ParticleText text="THRINE" color="#B84A32" particleSize={1.8} gap={3.5} />
+        </div>
+
         {/* Bottom copyright bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-paper/50 gap-4">
           <div>
-            © {new Date().getFullYear()} Faiz Studio. All client work is 100% owned by clients.
+            © {new Date().getFullYear()} Thrine Studio. All client work is 100% owned by clients.
           </div>
           <div className="flex items-center gap-4 text-paper/50 font-mono text-[11px]">
             <span>Kerala, India · Remotely Worldwide</span>
