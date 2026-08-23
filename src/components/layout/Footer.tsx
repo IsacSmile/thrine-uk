@@ -117,7 +117,7 @@ export const Footer: React.FC = () => {
 
         {/* Interactive Particle Text Branding */}
         <div className="py-8 border-b border-dark-border">
-          <ParticleText text="THRINE" color="#B84A32" particleSize={1.8} gap={3.5} />
+          <ParticleText text="thrine" color="#B84A32" particleSize={1.8} gap={3.2} delayMs={1500} />
         </div>
 
         {/* Bottom copyright bar */}

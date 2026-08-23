@@ -5,6 +5,7 @@ interface ParticleTextProps {
   color?: string;
   particleSize?: number;
   gap?: number;
+  delayMs?: number;
   className?: string;
 }
 
@@ -20,10 +21,11 @@ interface Particle {
 }
 
 export const ParticleText: React.FC<ParticleTextProps> = ({
-  text = 'THRINE',
+  text = 'thrine',
   color = '#B84A32',
   particleSize = 1.8,
   gap = 3.2,
+  delayMs = 1500,
   className = ''
 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -36,10 +38,12 @@ export const ParticleText: React.FC<ParticleTextProps> = ({
 
     let animationFrameId: number;
     let particles: Particle[] = [];
+    let delayTimer: ReturnType<typeof setTimeout> | null = null;
+    let hasTriggeredDelay = false;
     const mouse = { x: -1000, y: -1000, radius: 120 };
     let lastScrollY = window.scrollY;
 
-    const init = (scatter = true) => {
+    const init = (scatter = false) => {
       const container = canvas.parentElement;
       const width = container ? container.clientWidth : 800;
       const height = Math.min(width * 0.34, 230);
@@ -59,8 +63,8 @@ export const ParticleText: React.FC<ParticleTextProps> = ({
       const offCtx = offscreen.getContext('2d');
       if (!offCtx) return;
 
-      // Font matching the logo: Extra Bold/Black rounded sans-serif
-      const fontSize = Math.min(width * 0.21, 165);
+      // Font matching the main logo: Extra Bold/Black rounded sans-serif
+      const fontSize = Math.min(width * 0.22, 170);
       offCtx.font = `900 ${fontSize}px "Plus Jakarta Sans", "Outfit", "Inter", sans-serif`;
       offCtx.textAlign = 'center';
       offCtx.textBaseline = 'middle';
@@ -78,7 +82,6 @@ export const ParticleText: React.FC<ParticleTextProps> = ({
           const index = (y * width + x) * 4;
           const alpha = pixels[index + 3];
           if (alpha > 128) {
-            // Initial scatter burst if initialized for first render / scroll-in
             const initX = scatter ? x + (Math.random() - 0.5) * 250 : x;
             const initY = scatter ? y + (Math.random() - 0.5) * 250 : y;
 
@@ -87,8 +90,8 @@ export const ParticleText: React.FC<ParticleTextProps> = ({
               y: initY,
               originX: x,
               originY: y,
-              vx: scatter ? (Math.random() - 0.5) * 12 : 0,
-              vy: scatter ? (Math.random() - 0.5) * 12 : 0,
+              vx: scatter ? (Math.random() - 0.5) * 10 : 0,
+              vy: scatter ? (Math.random() - 0.5) * 10 : 0,
               size: particleSize,
               color: color
             });
@@ -97,10 +100,10 @@ export const ParticleText: React.FC<ParticleTextProps> = ({
       }
     };
 
-    init(true);
+    init(false);
 
-    // Trigger particle scatter burst on scroll-into-view, hover, or click
-    const triggerScatterBurst = (intensity = 10) => {
+    // Trigger particle scatter burst
+    const triggerScatterBurst = (intensity = 12) => {
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
         const angle = Math.random() * Math.PI * 2;
@@ -110,12 +113,15 @@ export const ParticleText: React.FC<ParticleTextProps> = ({
       }
     };
 
-    // 1. Trigger when scrolled into view (IntersectionObserver)
+    // 1. Trigger after exact delayMs (1.5 seconds) when scrolled into view
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            triggerScatterBurst(14);
+          if (entry.isIntersecting && !hasTriggeredDelay) {
+            hasTriggeredDelay = true;
+            delayTimer = setTimeout(() => {
+              triggerScatterBurst(16);
+            }, delayMs);
           }
         });
       },
@@ -223,6 +229,7 @@ export const ParticleText: React.FC<ParticleTextProps> = ({
 
     return () => {
       cancelAnimationFrame(animationFrameId);
+      if (delayTimer) clearTimeout(delayTimer);
       observer.disconnect();
       canvas.removeEventListener('mousemove', handleMouseMove);
       canvas.removeEventListener('mouseenter', handleMouseEnter);
@@ -232,7 +239,7 @@ export const ParticleText: React.FC<ParticleTextProps> = ({
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', () => init(false));
     };
-  }, [text, color, particleSize, gap]);
+  }, [text, color, particleSize, gap, delayMs]);
 
   return (
     <div className={`w-full flex justify-center items-center overflow-hidden ${className}`}>
