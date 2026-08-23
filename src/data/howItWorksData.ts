@@ -126,12 +126,12 @@ export const howItWorksData: Record<'bakery' | 'travel', ProjectWorkflows> = {
       ]
     },
     adminFlow: {
-      heading: 'How the MyHomelyCake team manages executive overview, catalog modal, bakers, subscribers, and hero settings',
+      heading: 'How the MyHomelyCake team manages executive dashboard, catalog, cake edit modal, bakers, occasion offers, and subscribers',
       steps: [
         {
           id: 'b-a-01',
           stepNumber: '01',
-          title: 'Store Executive Overview',
+          title: 'Store Executive Dashboard',
           shortLabel: 'Executive Dashboard',
           description: 'Real-time sales dashboard showing orders placed today, weekly/monthly revenue (₹2,386), newsletter subscribers (4), top ordered cakes (Red Velvet #1, Choco Butter Scotch #2), search terms ("Special Theme Cakes"), and recent order #MHC-6502.',
           statusTag: 'Live',
@@ -144,34 +144,34 @@ export const howItWorksData: Record<'bakery' | 'travel', ProjectWorkflows> = {
         {
           id: 'b-a-02',
           stepNumber: '02',
-          title: 'Products Catalog & Edit Cake Modal',
-          shortLabel: 'Products & Modal',
-          description: 'Manage 76 cakes with position numbers, custom weight prices (700g: ₹650, 1kg: ₹1000, 2kg: ₹2000), stock toggles, and open the Edit Cake Details & Photos modal to manage image galleries and custom prices.',
+          title: 'Products & Categories Catalog',
+          shortLabel: 'Product Catalog',
+          description: 'Manage 76 bakery items with category filters (Fresh Cream Cakes, Pastries, Cup Cakes), custom position numbers, base prices (₹1,000), and quick action edit/delete triggers.',
           statusTag: 'Live',
           metadata: [
             { label: 'Catalog Size', value: '76 Cakes • 5 Categories' },
-            { label: 'Modal Control', value: 'Batch photo gallery & weight prices' }
+            { label: 'Control', value: 'Stock toggles & position ordering' }
           ],
           mockupId: 'bakery-admin-catalog'
         },
         {
           id: 'b-a-03',
           stepNumber: '03',
-          title: 'Order Management Workflow & Stages',
-          shortLabel: 'Order Management',
-          description: 'Staff inspects incoming order cards (#MHC-6502, #MHC-4075) with continuous audio notifications (Sound ON), date filters (All Time, Today), customer phone numbers (9847431696), cake piping messages ("Happy Birthday Jiju"), and 1-click status actions.',
+          title: 'Edit Cake Details & Photos Modal',
+          shortLabel: 'Cake Modal',
+          description: 'Interactive popup modal to upload multiple high-res product photos, configure custom weight/quantity price variants (700g: ₹650, 1kg: ₹1000, 2kg: ₹2000), set standalone promo badges, and toggle homepage feature status.',
           statusTag: 'Live',
           metadata: [
-            { label: 'Live Order Ref', value: '#MHC-6502 (₹1,000)' },
-            { label: 'Pipeline Filters', value: 'New, Contacted, Confirmed, Completed' }
+            { label: 'Modal Function', value: 'Batch photo upload & custom prices' },
+            { label: 'Weight Tiers', value: '700g, 1kg, 1.5kg, 2kg' }
           ],
-          mockupId: 'bakery-admin-orders'
+          mockupId: 'bakery-admin-modal'
         },
         {
           id: 'b-a-04',
           stepNumber: '04',
           title: 'Team & Bakers Management (5 Bakers)',
-          shortLabel: 'Team & Bakers',
+          shortLabel: 'Team & Baker',
           description: 'Manage artisans, head chefs, and bakers (Angem Head Chef, Lilong Chef, Ayon Head Baker, Angap Baker, Jennifer Baker) featured in the homepage "Behind the Scenes" showcase.',
           statusTag: 'Live',
           metadata: [
@@ -181,11 +181,24 @@ export const howItWorksData: Record<'bakery' | 'travel', ProjectWorkflows> = {
           mockupId: 'bakery-admin-team'
         },
         {
-          id: 'b-a-[#05]',
+          id: 'b-a-05',
           stepNumber: '05',
+          title: 'Occasion Offers Manager',
+          shortLabel: 'Offer Setting',
+          description: 'Create and control occasion-based discount offers (e.g. "🎉 Onam Offer") with active toggles, custom dates, and instant homepage offer banner triggers.',
+          statusTag: 'Live',
+          metadata: [
+            { label: 'Offer Engine', value: 'Occasion-based discount banners' },
+            { label: 'Status', value: 'Active toggle control' }
+          ],
+          mockupId: 'bakery-admin-offers'
+        },
+        {
+          id: 'b-a-06',
+          stepNumber: '06',
           title: 'Newsletter Subscribers (4 Emails)',
           shortLabel: 'Subscribers',
-          description: 'Captured customer emails list (coady@gmail.com, test@gmail.com, itsfaizimam@gmail.com, myhomelycakes@gmail.com) with 1-click Export CSV capability.',
+          description: 'Centralized newsletter subscriber list (coady@gmail.com, test@gmail.com, itsfaizimam@gmail.com, myhomelycakes@gmail.com) with 1-click Export CSV capability.',
           statusTag: 'Live',
           metadata: [
             { label: 'Captured Leads', value: '4 Newsletter Subscribers' },
@@ -194,10 +207,10 @@ export const howItWorksData: Record<'bakery' | 'travel', ProjectWorkflows> = {
           mockupId: 'bakery-admin-subscribers'
         },
         {
-          id: 'b-a-[#06]',
-          stepNumber: '06',
+          id: 'b-a-07',
+          stepNumber: '07',
           title: 'Admin Settings & Hero Customization',
-          shortLabel: 'Hero Settings',
+          shortLabel: 'Admin Settings',
           description: 'Custom main hero banner titles ("Freshly Baked Homemade Cakes Delivered in Trivandrum"), manage active hero slides (Chocolate Truffle, Vancho Cake, Red Velvet), and update admin login credentials.',
           statusTag: 'Live',
           metadata: [
@@ -207,24 +220,11 @@ export const howItWorksData: Record<'bakery' | 'travel', ProjectWorkflows> = {
           mockupId: 'bakery-admin-settings'
         },
         {
-          id: 'b-a-[#07]',
-          stepNumber: '07',
-          title: 'Delivery Cities & Outlets Manager',
-          shortLabel: 'Delivery Cities',
-          description: 'Manage allowed delivery cities and bakery outlets. Trivandrum is auto-selected as default. Staff can enable/disable cities (TVM, Kochi) without breaking existing order history.',
-          statusTag: 'Live',
-          metadata: [
-            { label: 'Default City', value: 'Trivandrum (Active)' },
-            { label: 'Safety Rule', value: 'Order history preserved on disable' }
-          ],
-          mockupId: 'bakery-admin-cities'
-        },
-        {
-          id: 'b-a-[#08]',
+          id: 'b-a-08',
           stepNumber: '08',
           title: 'Real-Time Storefront Synchronization',
-          shortLabel: 'Store Sync',
-          description: 'Any change made in the admin panel—updating a cake price, position number, team member, delivery city, or order status—automatically reflects on the customer-facing website in real time.',
+          shortLabel: 'Storefront Sync',
+          description: 'Any change made in the admin panel—updating a cake price, position number, team member, occasion offer, or subscriber lead—automatically reflects on the customer-facing website in real time.',
           statusTag: 'Live',
           metadata: [
             { label: 'System Sync', value: 'One system connecting storefront to kitchen' },

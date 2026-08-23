@@ -11,94 +11,94 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
   switch (mockupId) {
 
     // =========================================================================
-    // BAKERY ADMIN FLOW (EXACT HIGH-RES UPLOADED SCREENSHOT RENDERING)
+    // BAKERY ADMIN FLOW (EXACT USER SPECIFIED ORDER & HIGH-RES SCREENSHOTS)
     // =========================================================================
 
-    // STEP 1: STORE EXECUTIVE OVERVIEW (EXACT UPLOADED SCREENSHOT)
+    // STEP 1: STORE EXECUTIVE DASHBOARD
     case 'bakery-admin-overview':
       return (
         <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
           <img 
-            src="/images/mockups/bakery_overview_exact.png" 
-            alt="Store Executive Overview Screenshot"
+            src="/images/mockups/step1_overview.png" 
+            alt="Store Executive Dashboard Screenshot"
             className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain min-w-[650px]"
           />
         </div>
       );
 
-    // STEP 4: TEAM & BAKERS MANAGEMENT (EXACT UPLOADED SCREENSHOT)
+    // STEP 2: PRODUCTS & CATEGORIES CATALOG
+    case 'bakery-admin-catalog':
+      return (
+        <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
+          <img 
+            src="/images/mockups/step2_catalog.png" 
+            alt="Products Catalog Screenshot"
+            className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain min-w-[650px]"
+          />
+        </div>
+      );
+
+    // STEP 3: EDIT CAKE DETAILS & PHOTOS MODAL
+    case 'bakery-admin-modal':
+      return (
+        <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
+          <img 
+            src="/images/mockups/step3_modal.png" 
+            alt="Edit Cake Details & Photos Modal Screenshot"
+            className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain min-w-[650px]"
+          />
+        </div>
+      );
+
+    // STEP 4: TEAM & BAKERS MANAGEMENT
     case 'bakery-admin-team':
       return (
         <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
           <img 
-            src="/images/mockups/bakery_team_exact.png" 
+            src="/images/mockups/step4_team.png" 
             alt="Team & Bakers Management Screenshot"
             className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain min-w-[650px]"
           />
         </div>
       );
 
-    // STEP 2: PRODUCTS CATALOG WITH EDIT CAKE MODAL (EXACT UPLOADED SCREENSHOT)
-    case 'bakery-admin-catalog':
+    // STEP 5: OCCASION OFFERS MANAGER
+    case 'bakery-admin-offers':
       return (
         <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
           <img 
-            src="/images/mockups/bakery_catalog_exact.png" 
-            alt="Products Catalog & Edit Cake Modal Screenshot"
+            src="/images/mockups/step5_offers.png" 
+            alt="Occasion Offers Manager Screenshot"
             className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain min-w-[650px]"
           />
         </div>
       );
 
-    // STEP 3: ORDER MANAGEMENT WORKFLOW (EXACT UPLOADED SCREENSHOT)
-    case 'bakery-admin-orders':
-      return (
-        <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
-          <img 
-            src="/images/mockups/bakery_orders_exact.png" 
-            alt="Order Management Workflow Screenshot"
-            className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain min-w-[650px]"
-          />
-        </div>
-      );
-
-    // STEP 5: NEWSLETTER SUBSCRIBERS (EXACT UPLOADED SCREENSHOT)
+    // STEP 6: NEWSLETTER SUBSCRIBERS
     case 'bakery-admin-subscribers':
       return (
         <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
           <img 
-            src="/images/mockups/bakery_subscribers_exact.png" 
+            src="/images/mockups/step6_subscribers.png" 
             alt="Newsletter Subscribers Screenshot"
             className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain min-w-[650px]"
           />
         </div>
       );
 
-    // STEP 6: ADMIN SETTINGS & HERO (EXACT UPLOADED SCREENSHOT)
+    // STEP 7: ADMIN SETTINGS & HERO CUSTOMIZATION
     case 'bakery-admin-settings':
       return (
         <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
           <img 
-            src="/images/mockups/bakery_settings_exact.png" 
+            src="/images/mockups/step7_settings.png" 
             alt="Admin Settings & Hero Customization Screenshot"
             className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain min-w-[650px]"
           />
         </div>
       );
 
-    // STEP 7: DELIVERY CITIES MANAGER (EXACT UPLOADED SCREENSHOT)
-    case 'bakery-admin-cities':
-      return (
-        <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
-          <img 
-            src="/images/mockups/bakery_cities_exact.png" 
-            alt="Delivery Cities Manager Screenshot"
-            className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain min-w-[650px]"
-          />
-        </div>
-      );
-
-    // STEP 8: STOREFRONT SYNC
+    // STEP 8: REAL-TIME STOREFRONT SYNC
     case 'bakery-admin-sync':
       return (
         <div className="bg-[#FAF8F5] border border-[#E5E0D8] rounded-sm p-6 text-editorial font-sans text-xs space-y-4 min-h-[490px] flex flex-col justify-between">
@@ -110,7 +110,7 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
 
             <h4 className="text-xl font-bold text-[#111]">One System. Zero Developer Overhead.</h4>
             <p className="text-xs text-[#666] leading-relaxed">
-              When the bakery staff updates a cake price, creates an occasion offer, adds team members, updates delivery cities, or changes an order status to <b>Completed/Delivered</b>, the change reflects on the customer site immediately.
+              When the bakery staff updates a cake price, creates an occasion offer, adds team members, manages subscribers, or changes an order status to <b>Completed/Delivered</b>, the change reflects on the customer site immediately.
             </p>
           </div>
 
