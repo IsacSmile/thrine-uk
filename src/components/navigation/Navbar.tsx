@@ -93,7 +93,7 @@ export const Navbar: React.FC = () => {
         <div className="hidden md:flex items-center gap-4">
           <span className="text-[11px] font-mono text-editorial-muted hidden lg:inline-flex items-center gap-1">
             <MapPin className="w-3 h-3 text-terracotta" />
-            <span>Kerala, India</span>
+            <span>Kerala, India · Remotely Worldwide</span>
           </span>
           <Button
             href="/contact"
@@ -146,7 +146,7 @@ export const Navbar: React.FC = () => {
 
             <div className="pt-2 flex items-center justify-between text-xs font-mono text-editorial-muted">
               <span>Location:</span>
-              <span className="font-bold text-editorial">Kerala, India · Worldwide</span>
+              <span className="font-bold text-editorial">Kerala, India · Remotely Worldwide</span>
             </div>
 
             <div className="pt-2">

@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
 
             <div className="flex items-center gap-2 text-xs font-mono text-paper/60 pt-1">
               <MapPin className="w-3.5 h-3.5 text-terracotta shrink-0" />
-              <span>Based in Kerala, India · Working with businesses worldwide</span>
+              <span>Kerala, India · Remotely Worldwide</span>
             </div>
 
             <div className="pt-2 flex items-center gap-3">
@@ -121,7 +121,7 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} Faiz Studio. All client work is 100% owned by clients.
           </div>
           <div className="flex items-center gap-4 text-paper/50 font-mono text-[11px]">
-            <span>Kerala, India • International Engagements</span>
+            <span>Kerala, India · Remotely Worldwide</span>
           </div>
         </div>
       </Container>

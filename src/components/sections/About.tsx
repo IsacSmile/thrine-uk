@@ -74,7 +74,7 @@ export const About: React.FC = () => {
                   <div className="text-xs text-terracotta font-mono uppercase tracking-wider font-semibold">{siteConfig.role}</div>
                   <div className="flex items-center gap-1 text-[11px] text-editorial-muted font-mono mt-1">
                     <MapPin className="w-3 h-3 text-terracotta" />
-                    <span>Kerala, India · Worldwide</span>
+                    <span>Kerala, India · Remotely Worldwide</span>
                   </div>
                 </div>
               </div>
