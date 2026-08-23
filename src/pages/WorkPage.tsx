@@ -16,7 +16,8 @@ export const WorkPage: React.FC = () => {
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold text-editorial tracking-tight font-sans mb-3 leading-[1.1]">
-            Selected Client Work & Case Studies
+            Selected Client Work & Case <br className="hidden sm:block" />
+            <span>Studies</span>
           </h1>
 
           <p className="text-sm sm:text-base text-editorial-muted leading-relaxed font-sans max-w-3xl mb-4">
