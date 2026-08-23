@@ -226,8 +226,8 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
               <BrowserFrame
                 url={
                   activeSide === 'customer'
-                    ? `https://${selectedProject === 'bakery' ? 'crustandcrumble.in' : 'travelhault.com'}`
-                    : `https://admin.${selectedProject === 'bakery' ? 'crustandcrumble.in' : 'travelhault.com'}`
+                    ? `https://${selectedProject === 'bakery' ? 'yourbakery.com' : 'yourtravel.com'}`
+                    : `https://admin.${selectedProject === 'bakery' ? 'yourbakery.com' : 'yourtravel.com'}`
                 }
                 badge={`${selectedProject === 'bakery' ? 'Bakery' : 'Travel'} • ${activeSide === 'customer' ? 'Customer View' : 'Admin Panel'}`}
               >
@@ -296,7 +296,11 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
             {/* Screenshot Preview */}
             <div className="pt-2">
               <BrowserFrame
-                url={activeSide === 'customer' ? 'https://customer-view.com' : 'https://admin-panel.com'}
+                url={
+                  activeSide === 'customer'
+                    ? `https://${selectedProject === 'bakery' ? 'yourbakery.com' : 'yourtravel.com'}`
+                    : `https://admin.${selectedProject === 'bakery' ? 'yourbakery.com' : 'yourtravel.com'}`
+                }
                 badge={activeStep.shortLabel}
               >
                 <HowItWorksMockup mockupId={activeStep.mockupId} />

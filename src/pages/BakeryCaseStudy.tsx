@@ -84,7 +84,7 @@ export const BakeryCaseStudy: React.FC = () => {
 
         {/* Hero Visual Screenshot */}
         <div className="mb-16">
-          <BrowserFrame url={project.liveUrl || "https://crustandcrumble.in"} badge="Live Bakery Storefront">
+          <BrowserFrame url={project.liveUrl || "https://yourbakery.com"} badge="Live Bakery Storefront">
             <ProjectVisualMockup projectType="bakery" variant="hero" />
           </BrowserFrame>
         </div>

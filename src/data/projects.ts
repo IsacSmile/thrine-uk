@@ -165,7 +165,7 @@ export const projects: Project[] = [
     clientLocation: "Trivandrum, India",
     timeline: "8 Weeks",
     status: "Live in Production",
-    liveUrl: "https://crustandcrumble.in",
+    liveUrl: "https://yourbakery.com",
     services: [
       "Strategy",
       "Custom Cake Configurator",
