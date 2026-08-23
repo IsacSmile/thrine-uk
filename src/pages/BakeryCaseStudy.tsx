@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, CheckCircle2, Calendar, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle2, Calendar, ExternalLink, SlidersHorizontal } from 'lucide-react';
 import { Container } from '../components/ui/Container';
 import { Badge } from '../components/ui/Badge';
 import { Button } from '../components/ui/Button';
@@ -32,6 +32,13 @@ export const BakeryCaseStudy: React.FC = () => {
             <Badge variant="brand">{project.category}</Badge>
             <Badge variant="default">{project.industry}</Badge>
             <Badge variant="outline">{project.type}</Badge>
+            <a
+              href="#how-it-works"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-terracotta/10 border border-terracotta/30 text-terracotta font-mono text-[11px] font-bold rounded-sm hover:bg-terracotta hover:text-paper transition-all ml-auto"
+            >
+              <SlidersHorizontal className="w-3.5 h-3.5" />
+              <span>How The System Works ↓</span>
+            </a>
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-editorial font-sans leading-tight">

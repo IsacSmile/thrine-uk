@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Calendar, MapPin, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Calendar, MapPin, ShieldCheck, CheckCircle2, SlidersHorizontal } from 'lucide-react';
 import { Container } from '../ui/Container';
 import { Button } from '../ui/Button';
 import { BrowserFrame } from '../ui/BrowserFrame';
@@ -35,7 +35,7 @@ export const Hero: React.FC = () => {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-12">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto mb-12">
             <Button
               href="/work"
               variant="primary"
@@ -45,6 +45,14 @@ export const Hero: React.FC = () => {
               View Selected Work
             </Button>
             
+            <a
+              href="#how-it-works"
+              className="px-5 py-3 bg-studio-surface border border-studio-border hover:border-terracotta text-editorial text-xs font-mono font-bold rounded-sm transition-all flex items-center justify-center gap-2 group shadow-sm"
+            >
+              <SlidersHorizontal className="w-4 h-4 text-terracotta group-hover:rotate-45 transition-transform" />
+              <span>How The System Works ↓</span>
+            </a>
+
             <Button
               href="/contact"
               variant="secondary"

@@ -41,7 +41,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
   };
 
   return (
-    <section className={`py-20 bg-paper border-b border-studio-border ${className}`}>
+    <section id="how-it-works" className={`py-20 bg-paper border-b border-studio-border scroll-mt-20 ${className}`}>
       <Container>
         {/* Section Header */}
         <SectionHeading
