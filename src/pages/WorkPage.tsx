@@ -9,7 +9,7 @@ export const WorkPage: React.FC = () => {
     <div className="pt-8 sm:pt-10 bg-paper text-editorial min-h-screen">
       <Container>
         {/* Unified Hero Header */}
-        <div className="max-w-4xl mb-6 sm:mb-8">
+        <div className="w-full mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-studio-surface border border-studio-border text-terracotta text-xs font-mono font-bold tracking-widest uppercase mb-3 shadow-sm">
             <Sparkles className="w-3.5 h-3.5" />
             <span>02 / PORTFOLIO SHOWCASE</span>
