@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { howItWorksData, ProjectWorkflows, WorkflowStep } from '../data/howItWorksData';
+import { fetchNeonSteps, upsertNeonStep, deleteNeonStep } from './neonClient';
 
 const STORAGE_KEY = 'agency_how_it_works_v2';
 const EVENT_NAME = 'howitworks_data_updated';
@@ -21,7 +22,7 @@ export const getHowItWorksData = (): Record<'bakery' | 'travel', ProjectWorkflow
   return howItWorksData;
 };
 
-// Helper to save data and trigger live sync
+// Helper to save data to localStorage and trigger live local sync
 export const saveHowItWorksData = (data: Record<'bakery' | 'travel', ProjectWorkflows>) => {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
@@ -31,16 +32,36 @@ export const saveHowItWorksData = (data: Record<'bakery' | 'travel', ProjectWork
   }
 };
 
-// Reset store back to initial data
+// Reset store back to initial default data
 export const resetHowItWorksData = () => {
   localStorage.removeItem(STORAGE_KEY);
   window.dispatchEvent(new Event(EVENT_NAME));
 };
 
-// Custom React hook to listen for live data changes
+// Custom React hook to listen for live data changes & auto-sync with Neon DB
 export const useHowItWorksStore = () => {
   const [data, setData] = useState<Record<'bakery' | 'travel', ProjectWorkflows>>(getHowItWorksData);
 
+  // Sync with Neon Postgres on initial hook mount
+  useEffect(() => {
+    let isMounted = true;
+
+    async function syncWithNeon() {
+      const dbData = await fetchNeonSteps();
+      if (dbData && isMounted) {
+        saveHowItWorksData(dbData);
+        setData(dbData);
+      }
+    }
+
+    syncWithNeon();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  // Listen for real-time window events
   useEffect(() => {
     const handleUpdate = () => {
       setData(getHowItWorksData());
@@ -65,7 +86,14 @@ export const useHowItWorksStore = () => {
     const flowKey = side === 'customer' ? 'customerFlow' : 'adminFlow';
     const steps = currentData[projectId][flowKey].steps;
 
-    const newSteps = steps.map((s) => (s.id === stepId ? { ...s, ...updatedStep } : s));
+    let targetStep: WorkflowStep | null = null;
+    const newSteps = steps.map((s) => {
+      if (s.id === stepId) {
+        targetStep = { ...s, ...updatedStep };
+        return targetStep;
+      }
+      return s;
+    });
 
     const newData: Record<'bakery' | 'travel', ProjectWorkflows> = {
       ...currentData,
@@ -78,7 +106,13 @@ export const useHowItWorksStore = () => {
       },
     };
 
+    // Save locally first for 0ms instant UI reaction
     saveHowItWorksData(newData);
+
+    // Sync to Neon Postgres in background
+    if (targetStep) {
+      upsertNeonStep(projectId, side, targetStep);
+    }
   };
 
   const addStep = (
@@ -101,7 +135,11 @@ export const useHowItWorksStore = () => {
       },
     };
 
+    // Save locally first for 0ms instant UI reaction
     saveHowItWorksData(newData);
+
+    // Sync to Neon Postgres in background
+    upsertNeonStep(projectId, side, newStep);
   };
 
   const deleteStep = (
@@ -124,7 +162,11 @@ export const useHowItWorksStore = () => {
       },
     };
 
+    // Save locally first for 0ms instant UI reaction
     saveHowItWorksData(newData);
+
+    // Sync deletion to Neon Postgres in background
+    deleteNeonStep(stepId);
   };
 
   return {
