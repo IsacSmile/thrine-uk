@@ -1,3 +1,10 @@
+export interface ProjectWorkflowStep {
+  step: string;
+  title: string;
+  description: string;
+  image?: string;
+}
+
 export interface Project {
   id: string;
   slug: string;
@@ -15,19 +22,24 @@ export interface Project {
   services: string[];
   technologies: string[];
   summary: string;
-  problem: {
+  challenge: {
     overview: string;
     painPoints: string[];
   };
-  whatWeChanged: {
+  solution: {
     overview: string;
     highlights: string[];
   };
-  businessImpact: {
-    metric: string;
-    label: string;
-    description: string;
-  }[];
+  outcome: {
+    overview: string;
+    metrics: {
+      metric: string;
+      label: string;
+      description: string;
+    }[];
+  };
+  customerWorkflow: ProjectWorkflowStep[];
+  adminWorkflow: ProjectWorkflowStep[];
   keyFeatures: {
     title: string;
     description: string;
@@ -50,86 +62,97 @@ export const projects: Project[] = [
   {
     id: "travel-platform",
     slug: "travel",
-    title: "Tours & Travel Booking Platform",
-    tagline: "Digitizing tour package discovery & multi-vehicle seat reservation inquiries.",
-    category: "Travel / Booking",
+    title: "Travel & Hault — Tour Booking Platform",
+    tagline: "Custom travel platform for presenting tour packages, handling customer enquiries, and managing booking workflows.",
+    category: "Travel & Tourism",
     industry: "Travel & Tourism",
-    type: "Web Application & Booking System",
-    clientName: "Travel Hault & Excursions",
+    type: "Customer Platform & Booking System",
+    clientName: "Travel & Hault",
     clientLogo: "/images/client-travel-halt-logo.png",
     clientLocation: "Dubai, UAE & Kerala, India",
     timeline: "6 Weeks",
     status: "Live in Production",
     liveUrl: "https://travelhault.com",
     services: [
-      "Strategy",
-      "UX & UI Design",
-      "Custom Booking Flow",
+      "Customer Booking Experience",
+      "Interactive Itinerary Builder",
       "Vehicle Seat Selector",
-      "Inquiry System"
+      "Enquiry Management System"
     ],
     technologies: ["React", "TypeScript", "Tailwind CSS", "REST APIs", "Node.js"],
-    summary: "Designed and engineered a single unified booking workflow that enables travelers to explore multi-day itineraries, select vehicle seat configurations, and submit booking inquiries without back-and-forth communication.",
-    problem: {
-      overview: "The tour operator was managing all customer inquiries manually across WhatsApp messages, spreadsheets, and phone calls. Peak season traffic caused severe inquiry backlogs, misquoted group rates, and lost bookings.",
+    summary: "A custom travel platform for presenting tour packages, handling customer enquiries, and managing the booking workflow.",
+    challenge: {
+      overview: "Managing all customer inquiries manually across WhatsApp messages, spreadsheets, and phone calls created peak season backlogs, misquoted rates, and delayed booking confirmations.",
       painPoints: [
-        "Customer drop-off caused by missing seat availability clarity for group SUV bookings.",
-        "Over 3+ hours spent daily handling repetitive pricing quotes over WhatsApp.",
-        "Inability for mobile users on slow networks to view detailed itineraries.",
-        "Lack of centralized booking records for drivers and operational staff."
+        "Customer drop-off caused by lack of seat availability clarity for group bookings.",
+        "Hours spent daily handling repetitive pricing quotes over chat channels.",
+        "Inability for travelers on mobile connections to explore multi-day itineraries.",
+        "Lack of a centralized booking record for driver dispatches and operational staff."
       ]
     },
-    whatWeChanged: {
-      overview: "We designed a streamlined digital booking funnel that allows customers to browse packages, choose travel dates and vehicle seat requirements, and submit verified booking requests directly to the operator.",
+    solution: {
+      overview: "We engineered a unified customer booking portal paired with an operational booking manager that structures traveler requests before they reach the operator.",
       highlights: [
-        "Interactive day-by-day itinerary explorer with transparent pricing inclusions.",
+        "Day-by-day itinerary explorer with transparent pricing inclusions.",
         "Visual SUV fleet seat mapper supporting independent multi-car seat reservations.",
         "Structured inquiry routing that pre-fills traveler dates, counts, and selected seats.",
-        "Touch-optimized mobile layout engineered to load in under 1.2 seconds."
+        "Touch-optimized mobile layout engineered for fast loading on cellular networks."
       ]
     },
-    businessImpact: [
-      {
-        metric: "70% Less",
-        label: "Manual Inquiry Time",
-        description: "Drastically reduced back-and-forth chat exchanges required to finalize booking details."
-      },
-      {
-        metric: "3.5x Faster",
-        label: "Customer Response",
-        description: "Inquiries arrive pre-populated with exact passenger counts and travel dates."
-      },
-      {
-        metric: "100% Clear",
-        label: "Seat Allocation",
-        description: "Zero group seat overlap errors during multi-vehicle booking dispatches."
-      }
+    outcome: {
+      overview: "Eliminated manual booking friction, accelerated response times, and created a structured operational pipeline for group tour dispatches.",
+      metrics: [
+        {
+          metric: "Simplified",
+          label: "Customer Enquiries",
+          description: "Drastically reduced back-and-forth chat exchanges to confirm dates and seats."
+        },
+        {
+          metric: "Faster",
+          label: "Response Handling",
+          description: "Inquiries arrive pre-populated with exact traveler counts and date selections."
+        },
+        {
+          metric: "Zero",
+          label: "Seat Errors",
+          description: "Zero group seat overlap errors during multi-vehicle booking dispatches."
+        }
+      ]
+    },
+    customerWorkflow: [
+      { step: "01", title: "Explore Trip", description: "Browse tour packages, multi-day itineraries, and transparent pricing." },
+      { step: "02", title: "Select Package", description: "Choose travel dates, passenger count, and optional tour extras." },
+      { step: "03", title: "Review Itinerary", description: "Inspect daily schedules, hotel stops, and included amenities." },
+      { step: "04", title: "Submit Enquiry", description: "Submit verified booking request with passenger details." },
+      { step: "05", title: "Confirm Booking", description: "Receive instant confirmation and trip itinerary voucher." }
+    ],
+    adminWorkflow: [
+      { step: "01", title: "Create Package", description: "Set up tour details, pricing tiers, and seasonal availability." },
+      { step: "02", title: "Build Itinerary", description: "Configure day-by-day schedule, vehicle allocations, and inclusions." },
+      { step: "03", title: "Publish System", description: "Push live updates directly to traveler-facing booking pages." },
+      { step: "04", title: "Receive Enquiry", description: "View structured booking inquiries pre-filled with traveler metadata." },
+      { step: "05", title: "Manage Trip", description: "Assign drivers, vehicles, and track active excursion schedules." }
     ],
     keyFeatures: [
       {
-        title: "Customer Booking Experience",
-        description: "Travelers can browse package itineraries, choose travel dates, and select group requirements in a single intuitive flow.",
-        technicalDetail: "Dynamic package configuration · availability logic · client-side state caching."
+        title: "Customer Experience: Tour Explorer",
+        description: "Travelers can explore package itineraries, choose travel dates, and select group requirements in a single intuitive flow.",
+        technicalDetail: "Dynamic package configuration · itinerary system · availability logic."
       },
       {
-        title: "Vehicle Seat Selector",
-        description: "Visual seat mapper allowing travelers to reserve specific seats across individual or multi-SUV vehicle fleets.",
+        title: "Vehicle & Fleet Seat Selector",
+        description: "Visual seat mapper allowing travelers to reserve specific seats across individual or multi-vehicle fleets.",
         technicalDetail: "Isolated seat state maps · multi-car allocation logic · responsive touch targets."
       },
       {
-        title: "Structured Inquiry Dispatch",
+        title: "Structured Enquiry Dispatch",
         description: "One-click inquiry routing that sends complete booking metadata straight to operator channels.",
         technicalDetail: "Pre-filled payload serialization · instant REST API dispatch · fallback handler."
-      },
-      {
-        title: "Mobile Traveler View",
-        description: "Fast, touch-first layout built for travelers booking tours on mobile connections.",
-        technicalDetail: "Lightweight asset bundle · zero layout shift · optimized mobile viewport."
       }
     ],
     technicalHighlights: [
       "Architected isolated seat selection state maps to prevent cross-vehicle state synchronization bugs during multi-car bookings.",
-      "Implemented responsive SVG layout renders for seat maps with touch-friendly 48px hit areas.",
+      "Implemented responsive SVG layout renders for seat maps with touch-friendly hit areas.",
       "Integrated lightweight REST API layer for instant inquiry dispatch without page reloads."
     ],
     screenshots: {
@@ -158,36 +181,35 @@ export const projects: Project[] = [
   {
     id: "bakery-ordering",
     slug: "bakery",
-    title: "Boutique Bakery & Custom Cake System",
-    tagline: "Modern online ordering experience & interactive custom cake build engine.",
-    category: "Food / Ordering",
+    title: "My Homely Cakes — Custom Bakery System",
+    tagline: "Online ordering hub and interactive custom cake build engine for artisanal bakeries.",
+    category: "Food & Hospitality",
     industry: "Food & Hospitality",
-    type: "E-Commerce & Ordering System",
-    clientName: "myhomelycakes.com",
+    type: "Online Ordering & Kitchen System",
+    clientName: "My Homely Cakes",
     clientLogo: "/images/client-homely-cakes-logo.png",
     clientLocation: "Trivandrum, India",
     timeline: "8 Weeks",
     status: "Live in Production",
     liveUrl: "https://yourbakery.com",
     services: [
-      "Strategy",
-      "Custom Cake Configurator",
-      "Store Badging Logic",
-      "Price Calculation Engine",
-      "Kitchen Queue Dashboard"
+      "Online Product Catalog",
+      "Step-by-Step Custom Cake Builder",
+      "Real-Time Price Calculator",
+      "Kitchen Order Queue Dashboard"
     ],
     technologies: ["React", "TypeScript", "Tailwind CSS", "Local Storage API", "REST APIs"],
-    summary: "Engineered an intuitive online ordering hub and step-by-step custom cake builder that automates custom order collection, provides instant price calculations, and organizes kitchen order queues.",
-    problem: {
-      overview: "The bakery was spending substantial staff hours taking complex custom cake requests over Instagram DMs and phone calls. Miscalculated quotes, unrecorded customer details, and orders arriving during kitchen closures created operational friction.",
+    summary: "An online ordering hub and step-by-step custom cake builder that automates order collection, provides instant price calculations, and organizes kitchen order queues.",
+    challenge: {
+      overview: "Taking complex custom cake requests over Instagram DMs and phone calls led to miscalculated quotes, unrecorded customer details, and orders arriving during kitchen closures.",
       painPoints: [
-        "15+ minutes spent per custom cake order answering repetitive flavor and pricing questions.",
+        "15+ minutes spent per custom order answering repetitive flavor and size questions.",
         "Customer pricing confusion leading to abandoned custom order requests.",
         "Orders received when specific outlets were closed or at daily baking capacity.",
         "Kitchen staff struggling to read handwritten custom cake messaging instructions."
       ]
     },
-    whatWeChanged: {
+    solution: {
       overview: "We built an interactive step-by-step cake customizer with live price calculations, dynamic outlet badging, and a dedicated kitchen order manager.",
       highlights: [
         "Visual 4-step cake builder for choosing flavors, tier sizes, custom text, and photo references.",
@@ -196,48 +218,60 @@ export const projects: Project[] = [
         "Clear kitchen order queue dashboard for tracking fulfillment statuses."
       ]
     },
-    businessImpact: [
-      {
-        metric: "15 Mins → 2 Mins",
-        label: "Order Taking Time",
-        description: "Automated custom order detail collection with 0 back-and-forth messaging required."
-      },
-      {
-        metric: "0 Errors",
-        label: "Pricing Calculations",
-        description: "Exact transparent pricing quotes generated instantly for custom tier options."
-      },
-      {
-        metric: "100% Tracked",
-        label: "Kitchen Queue",
-        description: "Bakeries maintain full visibility over daily custom order fulfillment stages."
-      }
+    outcome: {
+      overview: "Automated custom order collection, eliminated pricing errors, and provided kitchen staff with full visibility over daily order fulfillment.",
+      metrics: [
+        {
+          metric: "Automated",
+          label: "Order Collection",
+          description: "Zero back-and-forth messaging required to gather flavor and custom wording details."
+        },
+        {
+          metric: "Instant",
+          label: "Price Transparency",
+          description: "Exact transparent pricing quotes generated dynamically as customers select cake tiers."
+        },
+        {
+          metric: "Centralized",
+          label: "Kitchen Queue",
+          description: "Bakeries maintain full visibility over daily custom order fulfillment stages."
+        }
+      ]
+    },
+    customerWorkflow: [
+      { step: "01", title: "Browse Catalog", description: "Explore artisanal cake options, pastries, and house specialties." },
+      { step: "02", title: "Select Product", description: "Choose base cake design, sponge flavor, and serving weight." },
+      { step: "03", title: "Customize Cake", description: "Add custom text, cake toppings, and reference photos." },
+      { step: "04", title: "Add To Cart", description: "Review itemized invoice with instant pricing breakdown." },
+      { step: "05", title: "Checkout Order", description: "Select fulfillment date, store pickup, and confirm order." }
+    ],
+    adminWorkflow: [
+      { step: "01", title: "Dashboard Overview", description: "View real-time daily order volume, revenue, and store badging." },
+      { step: "02", title: "Add Product", description: "Upload new seasonal cake items with dynamic size pricing." },
+      { step: "03", title: "Configure Product", description: "Set available flavor combinations, add-ons, and lead times." },
+      { step: "04", title: "Manage Orders", description: "Track incoming orders in structured kitchen queue columns." },
+      { step: "05", title: "Complete Order", description: "Mark orders ready for pickup or dispatch with client notifications." }
     ],
     keyFeatures: [
       {
-        title: "Online Custom Cake Configurator",
-        description: "Customers build custom cakes step-by-step, selecting sponge flavors, tier sizes, fillings, custom text, and inspiration photo uploads.",
-        technicalDetail: "Multi-step state machine · dynamic image preview · custom modifier logic."
+        title: "Customer Experience: Cake Configurator",
+        description: "Customers build custom cakes step-by-step, selecting sponge flavors, tier sizes, fillings, custom text, and photo uploads.",
+        technicalDetail: "Multi-step state machine · dynamic preview · custom modifier logic."
       },
       {
         title: "Real-Time Price Calculator",
         description: "Generates an accurate, transparent total price estimate instantly as customers modify their cake configuration.",
-        technicalDetail: "Client-side pricing calculation engine · itemized invoice calculation · zero checkout delay."
-      },
-      {
-        title: "Dynamic Outlet Store Badging",
-        description: "Displays current store status and outlet availability dynamically across storefront headers and ordering pages.",
-        technicalDetail: "Store status API state · real-time operational window evaluation."
+        technicalDetail: "Client-side pricing calculation engine · itemized invoice calculation."
       },
       {
         title: "Kitchen Order Manager",
-        description: "Streamlined operational dashboard for bakery staff to track incoming orders, fulfillment statuses, and custom client requirements.",
+        description: "Streamlined operational dashboard for bakery staff to track incoming orders, fulfillment statuses, and custom requirements.",
         technicalDetail: "Filtered queue views · order status toggles · operational data persistence."
       }
     ],
     technicalHighlights: [
       "Constructed a lightweight state machine for the multi-step cake customizer, ensuring seamless step validation.",
-      "Utilized custom CSS animations for visual tier stacks and active modifier toggles without performance degradation.",
+      "Utilized custom CSS animations for visual tier stacks and active modifier toggles.",
       "Implemented resilient fallback handling for image uploads and local cart persistence."
     ],
     screenshots: {

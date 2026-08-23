@@ -1,60 +1,65 @@
 import React from 'react';
+import { ExternalLink } from 'lucide-react';
 import { Container } from '../ui/Container';
 
 export const TrustBar: React.FC = () => {
-  const highlights = [
-    { label: 'Core Expertise', value: 'Bookings & E-Commerce' },
-    { label: 'Target Markets', value: 'Dubai, UK, US & India' },
-    { label: 'Architecture', value: 'Full-Stack React & TS' },
+  const clients = [
+    {
+      name: "Travel & Hault",
+      industry: "Travel & Tourism",
+      location: "Dubai & Kerala",
+      liveUrl: "https://travelhault.com",
+      logo: "/images/client-travel-halt-logo.png"
+    },
+    {
+      name: "My Homely Cakes",
+      industry: "Food & Hospitality",
+      location: "Trivandrum",
+      liveUrl: "https://yourbakery.com",
+      logo: "/images/client-homely-cakes-logo.png"
+    }
   ];
 
   return (
-    <section className="py-8 bg-paper border-b border-studio-border font-sans">
+    <section className="py-6 bg-paper border-b border-studio-border font-sans">
       <Container>
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 text-xs">
-          {/* Client Logos Showcase Strip */}
-          <div className="flex flex-wrap items-center gap-6 sm:gap-8 pb-4 lg:pb-0 border-b lg:border-b-0 lg:border-r border-studio-border/80 lg:pr-8">
-            <span className="font-mono uppercase text-[10px] tracking-widest text-terracotta font-bold block shrink-0">
-              Active Clients
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 text-xs">
+          
+          {/* Heading */}
+          <div className="flex items-center gap-3 shrink-0">
+            <span className="text-xs font-mono uppercase tracking-widest text-terracotta font-bold">
+              Selected work
             </span>
-            
-            <div className="flex items-center gap-6 sm:gap-8">
-              <div className="flex items-center gap-2.5 group">
-                <img 
-                  src="/images/client-travel-halt-logo.png" 
-                  alt="Travel & Halt" 
-                  className="h-7 sm:h-8 w-auto object-contain transition-transform group-hover:scale-105" 
-                />
-                <span className="text-[11px] font-mono text-editorial-muted hidden sm:inline font-medium">
-                  Dubai & Kerala
-                </span>
-              </div>
-
-              <div className="h-5 w-px bg-studio-border"></div>
-
-              <div className="flex items-center gap-2.5 group">
-                <img 
-                  src="/images/client-homely-cakes-logo.png" 
-                  alt="myhomelycakes.com" 
-                  className="h-7 sm:h-8 w-auto object-contain transition-transform group-hover:scale-105" 
-                />
-                <span className="text-[11px] font-mono text-editorial-muted hidden sm:inline font-medium">
-                  Trivandrum
-                </span>
-              </div>
-            </div>
+            <span className="text-studio-border hidden sm:inline">•</span>
+            <span className="text-editorial-muted hidden md:inline font-mono text-[11px]">
+              Production systems engineered for active clients
+            </span>
           </div>
 
-          {/* Studio Capabilities Metrics */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 flex-1">
-            {highlights.map((item, idx) => (
-              <div key={idx} className="space-y-1">
-                <div className="font-mono uppercase text-[10px] tracking-widest text-terracotta">
-                  {item.label}
+          {/* Client Entries */}
+          <div className="flex flex-wrap items-center gap-6 sm:gap-8">
+            {clients.map((client) => (
+              <div key={client.name} className="flex items-center gap-3 py-1">
+                {client.logo && (
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="h-6 w-auto object-contain opacity-90"
+                  />
+                )}
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                  <span className="font-bold text-editorial text-xs">{client.name}</span>
+                  <span className="text-[11px] font-mono text-editorial-muted">({client.industry})</span>
                 </div>
-                <div className="font-bold text-editorial text-xs sm:text-sm">
-                  {item.value}
-                </div>
+                <a
+                  href={client.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1 text-[11px] font-mono font-bold text-terracotta hover:underline ml-1"
+                >
+                  <span>Visit live website</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
               </div>
             ))}
           </div>

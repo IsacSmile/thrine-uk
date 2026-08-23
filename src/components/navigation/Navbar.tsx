@@ -43,12 +43,10 @@ export const Navbar: React.FC = () => {
         isScrolled ? 'shadow-lg border-studio-border/90' : 'shadow-none border-studio-border/50'
       }`}>
         {/* Studio Logo */}
-        <Link to="/" className="group flex items-center focus:outline-none pl-1" aria-label="Thrine Home">
-          <img 
-            src="/images/thrine-logo-red-text.png" 
-            alt="Thrine" 
-            className="h-6 sm:h-7.5 w-auto object-contain transition-transform group-hover:scale-105"
-          />
+        <Link to="/" className="group flex items-center focus:outline-none pl-1" aria-label="Studio Home">
+          <span className="font-mono text-base sm:text-lg font-bold tracking-tight text-editorial">
+            FAIZ <span className="text-terracotta">/</span> STUDIO
+          </span>
         </Link>
 
         {/* Desktop Navigation Links */}
@@ -89,7 +87,7 @@ export const Navbar: React.FC = () => {
         <div className="hidden md:flex items-center gap-4">
           <span className="text-[11px] font-mono text-editorial-muted hidden lg:inline-flex items-center gap-1">
             <MapPin className="w-3 h-3 text-terracotta" />
-            <span>Kerala, India</span>
+            <span>India · Worldwide</span>
           </span>
           <Link
             to="/contact"

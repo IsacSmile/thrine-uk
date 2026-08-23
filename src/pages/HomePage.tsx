@@ -3,10 +3,8 @@ import { Hero } from '../components/sections/Hero';
 import { TrustBar } from '../components/sections/TrustBar';
 import { SelectedWork } from '../components/sections/SelectedWork';
 import { HowItWorks } from '../components/sections/HowItWorks';
-import { Services } from '../components/sections/Services';
 import { WhoThisIsFor } from '../components/sections/WhoThisIsFor';
-import { SolutionsGrid } from '../components/sections/SolutionsGrid';
-import { Process } from '../components/sections/Process';
+import { Services } from '../components/sections/Services';
 import { About } from '../components/sections/About';
 import { WhatHappensNext } from '../components/sections/WhatHappensNext';
 import { TechStack } from '../components/sections/TechStack';
@@ -19,40 +17,34 @@ export const HomePage: React.FC = () => {
       {/* 01 — Hero */}
       <Hero />
 
-      {/* 02 — Trust Strip */}
+      {/* 02 — Client Proof Strip */}
       <TrustBar />
 
-      {/* 03 — Selected Work (Outcome-Oriented Case Studies) */}
+      {/* 03 — Selected Work (Outcome & Workflow Case Studies) */}
       <SelectedWork />
 
-      {/* 04 — How The System Works (Interactive Dual-Role Walkthrough) */}
-      <HowItWorks initialProject="bakery" />
+      {/* 04 — How The System Works (Interactive Customer vs Admin Walkthrough) */}
+      <HowItWorks initialProject="travel" />
 
-      {/* 05 — What We Do / Capabilities */}
-      <Services />
-
-      {/* 06 — Who We Work With */}
+      {/* 05 — Who We Build For (3 Editorial Industry Columns) */}
       <WhoThisIsFor />
 
-      {/* 07 — Solution Domain Matrix */}
-      <SolutionsGrid />
+      {/* 06 — Core Capabilities (2 Major Service Groups) */}
+      <Services />
 
-      {/* 08 — The Studio & Founder Profile */}
+      {/* 07 — Meet The Studio (Founder Profile & Remote Model) */}
       <About />
 
-      {/* 09 — How We Work / Process & Risk Control */}
-      <Process />
-
-      {/* 10 — What Happens After You Contact Us & Pricing Philosophy */}
+      {/* 08 — What Happens Next & Scope Transparency */}
       <WhatHappensNext />
 
-      {/* 11 — Tech Stack */}
+      {/* 09 — Technical Trust */}
       <TechStack />
 
-      {/* 12 — Commercial FAQ */}
+      {/* 10 — Commercial FAQ */}
       <FAQ />
 
-      {/* 13 — Final Call to Action */}
+      {/* 11 — Final Call to Action */}
       <CTA />
     </div>
   );

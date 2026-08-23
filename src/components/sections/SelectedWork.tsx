@@ -19,8 +19,8 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
         {showHeading && (
           <SectionHeading
             eyebrow="02 / SELECTED WORK"
-            title="Featured Case Studies"
-            subtitle="Real business software systems engineered for revenue growth, automated bookings, and streamlined operations."
+            title="Selected Work"
+            subtitle="Case studies engineered as verified business evidence — connecting customer-facing experiences directly to operational business systems."
           />
         )}
 

@@ -1,119 +1,131 @@
 import React from 'react';
 import { Container } from '../ui/Container';
 import { SectionHeading } from '../ui/SectionHeading';
-import { Calendar, ShieldCheck, CheckCircle2, FileText } from 'lucide-react';
+import { Calendar, ShieldCheck, CheckCircle2, FileCheck } from 'lucide-react';
 import { Button } from '../ui/Button';
 
 export const WhatHappensNext: React.FC = () => {
-  const steps = [
+  const processSteps = [
     {
       step: "01",
-      title: "30-Minute Discovery Call",
-      description: "We discuss your existing business workflow, pain points, timeline, and goals without high-pressure sales tactics."
+      title: "Discovery Call",
+      description: "We understand your business, current workflow and goals."
     },
     {
       step: "02",
-      title: "Solution & System Architecture",
-      description: "We determine whether a conversion website, custom booking platform, online customizer, or portal makes sense."
+      title: "Solution",
+      description: "We determine whether you need a website, custom system or combination."
     },
     {
       step: "03",
-      title: "Written Proposal & Scope",
-      description: "You receive a clear proposal outlining defined scope, project milestones, estimated timeline, and fixed investment."
+      title: "Proposal",
+      description: "You receive a clear scope, timeline and project investment."
     },
     {
       step: "04",
-      title: "Discovery & Milestone Build",
-      description: "Upon approval, we begin with wireframes and user experience design before any production code is written."
+      title: "Build",
+      description: "Design and development happen in clear milestones with regular review."
+    },
+    {
+      step: "05",
+      title: "Launch",
+      description: "We test, deploy and hand over the finished system."
     }
   ];
 
+  const scopeDeliverables = [
+    "Defined scope",
+    "Project milestones",
+    "Timeline",
+    "Design direction",
+    "Production development",
+    "Testing",
+    "Deployment",
+    "Handover"
+  ];
+
   return (
-    <section className="py-20 bg-paper border-b border-studio-border">
+    <section id="process" className="py-20 bg-paper border-b border-studio-border">
       <Container>
         <SectionHeading
-          eyebrow="08 / WORKING MODEL"
-          title="What Happens After You Contact Us?"
-          subtitle="A transparent, low-pressure process designed so you always know what to expect at every stage of the engagement."
+          eyebrow="07 / PROCESS"
+          title="What happens next?"
+          subtitle="A clear 5-step process designed to give you total visibility and confidence from initial conversation to system launch."
         />
 
-        {/* 4-Step Call to Kickoff Sequence */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-16">
-          {steps.map((item) => (
+        {/* 5-Step Milestone Process */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
+          {processSteps.map((item) => (
             <div
               key={item.step}
-              className="bg-studio-surface border border-studio-border rounded-sm p-6 flex flex-col justify-between"
+              className="bg-studio-surface border border-studio-border rounded-sm p-5 flex flex-col justify-between"
             >
               <div>
-                <span className="font-mono text-2xl font-extrabold text-terracotta block mb-3">{item.step}</span>
-                <h3 className="text-base font-bold text-editorial mb-2">{item.title}</h3>
-                <p className="text-xs text-editorial-muted leading-relaxed">{item.description}</p>
+                <span className="font-mono text-xl font-extrabold text-terracotta block mb-2">{item.step}</span>
+                <h3 className="text-base font-bold text-editorial font-sans mb-1.5">{item.title}</h3>
+                <p className="text-xs text-editorial-muted leading-relaxed font-sans">{item.description}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Low-Pressure Promise Banner */}
-        <div className="p-4 bg-terracotta/5 border border-terracotta/20 rounded-sm text-center mb-16">
-          <span className="text-xs font-mono text-terracotta font-semibold uppercase tracking-wider">
-            Our Low-Pressure Guarantee: No sales pitches. If we are not the right fit for your project, we will tell you directly.
-          </span>
+        {/* Reassuring Line */}
+        <div className="p-4 bg-studio-surface border border-studio-border rounded-sm text-center mb-16">
+          <p className="text-xs font-mono text-editorial-muted">
+            No pressure. If we're not the right fit, we'll tell you.
+          </p>
         </div>
 
-        {/* 2 Trust Columns: Pricing Philosophy + 100% Code Ownership Guarantee */}
+        {/* 2 Trust Panels: What You Receive + Your Business Stays Yours */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Column 1: Pricing Philosophy */}
+          
+          {/* Panel 1: What You Receive */}
           <div className="bg-studio-surface border border-studio-border rounded-sm p-6 sm:p-8 space-y-4">
             <div className="flex items-center gap-2">
-              <FileText className="w-5 h-5 text-terracotta" />
-              <h3 className="text-xl font-bold text-editorial font-sans">Pricing Philosophy</h3>
+              <FileCheck className="w-5 h-5 text-terracotta" />
+              <h3 className="text-xl font-bold text-editorial font-sans">What you receive</h3>
             </div>
-            <p className="text-xs sm:text-sm text-editorial-muted leading-relaxed">
-              Every project is scoped individually based on operational complexity, number of custom interfaces, third-party integrations, and timeline requirements.
+            <p className="text-xs text-editorial-muted leading-relaxed font-sans">
+              Every engagement includes structured project management and complete technical handovers:
             </p>
-            <div className="space-y-2 pt-2 border-t border-studio-border text-xs text-editorial font-mono">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0" />
-                <span>Defined scope before starting</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0" />
-                <span>Fixed project investment (no unexpected fees)</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0" />
-                <span>Clear milestone payment schedule</span>
-              </div>
+            <div className="grid grid-cols-2 gap-2 pt-2 border-t border-studio-border text-xs text-editorial font-mono">
+              {scopeDeliverables.map((item) => (
+                <div key={item} className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-terracotta shrink-0" />
+                  <span>{item}</span>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Column 2: Product & Code Ownership Guarantee */}
+          {/* Panel 2: Your Business Stays Yours */}
           <div className="bg-studio-surface border border-studio-border rounded-sm p-6 sm:p-8 space-y-4">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-5 h-5 text-terracotta" />
-              <h3 className="text-xl font-bold text-editorial font-sans">You Own Your Product 100%</h3>
+              <h3 className="text-xl font-bold text-editorial font-sans">Your business stays yours.</h3>
             </div>
-            <p className="text-xs sm:text-sm text-editorial-muted leading-relaxed">
-              Your website, source code, design files, content, and business data remain entirely yours. We never lock you into proprietary tools or restrict code transfer.
+            <p className="text-xs text-editorial-muted leading-relaxed font-sans">
+              Your website, content and business data remain yours. You are not locked into a proprietary platform simply to keep using the system.
             </p>
             <div className="space-y-2 pt-2 border-t border-studio-border text-xs text-editorial font-mono">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0" />
-                <span>Full GitHub repository transfer</span>
+                <CheckCircle2 className="w-3.5 h-3.5 text-terracotta shrink-0" />
+                <span>100% full source code ownership</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0" />
-                <span>Independent hosting flexibility</span>
+                <CheckCircle2 className="w-3.5 h-3.5 text-terracotta shrink-0" />
+                <span>Independent hosting & database deployment</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0" />
-                <span>Zero vendor lock-in</span>
+                <CheckCircle2 className="w-3.5 h-3.5 text-terracotta shrink-0" />
+                <span>Zero recurring platform lock-in fees</span>
               </div>
             </div>
           </div>
+
         </div>
 
-        {/* CTA Footer */}
+        {/* Call CTA */}
         <div className="mt-12 text-center">
           <Button
             href="/contact"
@@ -121,7 +133,7 @@ export const WhatHappensNext: React.FC = () => {
             size="lg"
             icon={<Calendar className="w-4 h-4" />}
           >
-            Book a 30-Minute Call
+            Book a 30-Minute Discovery Call
           </Button>
         </div>
       </Container>

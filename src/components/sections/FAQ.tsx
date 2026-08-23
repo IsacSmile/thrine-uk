@@ -15,9 +15,9 @@ export const FAQ: React.FC = () => {
     <section className="py-20 bg-paper border-b border-studio-border">
       <Container size="md">
         <SectionHeading
-          eyebrow="08 / FREQUENTLY ASKED"
-          title="Questions & Answers"
-          subtitle="Everything you need to know about working with me on business websites and custom software systems."
+          eyebrow="09 / FREQUENTLY ASKED"
+          title="Frequently Asked Questions"
+          subtitle="Everything you need to know about working with our studio on custom business systems and conversion websites."
           align="center"
         />
 

@@ -100,12 +100,12 @@ export const BakeryCaseStudy: React.FC = () => {
                 <span className="text-terracotta font-mono">01.</span> The Business Challenge
               </h2>
               <p className="text-editorial-muted leading-relaxed">
-                {project.problem.overview}
+                {project.challenge.overview}
               </p>
               <div className="p-4 bg-studio-surface border border-studio-border rounded-sm text-xs text-editorial space-y-2">
                 <div className="font-bold uppercase font-mono text-terracotta">Core Operational Friction Points:</div>
                 <ul className="list-disc pl-4 space-y-1 text-editorial-muted">
-                  {project.problem.painPoints.map((pt, i) => (
+                  {project.challenge.painPoints.map((pt, i) => (
                     <li key={i}>{pt}</li>
                   ))}
                 </ul>
@@ -118,10 +118,10 @@ export const BakeryCaseStudy: React.FC = () => {
                 <span className="text-terracotta font-mono">02.</span> What We Changed & Built
               </h2>
               <p className="text-editorial-muted leading-relaxed">
-                {project.whatWeChanged.overview}
+                {project.solution.overview}
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {project.whatWeChanged.highlights.map((h, i) => (
+                {project.solution.highlights.map((h, i) => (
                   <div key={i} className="p-4 bg-studio-surface border border-studio-border rounded-sm flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0 mt-0.5" />
                     <span className="text-xs text-editorial font-medium">{h}</span>
@@ -136,7 +136,7 @@ export const BakeryCaseStudy: React.FC = () => {
                 <span className="text-terracotta font-mono">03.</span> Business Impact & Measurable Outcomes
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {project.businessImpact.map((item) => (
+                {project.outcome.metrics.map((item) => (
                   <div key={item.label} className="p-4 bg-studio-surface border border-studio-border rounded-sm space-y-1">
                     <div className="text-2xl font-extrabold text-editorial font-sans">{item.metric}</div>
                     <div className="text-xs font-bold text-terracotta font-mono">{item.label}</div>

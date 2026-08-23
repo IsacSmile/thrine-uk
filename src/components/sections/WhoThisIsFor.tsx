@@ -1,28 +1,39 @@
 import React from 'react';
 import { Container } from '../ui/Container';
 import { SectionHeading } from '../ui/SectionHeading';
-import { ArrowRight, Compass, Utensils, Briefcase, AlertCircle } from 'lucide-react';
-import { Button } from '../ui/Button';
+import { Compass, Utensils, Briefcase } from 'lucide-react';
 
 export const WhoThisIsFor: React.FC = () => {
-  const categories = [
+  const columns = [
     {
       icon: <Compass className="w-5 h-5 text-terracotta" />,
       title: "Travel & Tourism",
-      description: "Tour operators, excursion providers, and booking agencies needing streamlined itineraries, vehicle seat reservation engines, and automated inquiry collection.",
-      deliverables: ["Package Discovery Catalogs", "Multi-Vehicle Seat Allocators", "Structured Inquiry Funnels"]
+      capabilities: [
+        "Booking platforms",
+        "Tour management",
+        "Enquiry systems",
+        "Customer workflows"
+      ]
     },
     {
       icon: <Utensils className="w-5 h-5 text-terracotta" />,
       title: "Food & Hospitality",
-      description: "Boutique bakeries, cloud kitchens, and artisan food brands requiring step-by-step custom order builders, live pricing calculators, and kitchen order management.",
-      deliverables: ["Custom Cake Builders", "Real-Time Price Calculators", "Kitchen Queue Dashboards"]
+      capabilities: [
+        "Online ordering",
+        "Product customization",
+        "Delivery workflows",
+        "Order management"
+      ]
     },
     {
       icon: <Briefcase className="w-5 h-5 text-terracotta" />,
       title: "Service Businesses",
-      description: "Consultancies, service firms, and operational businesses that need custom lead funnels, scheduling integrations, client portals, and automated workflow tools.",
-      deliverables: ["Conversion Funnels", "Scheduling Integrations", "Client Dashboards"]
+      capabilities: [
+        "Lead management",
+        "Scheduling",
+        "Customer portals",
+        "Internal systems"
+      ]
     }
   ];
 
@@ -30,36 +41,29 @@ export const WhoThisIsFor: React.FC = () => {
     <section className="py-20 bg-paper border-b border-studio-border">
       <Container>
         <SectionHeading
-          eyebrow="04 / IDEAL ENGAGEMENTS"
-          title="Built For Businesses With Operational Complexity"
-          subtitle="We partner exclusively with companies where the website or software system directly impacts bookings, order management, and revenue."
+          eyebrow="03 / WHO WE BUILD FOR"
+          title="Built for businesses with real workflows."
+          subtitle="We work with businesses where the website is more than a brochure and everyday operations need better digital tools."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {categories.map((cat) => (
+          {columns.map((col) => (
             <div
-              key={cat.title}
-              className="bg-studio-surface border border-studio-border rounded-sm p-6 flex flex-col justify-between hover:border-editorial transition-colors"
+              key={col.title}
+              className="bg-studio-surface border border-studio-border rounded-sm p-6 sm:p-8 flex flex-col justify-between hover:border-editorial transition-colors"
             >
-              <div className="space-y-4">
+              <div className="space-y-6">
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-sm bg-paper border border-studio-border flex items-center justify-center">
-                    {cat.icon}
+                    {col.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-editorial">{cat.title}</h3>
+                  <h3 className="text-xl font-bold text-editorial font-sans">{col.title}</h3>
                 </div>
 
-                <p className="text-xs text-editorial-muted leading-relaxed">
-                  {cat.description}
-                </p>
-              </div>
-
-              <div className="pt-6 mt-6 border-t border-studio-border space-y-2">
-                <div className="text-[10px] font-mono uppercase tracking-widest text-terracotta font-semibold">Typical Systems Built</div>
-                <div className="space-y-1">
-                  {cat.deliverables.map((item) => (
-                    <div key={item} className="text-xs text-editorial flex items-center gap-1.5 font-mono">
-                      <span className="w-1 h-1 rounded-full bg-terracotta shrink-0"></span>
+                <div className="space-y-2.5 pt-2 border-t border-studio-border font-mono text-xs text-editorial">
+                  {col.capabilities.map((item) => (
+                    <div key={item} className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-terracotta shrink-0"></span>
                       <span>{item}</span>
                     </div>
                   ))}
@@ -69,26 +73,11 @@ export const WhoThisIsFor: React.FC = () => {
           ))}
         </div>
 
-        {/* Confident Honest Positioning Statement Box */}
-        <div className="p-6 bg-studio-surface border border-studio-border rounded-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <div className="flex items-start gap-3 max-w-2xl">
-            <AlertCircle className="w-5 h-5 text-terracotta shrink-0 mt-0.5" />
-            <div className="space-y-1">
-              <span className="text-xs font-mono uppercase font-bold text-editorial">Our Honest Positioning</span>
-              <p className="text-xs text-editorial-muted leading-relaxed">
-                If your business can be managed entirely with a basic brochure template or static 3-page site, we are probably not the right studio. We focus on businesses with real operational workflows.
-              </p>
-            </div>
-          </div>
-
-          <Button
-            href="/contact"
-            variant="secondary"
-            size="sm"
-            icon={<ArrowRight className="w-3.5 h-3.5" />}
-          >
-            Discuss Your Business
-          </Button>
+        {/* Visually Subtle But Confident Statement */}
+        <div className="p-6 bg-studio-surface border border-studio-border rounded-sm text-center">
+          <p className="text-xs sm:text-sm font-mono text-editorial-muted">
+            If you only need a simple brochure website, we're probably not the right studio.
+          </p>
         </div>
       </Container>
     </section>
