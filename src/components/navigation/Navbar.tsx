@@ -45,11 +45,11 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Studio Logo */}
         <Link to="/" className="group flex items-center focus:outline-none" aria-label="Thrine Studio Home">
-          <div className="h-9 px-3 bg-[#c8251d] rounded-sm flex items-center justify-center transition-transform group-hover:scale-105 shadow-sm">
+          <div className="h-7.5 px-2.5 bg-[#c8251d] rounded-sm flex items-center justify-center transition-transform group-hover:scale-105 shadow-sm">
             <img 
               src="/images/thrine-logo-transparent.png" 
               alt="Thrine Logo" 
-              className="h-5.5 w-auto object-contain"
+              className="h-4 w-auto object-contain"
             />
           </div>
         </Link>

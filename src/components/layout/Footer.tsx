@@ -14,11 +14,11 @@ export const Footer: React.FC = () => {
           {/* Column 1: Studio Identity & Location */}
           <div className="md:col-span-2 space-y-4">
             <Link to="/" className="inline-flex items-center focus:outline-none" aria-label="Thrine Studio Home">
-              <div className="h-10 px-3.5 bg-[#c8251d] rounded-sm flex items-center justify-center shadow-sm">
+              <div className="h-8 px-2.5 bg-[#c8251d] rounded-sm flex items-center justify-center shadow-sm">
                 <img 
                   src="/images/thrine-logo-transparent.png" 
                   alt="Thrine Logo" 
-                  className="h-6 w-auto object-contain"
+                  className="h-4.5 w-auto object-contain"
                 />
               </div>
             </Link>
