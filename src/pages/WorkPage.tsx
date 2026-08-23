@@ -6,7 +6,7 @@ import { Sparkles, Layers, ShieldCheck, Zap } from 'lucide-react';
 
 export const WorkPage: React.FC = () => {
   return (
-    <div className="pt-16 sm:pt-20 bg-paper text-editorial min-h-screen">
+    <div className="pt-8 sm:pt-10 bg-paper text-editorial min-h-screen">
       <Container>
         {/* Unified Hero Header */}
         <div className="max-w-4xl mb-6 sm:mb-8">
@@ -15,9 +15,8 @@ export const WorkPage: React.FC = () => {
             <span>02 / PORTFOLIO SHOWCASE</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-editorial tracking-tight font-sans mb-3 leading-[1.15]">
-            Selected Client Work <br className="hidden sm:block" />
-            <span className="text-editorial">& Case Studies</span>
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-editorial tracking-tight font-sans mb-3 leading-[1.1]">
+            Selected Client Work & Case Studies
           </h1>
 
           <p className="text-sm sm:text-base text-editorial-muted leading-relaxed font-sans max-w-3xl mb-4">
