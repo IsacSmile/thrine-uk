@@ -249,11 +249,11 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
                     <img 
                       src="/images/bakers/angem.png" 
                       alt="Angem Head Chef"
-                      className="w-11 h-11 rounded-full object-cover border-2 border-[#E07A26] shadow-sm shrink-0"
+                      className="w-12 h-12 rounded-full object-cover border-2 border-[#E07A26] shadow-sm shrink-0"
                     />
                     <div>
                       <h5 className="font-extrabold text-sm text-[#111]">Angem</h5>
-                      <span className="bg-[#FFF5EC] text-[#E07A26] text-[8px] font-mono px-2 py-0.5 rounded-full font-bold border border-[#E07A26]/20">
+                      <span className="bg-[#FFF5EC] text-[#E07A26] text-[8px] font-mono px-2 py-0.5 rounded-full font-bold border border-[#E07A26]/20 inline-block">
                         Head Chef
                       </span>
                     </div>
@@ -278,11 +278,11 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
                     <img 
                       src="/images/bakers/lilong.png" 
                       alt="Lilong Chef"
-                      className="w-11 h-11 rounded-full object-cover border-2 border-[#337AB7] shadow-sm shrink-0"
+                      className="w-12 h-12 rounded-full object-cover border-2 border-[#337AB7] shadow-sm shrink-0"
                     />
                     <div>
                       <h5 className="font-extrabold text-sm text-[#111]">Lilong</h5>
-                      <span className="bg-[#EBF5FF] text-[#337AB7] text-[8px] font-mono px-2 py-0.5 rounded-full font-bold border border-[#337AB7]/20">
+                      <span className="bg-[#EBF5FF] text-[#337AB7] text-[8px] font-mono px-2 py-0.5 rounded-full font-bold border border-[#337AB7]/20 inline-block">
                         Chef
                       </span>
                     </div>
@@ -307,11 +307,11 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
                     <img 
                       src="/images/bakers/ayon.png" 
                       alt="Ayon Head Baker"
-                      className="w-11 h-11 rounded-full object-cover border-2 border-[#8E44AD] shadow-sm shrink-0"
+                      className="w-12 h-12 rounded-full object-cover border-2 border-[#8E44AD] shadow-sm shrink-0"
                     />
                     <div>
                       <h5 className="font-extrabold text-sm text-[#111]">Ayon</h5>
-                      <span className="bg-[#F4ECF7] text-[#8E44AD] text-[8px] font-mono px-2 py-0.5 rounded-full font-bold border border-[#8E44AD]/20">
+                      <span className="bg-[#F4ECF7] text-[#8E44AD] text-[8px] font-mono px-2 py-0.5 rounded-full font-bold border border-[#8E44AD]/20 inline-block">
                         Head Baker
                       </span>
                     </div>
@@ -336,11 +336,11 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
                     <img 
                       src="/images/bakers/angap.png" 
                       alt="Angap Baker"
-                      className="w-11 h-11 rounded-full object-cover border-2 border-[#054D3B] shadow-sm shrink-0"
+                      className="w-12 h-12 rounded-full object-cover border-2 border-[#054D3B] shadow-sm shrink-0"
                     />
                     <div>
                       <h5 className="font-extrabold text-sm text-[#111]">Angap</h5>
-                      <span className="bg-[#EBFDF5] text-[#054D3B] text-[8px] font-mono px-2 py-0.5 rounded-full font-bold border border-[#054D3B]/20">
+                      <span className="bg-[#EBFDF5] text-[#054D3B] text-[8px] font-mono px-2 py-0.5 rounded-full font-bold border border-[#054D3B]/20 inline-block">
                         Baker
                       </span>
                     </div>
