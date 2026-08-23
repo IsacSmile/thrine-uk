@@ -40,6 +40,18 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
     setActiveStepIndex(0);
   };
 
+  const handleNextStep = () => {
+    if (safeActiveStepIndex < steps.length - 1) {
+      setActiveStepIndex(safeActiveStepIndex + 1);
+    }
+  };
+
+  const handlePrevStep = () => {
+    if (safeActiveStepIndex > 0) {
+      setActiveStepIndex(safeActiveStepIndex - 1);
+    }
+  };
+
   return (
     <section id="how-it-works" className={`py-20 bg-paper border-b border-studio-border scroll-mt-20 ${className}`}>
       <Container>
@@ -52,14 +64,14 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
         />
 
         {/* Dual Selector Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 max-w-4xl mx-auto">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4 mb-8 sm:mb-12 max-w-4xl mx-auto">
           
           {/* Selector 1: Project Picker */}
-          <div className="bg-studio-surface border border-studio-border p-1 rounded-sm flex items-center w-full md:w-auto text-xs font-mono">
+          <div className="bg-studio-surface border border-studio-border p-1 rounded-sm flex items-center w-full sm:w-auto text-[11px] sm:text-xs font-mono">
             <button
               type="button"
               onClick={() => handleProjectToggle('bakery')}
-              className={`px-3 sm:px-4 py-2 rounded-sm transition-all text-center flex-1 whitespace-nowrap ${
+              className={`px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-sm transition-all text-center flex-1 whitespace-nowrap ${
                 selectedProject === 'bakery'
                   ? 'bg-dark text-paper font-bold'
                   : 'text-editorial-muted hover:text-editorial'
@@ -70,7 +82,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
             <button
               type="button"
               onClick={() => handleProjectToggle('travel')}
-              className={`px-3 sm:px-4 py-2 rounded-sm transition-all text-center flex-1 whitespace-nowrap ${
+              className={`px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-sm transition-all text-center flex-1 whitespace-nowrap ${
                 selectedProject === 'travel'
                   ? 'bg-dark text-paper font-bold'
                   : 'text-editorial-muted hover:text-editorial'
@@ -81,11 +93,11 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
           </div>
 
           {/* Selector 2: Dual Role Side Picker */}
-          <div className="bg-studio-surface border border-studio-border p-1 rounded-sm flex items-center w-full md:w-auto text-xs font-mono">
+          <div className="bg-studio-surface border border-studio-border p-1 rounded-sm flex items-center w-full sm:w-auto text-[11px] sm:text-xs font-mono">
             <button
               type="button"
               onClick={() => handleSideToggle('customer')}
-              className={`px-3 sm:px-4 py-2 rounded-sm transition-all text-center flex-1 whitespace-nowrap ${
+              className={`px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-sm transition-all text-center flex-1 whitespace-nowrap ${
                 activeSide === 'customer'
                   ? 'bg-terracotta text-paper font-bold'
                   : 'text-editorial-muted hover:text-editorial'
@@ -96,7 +108,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
             <button
               type="button"
               onClick={() => handleSideToggle('admin')}
-              className={`px-3 sm:px-4 py-2 rounded-sm transition-all text-center flex-1 whitespace-nowrap ${
+              className={`px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-sm transition-all text-center flex-1 whitespace-nowrap ${
                 activeSide === 'admin'
                   ? 'bg-terracotta text-paper font-bold'
                   : 'text-editorial-muted hover:text-editorial'
@@ -227,35 +239,95 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
         </div>
 
         {/* ======================================================== */}
-        {/* MOBILE LAYOUT (Vertical Step Cards with Inline UI Previews) */}
+        {/* MOBILE LAYOUT (Interactive Step Ribbon + Active Viewport) */}
         {/* ======================================================== */}
         <div className="lg:hidden space-y-6">
-          {steps.map((step) => (
-            <div
-              key={step.id}
-              className="bg-studio-surface border border-studio-border rounded-sm p-5 space-y-4"
-            >
-              <div className="flex items-center justify-between border-b border-studio-border pb-3 font-mono text-xs">
-                <span className="text-lg font-extrabold text-terracotta">{step.stepNumber} / {step.shortLabel}</span>
-                <Badge variant={step.statusTag === 'Live' ? 'brand' : 'outline'}>{step.statusTag}</Badge>
-              </div>
-
-              <div>
-                <h3 className="text-lg font-bold text-editorial font-sans">{step.title}</h3>
-                <p className="text-xs text-editorial-muted leading-relaxed mt-1">{step.description}</p>
-              </div>
-
-              {/* Inline UI Preview */}
-              <div className="pt-2">
-                <BrowserFrame
-                  url={activeSide === 'customer' ? 'https://customer-view.com' : 'https://admin-panel.com'}
-                  badge={step.shortLabel}
+          {/* Mobile Horizontal Step Selector Ribbon */}
+          <div className="bg-studio-surface border border-studio-border rounded-sm p-1.5 flex items-center gap-1.5 font-mono text-[11px] overflow-x-auto no-scrollbar">
+            {steps.map((step, idx) => {
+              const isActive = idx === safeActiveStepIndex;
+              return (
+                <button
+                  key={step.id}
+                  type="button"
+                  onClick={() => setActiveStepIndex(idx)}
+                  className={`flex items-center gap-1 px-2.5 py-1.5 rounded-sm transition-all whitespace-nowrap shrink-0 ${
+                    isActive
+                      ? 'bg-dark text-paper font-bold'
+                      : 'text-editorial-muted hover:text-editorial bg-paper/60 border border-studio-border'
+                  }`}
                 >
-                  <HowItWorksMockup mockupId={step.mockupId} />
-                </BrowserFrame>
-              </div>
+                  <span className={isActive ? 'text-terracotta font-extrabold' : 'text-editorial-muted'}>
+                    {step.stepNumber}
+                  </span>
+                  <span>{step.shortLabel}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Active Step Card */}
+          <div className="bg-studio-surface border border-studio-border rounded-sm p-4 sm:p-5 space-y-4">
+            <div className="flex items-center justify-between border-b border-studio-border pb-2.5 font-mono text-xs">
+              <span className="text-base font-extrabold text-terracotta">
+                Step {activeStep.stepNumber} / {activeStep.shortLabel}
+              </span>
+              <Badge variant={activeStep.statusTag === 'Live' ? 'brand' : 'outline'} size="sm">
+                {activeStep.statusTag}
+              </Badge>
             </div>
-          ))}
+
+            <div>
+              <h3 className="text-base sm:text-lg font-bold text-editorial font-sans">{activeStep.title}</h3>
+              <p className="text-xs text-editorial-muted leading-relaxed mt-1">{activeStep.description}</p>
+            </div>
+
+            {/* Step Metadata Pills */}
+            {activeStep.metadata && activeStep.metadata.length > 0 && (
+              <div className="flex flex-wrap gap-1.5 pt-1 font-mono text-[10px]">
+                {activeStep.metadata.map((m, idx) => (
+                  <span key={idx} className="bg-paper border border-studio-border px-2 py-0.5 rounded-sm text-editorial">
+                    <strong className="text-terracotta">{m.label}:</strong> {m.value}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {/* Screenshot Preview */}
+            <div className="pt-2">
+              <BrowserFrame
+                url={activeSide === 'customer' ? 'https://customer-view.com' : 'https://admin-panel.com'}
+                badge={activeStep.shortLabel}
+              >
+                <HowItWorksMockup mockupId={activeStep.mockupId} />
+              </BrowserFrame>
+            </div>
+
+            {/* Mobile Step Prev/Next Navigation Controls */}
+            <div className="flex items-center justify-between pt-2 border-t border-studio-border font-mono text-xs">
+              <button
+                type="button"
+                onClick={() => handlePrevStep()}
+                disabled={safeActiveStepIndex === 0}
+                className="px-3 py-1.5 bg-paper border border-studio-border rounded-sm text-editorial hover:border-editorial disabled:opacity-40 disabled:hover:border-studio-border flex items-center gap-1 font-bold"
+              >
+                <span>← Prev</span>
+              </button>
+
+              <span className="text-[11px] text-editorial-muted font-bold">
+                {safeActiveStepIndex + 1} of {steps.length}
+              </span>
+
+              <button
+                type="button"
+                onClick={() => handleNextStep()}
+                disabled={safeActiveStepIndex === steps.length - 1}
+                className="px-3 py-1.5 bg-paper border border-studio-border rounded-sm text-editorial hover:border-editorial disabled:opacity-40 disabled:hover:border-studio-border flex items-center gap-1 font-bold"
+              >
+                <span>Next →</span>
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* ======================================================== */}

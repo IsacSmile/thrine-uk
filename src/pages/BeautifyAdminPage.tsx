@@ -271,28 +271,28 @@ export const BeautifyAdminPage: React.FC = () => {
             <span className="text-[10px] font-mono uppercase tracking-wider text-terracotta font-bold block">
               1. SELECT CASE STUDY PROJECT
             </span>
-            <div className="grid grid-cols-2 gap-2 text-xs font-mono">
+            <div className="grid grid-cols-2 gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-mono">
               <button
                 type="button"
                 onClick={() => setSelectedProject('bakery')}
-                className={`py-2 px-3 rounded-sm font-bold text-center border transition-all ${
+                className={`py-1.5 sm:py-2 px-1.5 sm:px-3 rounded-sm font-bold text-center border transition-all ${
                   selectedProject === 'bakery'
                     ? 'bg-dark text-paper border-dark'
                     : 'bg-paper text-editorial border-studio-border hover:border-editorial'
                 }`}
               >
-                🍰 My Homely Cakes (Bakery)
+                🍰 Bakery (Homely Cakes)
               </button>
               <button
                 type="button"
                 onClick={() => setSelectedProject('travel')}
-                className={`py-2 px-3 rounded-sm font-bold text-center border transition-all ${
+                className={`py-1.5 sm:py-2 px-1.5 sm:px-3 rounded-sm font-bold text-center border transition-all ${
                   selectedProject === 'travel'
                     ? 'bg-dark text-paper border-dark'
                     : 'bg-paper text-editorial border-studio-border hover:border-editorial'
                 }`}
               >
-                🏔️ Travel & Hault (Tours)
+                🏔️ Travel (Travel & Hault)
               </button>
             </div>
           </div>
@@ -302,28 +302,28 @@ export const BeautifyAdminPage: React.FC = () => {
             <span className="text-[10px] font-mono uppercase tracking-wider text-terracotta font-bold block">
               2. SELECT WORKFLOW SIDE
             </span>
-            <div className="grid grid-cols-2 gap-2 text-xs font-mono">
+            <div className="grid grid-cols-2 gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-mono">
               <button
                 type="button"
                 onClick={() => setActiveSide('customer')}
-                className={`py-2 px-3 rounded-sm font-bold text-center border transition-all ${
+                className={`py-1.5 sm:py-2 px-1.5 sm:px-3 rounded-sm font-bold text-center border transition-all ${
                   activeSide === 'customer'
                     ? 'bg-terracotta text-paper border-terracotta'
                     : 'bg-paper text-editorial border-studio-border hover:border-editorial'
                 }`}
               >
-                👤 Customer Experience
+                👤 Customer View
               </button>
               <button
                 type="button"
                 onClick={() => setActiveSide('admin')}
-                className={`py-2 px-3 rounded-sm font-bold text-center border transition-all ${
+                className={`py-1.5 sm:py-2 px-1.5 sm:px-3 rounded-sm font-bold text-center border transition-all ${
                   activeSide === 'admin'
                     ? 'bg-terracotta text-paper border-terracotta'
                     : 'bg-paper text-editorial border-studio-border hover:border-editorial'
                 }`}
               >
-                💼 Business / Admin Panel
+                💼 Business / Admin
               </button>
             </div>
           </div>

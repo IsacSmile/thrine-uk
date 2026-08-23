@@ -25,12 +25,12 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-editorial font-sans leading-[1.08] mb-6">
+          <h1 className="text-3xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-editorial font-sans leading-[1.1] mb-4 sm:mb-6">
             Websites & Business Systems Built For Growth.
           </h1>
 
           {/* Short Positioning Paragraph */}
-          <p className="text-lg sm:text-xl text-editorial-muted leading-relaxed max-w-2xl font-normal mb-10">
+          <p className="text-sm sm:text-xl text-editorial-muted leading-relaxed max-w-2xl font-normal mb-8 sm:mb-10">
             We design and engineer high-converting websites, custom booking platforms, food ordering engines, and operational digital tools for growing service businesses.
           </p>
 
