@@ -7,6 +7,7 @@ import { TravelCaseStudy } from './pages/TravelCaseStudy';
 import { BakeryCaseStudy } from './pages/BakeryCaseStudy';
 import { ServicesPage } from './pages/ServicesPage';
 import { ContactPage } from './pages/ContactPage';
+import { BeautifyAdminPage } from './pages/BeautifyAdminPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 export const App: React.FC = () => {
@@ -21,6 +22,7 @@ export const App: React.FC = () => {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/book" element={<ContactPage />} />
+          <Route path="/beautify" element={<BeautifyAdminPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </PageLayout>

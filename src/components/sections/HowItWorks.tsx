@@ -4,7 +4,8 @@ import { SectionHeading } from '../ui/SectionHeading';
 import { Badge } from '../ui/Badge';
 import { BrowserFrame } from '../ui/BrowserFrame';
 import { HowItWorksMockup } from './HowItWorksMockup';
-import { howItWorksData, WorkflowStep } from '../../data/howItWorksData';
+import { WorkflowStep } from '../../data/howItWorksData';
+import { useHowItWorksStore } from '../../utils/howItWorksStore';
 
 interface HowItWorksProps {
   initialProject?: 'bakery' | 'travel';
@@ -15,11 +16,12 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
   initialProject = 'bakery',
   className = ''
 }) => {
+  const { data: howItWorksStoreData } = useHowItWorksStore();
   const [selectedProject, setSelectedProject] = useState<'bakery' | 'travel'>(initialProject);
   const [activeSide, setActiveSide] = useState<'customer' | 'admin'>('customer');
   const [activeStepIndex, setActiveStepIndex] = useState<number>(0);
 
-  const currentProjectData = howItWorksData[selectedProject];
+  const currentProjectData = howItWorksStoreData[selectedProject];
   const currentFlow = activeSide === 'customer'
     ? currentProjectData.customerFlow
     : currentProjectData.adminFlow;

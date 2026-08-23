@@ -63,6 +63,24 @@ const ZoomableImage: React.FC<{ src: string; alt: string; className?: string }> 
 };
 
 export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) => {
+  if (
+    mockupId.startsWith('data:') ||
+    mockupId.startsWith('http:') ||
+    mockupId.startsWith('https:') ||
+    mockupId.startsWith('/images/uploads/') ||
+    mockupId.startsWith('blob:')
+  ) {
+    return (
+      <div className="w-full bg-[#FAF8F5] flex justify-center items-start">
+        <ZoomableImage 
+          src={mockupId} 
+          alt="Custom Uploaded Step Screenshot"
+          className="w-full h-auto min-w-[650px] block rounded-sm shadow-sm"
+        />
+      </div>
+    );
+  }
+
   switch (mockupId) {
 
     // =========================================================================
