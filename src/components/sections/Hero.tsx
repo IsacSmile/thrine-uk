@@ -15,7 +15,7 @@ export const Hero: React.FC = () => {
           {/* Eyebrow Label & Studio Location */}
           <div className="flex flex-wrap items-center gap-3 mb-6">
             <span className="text-xs font-mono uppercase tracking-widest text-terracotta font-semibold">
-              FAIZ / STUDIO
+              THRINE / STUDIO
             </span>
             <span className="text-studio-border">•</span>
             <span className="inline-flex items-center gap-1 text-xs font-mono text-editorial-muted">

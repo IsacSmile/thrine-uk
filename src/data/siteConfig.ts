@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Faiz",
   founder: "Faiz",
   role: "Studio Founder & Lead Software Engineer",
-  title: "FAIZ / STUDIO — Websites & Business Systems",
+  title: "THRINE / STUDIO — Websites & Business Systems",
   location: "Kerala, India · Remotely Worldwide",
   positioning: "Independent digital engineering studio designing and building websites, booking platforms, ordering engines, and operational business systems for growing service companies.",
   availability: "Available for international client engagements",
