@@ -18,8 +18,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
     <div className="py-14 border-b border-studio-border last:border-b-0 space-y-8 font-sans">
       
       {/* Client Metadata Bar */}
-      <div className="bg-studio-surface border border-studio-border p-4 rounded-sm grid grid-cols-2 md:grid-cols-6 gap-4 text-xs font-mono">
-        <div className="flex items-center gap-3 col-span-2 md:col-span-2">
+      <div className="bg-studio-surface border border-studio-border p-4 rounded-sm flex flex-wrap items-center justify-between gap-y-4 gap-x-6 text-xs font-mono">
+        <div className="flex items-center gap-3 shrink-0">
           {project.clientLogo && (
             <div className="h-8 min-w-[36px] max-w-[90px] flex items-center justify-center p-1 bg-paper/80 border border-studio-border/60 rounded-sm shrink-0">
               <img 
@@ -29,36 +29,43 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
               />
             </div>
           )}
-          <div className="min-w-0">
-            <span className="text-terracotta uppercase tracking-wider block text-[10px] font-bold">Client / Industry</span>
-            <span className="font-bold text-editorial truncate block text-sm">{project.clientName} · {project.industry}</span>
+          <div>
+            <span className="text-terracotta uppercase tracking-wider block text-[10px] font-bold">Client</span>
+            <span className="font-bold text-editorial text-sm">{project.clientName}</span>
           </div>
         </div>
+
+        <div>
+          <span className="text-terracotta uppercase tracking-wider block text-[10px] font-bold">Industry</span>
+          <span className="font-bold text-editorial">{project.industry}</span>
+        </div>
+
         <div>
           <span className="text-terracotta uppercase tracking-wider block text-[10px] font-bold">Location</span>
-          <span className="font-bold text-editorial truncate block">{project.clientLocation}</span>
+          <span className="font-bold text-editorial">{project.clientLocation}</span>
         </div>
+
         <div>
           <span className="text-terracotta uppercase tracking-wider block text-[10px] font-bold">Timeline</span>
-          <span className="font-bold text-editorial truncate block">{project.timeline}</span>
+          <span className="font-bold text-editorial">{project.timeline}</span>
         </div>
+
         <div>
           <span className="text-terracotta uppercase tracking-wider block text-[10px] font-bold">Status</span>
-          <span className="font-bold text-editorial truncate block">{project.status}</span>
+          <span className="font-bold text-editorial">{project.status}</span>
         </div>
-        <div className="flex items-center justify-end">
-          {project.liveUrl && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1 text-[11px] text-terracotta hover:underline font-bold"
-            >
-              <span>Visit live website</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
-          )}
-        </div>
+
+        {project.liveUrl && (
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-paper border border-studio-border rounded-sm text-editorial hover:text-terracotta hover:border-terracotta transition-colors font-bold text-xs shrink-0"
+          >
+            <span>Visit live website</span>
+            <ExternalLink className="w-3.5 h-3.5 text-terracotta" />
+          </a>
+        )}
       </div>
 
       {/* Project Title & Summary */}
