@@ -36,19 +36,17 @@ export const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
-        isScrolled
-          ? 'bg-paper/95 backdrop-blur-md border-b border-studio-border py-3.5'
-          : 'bg-paper border-b border-transparent py-5'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 sm:py-4 px-3 sm:px-6 ${
+        isScrolled ? 'bg-transparent' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto bg-paper/95 backdrop-blur-md border border-studio-border/80 rounded-full shadow-lg hover:shadow-xl px-4 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between transition-all duration-300">
         {/* Studio Logo */}
-        <Link to="/" className="group flex items-center focus:outline-none" aria-label="Thrine Home">
+        <Link to="/" className="group flex items-center focus:outline-none pl-1" aria-label="Thrine Home">
           <img 
             src="/images/thrine-logo-red-text.png" 
             alt="Thrine" 
-            className="h-7 sm:h-8 w-auto object-contain transition-transform group-hover:scale-105"
+            className="h-6 sm:h-7.5 w-auto object-contain transition-transform group-hover:scale-105"
           />
         </Link>
 
@@ -79,7 +77,7 @@ export const Navbar: React.FC = () => {
               >
                 {link.name}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-terracotta rounded-full"></span>
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-terracotta rounded-full"></span>
                 )}
               </Link>
             );
@@ -90,16 +88,15 @@ export const Navbar: React.FC = () => {
         <div className="hidden md:flex items-center gap-4">
           <span className="text-[11px] font-mono text-editorial-muted hidden lg:inline-flex items-center gap-1">
             <MapPin className="w-3 h-3 text-terracotta" />
-            <span>Kerala, India · Remotely Worldwide</span>
+            <span>Kerala, India</span>
           </span>
-          <Button
-            href="/contact"
-            variant="primary"
-            size="sm"
-            icon={<Calendar className="w-3.5 h-3.5" />}
+          <Link
+            to="/contact"
+            className="px-5 py-2 bg-dark hover:bg-terracotta text-paper rounded-full text-xs font-mono font-bold transition-all shadow-sm hover:shadow flex items-center gap-1.5"
           >
-            Book a Call
-          </Button>
+            <Calendar className="w-3.5 h-3.5" />
+            <span>Book a call</span>
+          </Link>
         </div>
 
         {/* Mobile Hamburger Toggle Button */}
@@ -107,7 +104,7 @@ export const Navbar: React.FC = () => {
           type="button"
           aria-label="Toggle Navigation Menu"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-sm text-editorial bg-studio-surface border border-studio-border focus:outline-none transition-transform duration-200 active:scale-95"
+          className="md:hidden p-2.5 rounded-full text-editorial bg-dark/5 border border-studio-border/50 hover:bg-dark/10 focus:outline-none transition-transform duration-200 active:scale-95"
         >
           {mobileMenuOpen ? (
             <X className="w-5 h-5 transition-transform duration-200 rotate-90" />
@@ -119,10 +116,10 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer Menu with Smooth Slide & Fade Transition */}
       <div
-        className={`md:hidden fixed inset-x-0 top-[61px] bg-paper/95 backdrop-blur-md border-b border-studio-border p-6 shadow-2xl transition-all duration-300 ease-out transform ${
+        className={`md:hidden fixed inset-x-4 top-[72px] max-w-lg mx-auto bg-paper/98 backdrop-blur-xl border border-studio-border/80 rounded-3xl p-6 shadow-2xl transition-all duration-300 ease-out transform ${
           mobileMenuOpen
-            ? 'opacity-100 translate-y-0 pointer-events-auto'
-            : 'opacity-0 -translate-y-4 pointer-events-none'
+            ? 'opacity-100 translate-y-0 pointer-events-auto scale-100'
+            : 'opacity-0 -translate-y-4 pointer-events-none scale-95'
         }`}
       >
         <nav className="flex flex-col gap-4 text-sm font-medium">
