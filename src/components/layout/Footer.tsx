@@ -14,13 +14,11 @@ export const Footer: React.FC = () => {
           {/* Column 1: Studio Identity & Location */}
           <div className="md:col-span-2 space-y-4">
             <Link to="/" className="inline-flex items-center focus:outline-none" aria-label="Thrine Home">
-              <div className="h-11 px-4 bg-[#c8251d] rounded-md flex items-center justify-center transition-all duration-200 hover:bg-[#d92921] shadow-sm">
-                <img 
-                  src="/images/thrine-logo-transparent.png" 
-                  alt="Thrine Logo" 
-                  className="h-6.5 w-auto object-contain drop-shadow-sm"
-                />
-              </div>
+              <img 
+                src="/images/thrine-logo-red-text.png" 
+                alt="Thrine" 
+                className="h-8 sm:h-9 w-auto object-contain transition-transform hover:scale-105"
+              />
             </Link>
             
             <p className="text-xs sm:text-sm text-paper/70 leading-relaxed max-w-md">
