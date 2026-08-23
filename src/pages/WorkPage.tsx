@@ -6,7 +6,7 @@ import { Sparkles, Layers, ShieldCheck, Zap } from 'lucide-react';
 
 export const WorkPage: React.FC = () => {
   return (
-    <div className="pt-24 sm:pt-28 bg-paper text-editorial min-h-screen">
+    <div className="pt-16 sm:pt-20 bg-paper text-editorial min-h-screen">
       <Container>
         {/* Unified Hero Header */}
         <div className="max-w-4xl mb-6 sm:mb-8">
