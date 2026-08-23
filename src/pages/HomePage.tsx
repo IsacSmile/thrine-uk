@@ -1,6 +1,7 @@
 import React from 'react';
 import { Hero } from '../components/sections/Hero';
 import { TrustBar } from '../components/sections/TrustBar';
+import { EditorialManifesto } from '../components/sections/EditorialManifesto';
 import { SelectedWork } from '../components/sections/SelectedWork';
 import { HowItWorks } from '../components/sections/HowItWorks';
 import { Services } from '../components/sections/Services';
@@ -21,6 +22,9 @@ export const HomePage: React.FC = () => {
 
       {/* 02 — Trust Strip */}
       <TrustBar />
+
+      {/* 02.5 — Editorial Manifesto (ScrollReveal Animation) */}
+      <EditorialManifesto />
 
       {/* 03 — Selected Work (Outcome-Oriented Case Studies) */}
       <SelectedWork />
