@@ -1,8 +1,7 @@
 import React from 'react';
-import { ArrowRight, Calendar, MapPin } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 import { Container } from '../ui/Container';
 import { Button } from '../ui/Button';
-import { siteConfig } from '../../data/siteConfig';
 
 export const Hero: React.FC = () => {
   return (
@@ -10,15 +9,10 @@ export const Hero: React.FC = () => {
       <Container>
         <div className="flex flex-col items-start max-w-4xl relative z-10">
           
-          {/* Eyebrow Label & Studio Location */}
-          <div className="flex flex-wrap items-center gap-3 mb-6">
+          {/* Eyebrow Label */}
+          <div className="mb-6">
             <span className="text-xs font-mono uppercase tracking-widest text-terracotta font-semibold">
               THRINE STUDIO
-            </span>
-            <span className="text-studio-border">•</span>
-            <span className="inline-flex items-center gap-1 text-xs font-mono text-editorial-muted">
-              <MapPin className="w-3.5 h-3.5 text-terracotta" />
-              <span>{siteConfig.location}</span>
             </span>
           </div>
 
