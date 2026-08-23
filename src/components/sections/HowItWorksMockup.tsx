@@ -20,7 +20,7 @@ const ZoomableImage: React.FC<{ src: string; alt: string; className?: string }> 
         <img 
           src={src} 
           alt={alt} 
-          className={className} 
+          className={`${className || ''} crisp-image`} 
         />
         {/* Hover hint badge */}
         <div className="absolute top-3 right-3 bg-[#111]/85 text-white text-[10px] font-mono px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 shadow-md pointer-events-none z-10">
@@ -48,7 +48,7 @@ const ZoomableImage: React.FC<{ src: string; alt: string; className?: string }> 
             <img 
               src={src} 
               alt={alt} 
-              className="max-w-full max-h-[85vh] object-contain rounded-md shadow-2xl border border-white/10"
+              className="max-w-full max-h-[85vh] object-contain rounded-md shadow-2xl border border-white/10 crisp-image"
               onClick={(e) => e.stopPropagation()}
             />
 
