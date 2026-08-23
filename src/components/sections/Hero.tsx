@@ -32,12 +32,12 @@ export const Hero: React.FC = () => {
           {/* Short Positioning Paragraph */}
           <p className="text-sm sm:text-xl text-editorial-muted leading-relaxed max-w-2xl font-normal mb-8 sm:mb-10">
             We design and engineer{' '}
-            <span className="font-semibold text-editorial underline decoration-wavy decoration-terracotta decoration-[2.5px] underline-offset-[6px] hover:text-terracotta hover:decoration-editorial transition-all duration-300 cursor-pointer inline-block hover:-translate-y-0.5">
-              high-converting
+            <span className="font-semibold text-editorial/70 hover:text-editorial transition-colors duration-300 cursor-pointer">
+              conversion-focused
             </span>{' '}
             websites, custom booking platforms,{' '}
-            <span className="font-semibold text-editorial underline decoration-wavy decoration-terracotta decoration-[2.5px] underline-offset-[6px] hover:text-terracotta hover:decoration-editorial transition-all duration-300 cursor-pointer inline-block hover:-translate-y-0.5">
-              food ordering engines
+            <span className="font-semibold text-editorial/70 hover:text-editorial transition-colors duration-300 cursor-pointer">
+              end-to-end ordering platforms
             </span>
             , and operational digital tools for growing service businesses.
           </p>
