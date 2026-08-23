@@ -9,12 +9,7 @@ export const Hero: React.FC = () => {
       <Container>
         <div className="flex flex-col items-start max-w-4xl relative z-10">
           
-          {/* Eyebrow Label */}
-          <div className="mb-6">
-            <span className="text-xs font-mono uppercase tracking-widest text-terracotta font-semibold">
-              THRINE STUDIO
-            </span>
-          </div>
+
 
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-editorial font-sans leading-[1.1] mb-6">
