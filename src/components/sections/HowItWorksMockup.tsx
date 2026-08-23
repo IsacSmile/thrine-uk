@@ -1,24 +1,79 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  ShoppingBag, Cake, MapPin, CheckCircle2, ArrowRight
+  ShoppingBag, Cake, MapPin, CheckCircle2, ArrowRight, ZoomIn, X
 } from 'lucide-react';
 
 interface HowItWorksMockupProps {
   mockupId: string;
 }
 
+const ZoomableImage: React.FC<{ src: string; alt: string; className?: string }> = ({ src, alt, className }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      <div 
+        onClick={() => setIsOpen(true)}
+        className="group relative cursor-zoom-in overflow-hidden rounded-sm transition-all"
+        title="Click to view full screen high-resolution screenshot"
+      >
+        <img 
+          src={src} 
+          alt={alt} 
+          className={className} 
+        />
+        {/* Hover hint badge */}
+        <div className="absolute top-3 right-3 bg-[#111]/85 text-white text-[10px] font-mono px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 shadow-md pointer-events-none z-10">
+          <ZoomIn className="w-3 h-3 text-[#E07A26]" />
+          <span>Click to Expand High-Res</span>
+        </div>
+      </div>
+
+      {/* Lightbox Modal */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 md:p-8 animate-fadeIn"
+          onClick={() => setIsOpen(false)}
+        >
+          <div className="relative max-w-6xl max-h-[90vh] w-full flex flex-col items-center justify-center">
+            {/* Close button */}
+            <button 
+              onClick={() => setIsOpen(false)}
+              className="absolute -top-10 right-0 text-white hover:text-[#E07A26] text-xs font-mono font-bold flex items-center gap-1.5 bg-[#111] px-3 py-1.5 rounded-full border border-white/20 shadow-lg cursor-pointer transition-colors"
+            >
+              <X className="w-3.5 h-3.5" />
+              <span>Close View</span>
+            </button>
+
+            <img 
+              src={src} 
+              alt={alt} 
+              className="max-w-full max-h-[85vh] object-contain rounded-md shadow-2xl border border-white/10"
+              onClick={(e) => e.stopPropagation()}
+            />
+
+            <div className="mt-3 text-white/70 text-[11px] font-mono text-center">
+              High-Resolution Screenshot View • Click anywhere outside to close
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
 export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) => {
   switch (mockupId) {
 
     // =========================================================================
-    // BAKERY ADMIN FLOW (EXACT USER SPECIFIED ORDER & HIGH-RES SCREENSHOTS)
+    // BAKERY ADMIN FLOW (EXACT HIGH-RES SCREENSHOTS WITH CLICK-TO-ZOOM MODAL)
     // =========================================================================
 
     // STEP 1: STORE EXECUTIVE DASHBOARD
     case 'bakery-admin-overview':
       return (
         <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
-          <img 
+          <ZoomableImage 
             src="/images/mockups/step1_overview.png" 
             alt="Store Executive Dashboard Screenshot"
             className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain min-w-[650px]"
@@ -30,7 +85,7 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
     case 'bakery-admin-catalog':
       return (
         <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
-          <img 
+          <ZoomableImage 
             src="/images/mockups/step2_catalog.png" 
             alt="Products Catalog Screenshot"
             className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain min-w-[650px]"
@@ -42,7 +97,7 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
     case 'bakery-admin-modal':
       return (
         <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
-          <img 
+          <ZoomableImage 
             src="/images/mockups/step3_modal.png" 
             alt="Edit Cake Details & Photos Modal Screenshot"
             className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain min-w-[650px]"
@@ -54,7 +109,7 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
     case 'bakery-admin-team':
       return (
         <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
-          <img 
+          <ZoomableImage 
             src="/images/mockups/step4_team.png" 
             alt="Team & Bakers Management Screenshot"
             className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain min-w-[650px]"
@@ -66,7 +121,7 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
     case 'bakery-admin-offers':
       return (
         <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
-          <img 
+          <ZoomableImage 
             src="/images/mockups/step5_offers.png" 
             alt="Occasion Offers Manager Screenshot"
             className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain min-w-[650px]"
@@ -78,7 +133,7 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
     case 'bakery-admin-subscribers':
       return (
         <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
-          <img 
+          <ZoomableImage 
             src="/images/mockups/step6_subscribers.png" 
             alt="Newsletter Subscribers Screenshot"
             className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain min-w-[650px]"
@@ -86,15 +141,33 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
         </div>
       );
 
-    // STEP 7: ADMIN SETTINGS & HERO CUSTOMIZATION
+    // STEP 7: SETTINGS (SHOW BOTH SETTINGS SCREENSHOT IMAGES)
     case 'bakery-admin-settings':
       return (
-        <div className="w-full bg-[#FAF8F5] overflow-x-auto flex justify-center items-start">
-          <img 
-            src="/images/mockups/step7_settings.png" 
-            alt="Admin Settings & Hero Customization Screenshot"
-            className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain min-w-[650px]"
-          />
+        <div className="w-full bg-[#FAF8F5] overflow-x-auto p-2 space-y-4">
+          {/* Settings Section 1: Hero Banner & Slides Manager */}
+          <div className="space-y-1.5">
+            <div className="text-[10px] font-mono text-[#E07A26] font-bold uppercase tracking-wider px-1">
+              Part 1: Hero Banner & Slides Manager
+            </div>
+            <ZoomableImage 
+              src="/images/mockups/step7_settings_part1.png" 
+              alt="Settings Part 1 Hero Banner Manager Screenshot"
+              className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain min-w-[650px]"
+            />
+          </div>
+
+          {/* Settings Section 2: Hero Customization & Admin Credentials */}
+          <div className="space-y-1.5 pt-2 border-t border-[#E5E0D8]">
+            <div className="text-[10px] font-mono text-[#E07A26] font-bold uppercase tracking-wider px-1">
+              Part 2: Store Headings & Admin Credentials
+            </div>
+            <ZoomableImage 
+              src="/images/mockups/step7_settings_part2.png" 
+              alt="Settings Part 2 Admin Credentials Screenshot"
+              className="w-full h-auto max-w-full block rounded-sm shadow-sm object-contain min-w-[650px]"
+            />
+          </div>
         </div>
       );
 
@@ -459,7 +532,7 @@ export const HowItWorksMockup: React.FC<HowItWorksMockupProps> = ({ mockupId }) 
         <div className="bg-paper border border-studio-border rounded-sm p-5 space-y-4 font-sans text-editorial">
           <div className="flex justify-between items-center border-b border-studio-border pb-3 font-mono">
             <span className="text-xs font-bold text-editorial">Inquiry Review</span>
-            <span className="text-xs font-bold text-terracotta">Est. Total: $1,920</span>
+            <span className="text-xs font-bold text-[#E07A26]">Est. Total: $1,920</span>
           </div>
 
           <div className="p-3 bg-studio-surface border border-studio-border rounded-sm text-xs font-mono space-y-1">

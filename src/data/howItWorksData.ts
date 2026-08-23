@@ -209,9 +209,9 @@ export const howItWorksData: Record<'bakery' | 'travel', ProjectWorkflows> = {
         {
           id: 'b-a-07',
           stepNumber: '07',
-          title: 'Admin Settings & Hero Customization',
-          shortLabel: 'Admin Settings',
-          description: 'Custom main hero banner titles ("Freshly Baked Homemade Cakes Delivered in Trivandrum"), manage active hero slides (Chocolate Truffle, Vancho Cake, Red Velvet), and update admin login credentials.',
+          title: 'Store Settings & Hero Customization',
+          shortLabel: 'Settings',
+          description: 'Customize main hero banner titles ("Freshly Baked Homemade Cakes Delivered in Trivandrum"), manage active hero slides (Chocolate Truffle, Vancho Cake, Red Velvet), and update admin login credentials.',
           statusTag: 'Live',
           metadata: [
             { label: 'Hero Slides', value: '3 Active Banner Slides' },
