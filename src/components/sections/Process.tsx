@@ -8,37 +8,37 @@ export const Process: React.FC = () => {
     {
       number: "01",
       title: "Discover",
-      riskNote: "Operational audit and bottleneck identification before proposing software.",
+      riskNote: "We learn how your bakery or tour business actually works.",
       details: ["Workflow Audit", "Requirement Scope", "System Goals"]
     },
     {
       number: "02",
       title: "Plan",
-      riskNote: "Clear technical architecture, milestone roadmap, and fixed proposal.",
+      riskNote: "We agree on exactly what will be built and the price.",
       details: ["System Wireframes", "Tech Architecture", "Fixed Proposal"]
     },
     {
       number: "03",
       title: "Design",
-      riskNote: "Complete UI design & interactive prototypes approved before writing code.",
+      riskNote: "You see and approve the design before anything is coded.",
       details: ["UI Mockups", "Responsive Layouts", "Client Approval"]
     },
     {
       number: "04",
       title: "Build",
-      riskNote: "Milestone-based engineering with regular staging reviews.",
+      riskNote: "We build your website or booking system.",
       details: ["React / TS Build", "API Integration", "Staging Demos"]
     },
     {
       number: "05",
       title: "Launch",
-      riskNote: "Comprehensive QA testing, live server deployment, and full code handover.",
+      riskNote: "We test everything and go live.",
       details: ["QA & Performance", "Live Deployment", "Code Transfer"]
     },
     {
       number: "06",
       title: "Support",
-      riskNote: "Ongoing technical maintenance, security updates, and feature updates.",
+      riskNote: "We stay available for fixes and small updates.",
       details: ["System Monitoring", "Security Updates", "Ongoing Maintenance"]
     }
   ];
