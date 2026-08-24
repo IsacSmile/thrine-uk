@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Lock, Key, CheckCircle2, Plus, Trash2, Upload, RefreshCw, Eye, EyeOff, AlertCircle, ArrowLeft 
+  Lock, Key, CheckCircle2, Plus, Trash2, Upload, RefreshCw, Eye, EyeOff, AlertCircle, ArrowLeft, Video 
 } from 'lucide-react';
 import { Container } from '../components/ui/Container';
 import { Badge } from '../components/ui/Badge';
 import { useHowItWorksStore } from '../utils/howItWorksStore';
+import { useVideoStore } from '../utils/videoStore';
 import { WorkflowStep } from '../data/howItWorksData';
 
 export const BeautifyAdminPage: React.FC = () => {
   const { data, updateStep, addStep, deleteStep, resetData } = useHowItWorksStore();
+  const { videoSettings, updateVideoSettings } = useVideoStore();
 
   // Authentication State
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
@@ -270,6 +272,106 @@ export const BeautifyAdminPage: React.FC = () => {
             </div>
           </div>
         )}
+
+        {/* 🎬 HOMEPAGE HERO YOUTUBE VIDEO MANAGER */}
+        <div className="bg-studio-surface border border-studio-border p-5 rounded-2xl mb-8 space-y-4 shadow-sm">
+          <div className="flex items-center justify-between border-b border-studio-border pb-3">
+            <div className="flex items-center gap-2">
+              <div className="p-2 bg-red-600/10 border border-red-500/30 rounded-lg text-red-600">
+                <Video className="w-5 h-5" />
+              </div>
+              <div>
+                <h2 className="text-base font-extrabold text-editorial font-sans">
+                  Homepage YouTube System Video Manager
+                </h2>
+                <p className="text-xs text-editorial-muted">
+                  Update the embedded YouTube video URL, title, or visibility for the section right below the Hero.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <label className="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={videoSettings.enabled}
+                  onChange={(e) => {
+                    updateVideoSettings({ enabled: e.target.checked });
+                    triggerSuccessNotification(e.target.checked ? 'Video section enabled!' : 'Video section hidden!');
+                  }}
+                  className="sr-only peer"
+                />
+                <div className="w-11 h-6 bg-paper peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-600"></div>
+              </label>
+              <span className="text-xs font-mono font-bold text-editorial">
+                {videoSettings.enabled ? 'Enabled' : 'Hidden'}
+              </span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+            {/* YouTube URL Input */}
+            <div className="md:col-span-6 space-y-1.5 font-mono text-xs">
+              <label className="font-bold text-editorial text-[11px] block">
+                YOUTUBE VIDEO URL / SHARE LINK / EMBED ID:
+              </label>
+              <input
+                type="text"
+                value={videoSettings.youtubeUrl}
+                onChange={(e) => updateVideoSettings({ youtubeUrl: e.target.value })}
+                placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                className="w-full p-2.5 bg-paper border border-studio-border rounded-sm font-mono text-xs text-editorial focus:border-red-600 focus:outline-none"
+              />
+              <span className="text-[10px] text-editorial-muted block">
+                Paste any YouTube link (standard watch link, short link, or embed URL).
+              </span>
+            </div>
+
+            {/* Video Section Title */}
+            <div className="md:col-span-6 space-y-1.5 font-mono text-xs">
+              <label className="font-bold text-editorial text-[11px] block">
+                SECTION TITLE:
+              </label>
+              <input
+                type="text"
+                value={videoSettings.title}
+                onChange={(e) => updateVideoSettings({ title: e.target.value })}
+                placeholder="How Thrine Engineers Custom Business Systems"
+                className="w-full p-2.5 bg-paper border border-studio-border rounded-sm font-mono text-xs text-editorial focus:border-red-600 focus:outline-none"
+              />
+            </div>
+
+            {/* Video Subtitle */}
+            <div className="md:col-span-12 space-y-1.5 font-mono text-xs">
+              <label className="font-bold text-editorial text-[11px] block">
+                SECTION SUBTITLE / CAPTION:
+              </label>
+              <input
+                type="text"
+                value={videoSettings.subtitle}
+                onChange={(e) => updateVideoSettings({ subtitle: e.target.value })}
+                placeholder="Watch this video breakdown before booking your consultation call."
+                className="w-full p-2.5 bg-paper border border-studio-border rounded-sm font-mono text-xs text-editorial focus:border-red-600 focus:outline-none"
+              />
+            </div>
+          </div>
+
+          <div className="pt-2 flex items-center justify-between text-xs font-mono">
+            <span className="text-[11px] text-emerald-600 font-bold flex items-center gap-1">
+              <CheckCircle2 className="w-3.5 h-3.5" />
+              Live Sync Active — Updates save immediately to Homepage
+            </span>
+            <button
+              type="button"
+              onClick={() => {
+                triggerSuccessNotification('YouTube video settings saved successfully!');
+              }}
+              className="px-4 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded-sm font-bold transition-colors cursor-pointer"
+            >
+              Save Video Settings
+            </button>
+          </div>
+        </div>
 
         {/* Project & Side Switcher Bar */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">

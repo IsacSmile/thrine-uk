@@ -27,6 +27,7 @@ export const siteConfig = {
   availability: "Available for international engagements",
   status: "Accepting new project engagements",
   calendlyUrl: import.meta.env.VITE_CALENDLY_URL || "https://calendly.com/faiz-studio/30min",
+  zcalUrl: "https://zcal.co/i/wV1qGCNy",
   email: "hello@faiz.studio",
   socials: {
     github: "https://github.com/IsacSmile",
