@@ -9,6 +9,7 @@ export const siteConfig = {
       name: "Al-Nishat Siddique",
       role: "Founder / Strategy",
       initials: "A",
+      avatar: "/images/team/nishat.png",
       bio: "Leads studio vision, strategic client engagements, and business system alignment.",
       linkedin: "https://www.linkedin.com/in/nishatsiddique"
     },
@@ -16,6 +17,7 @@ export const siteConfig = {
       name: "Faiz I",
       role: "Full Stack Developer",
       initials: "F",
+      avatar: "/images/team/faiz.jpg",
       bio: "Engineers end-to-end web applications, custom booking portals, and internal admin platforms.",
       linkedin: "https://www.linkedin.com/in/faiz-imam/"
     }

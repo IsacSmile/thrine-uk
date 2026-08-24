@@ -62,9 +62,17 @@ export const About: React.FC = () => {
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-sm bg-dark text-paper font-bold text-xl flex items-center justify-center font-sans shrink-0 border border-studio-border">
-                      {member.initials}
-                    </div>
+                    {member.avatar ? (
+                      <img
+                        src={member.avatar}
+                        alt={member.name}
+                        className="w-12 h-12 rounded-sm object-cover shrink-0 border border-studio-border"
+                      />
+                    ) : (
+                      <div className="w-12 h-12 rounded-sm bg-dark text-paper font-bold text-xl flex items-center justify-center font-sans shrink-0 border border-studio-border">
+                        {member.initials}
+                      </div>
+                    )}
                     <div>
                       <h3 className="text-lg font-bold text-editorial font-sans">{member.name}</h3>
                       <div className="text-xs text-terracotta font-mono uppercase tracking-wider font-semibold">
