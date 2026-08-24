@@ -109,8 +109,8 @@ export const HeroVideoSection: React.FC = () => {
           </div>
 
           {/* High Converting CTA Block below video */}
-          <div className="mt-10 p-8 bg-dark text-paper border border-dark-border rounded-2xl shadow-xl text-center flex flex-col items-center space-y-4">
-            {/* Availability Guarantee Badge (Thrine Terracotta Theme) */}
+          <div className="mt-8 text-center flex flex-col items-center space-y-4">
+            {/* Availability Guarantee Badge */}
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-terracotta/40 bg-terracotta/10 text-terracotta text-xs font-mono tracking-wide font-medium shadow-sm">
               <span className="w-2 h-2 rounded-full bg-terracotta animate-pulse shrink-0"></span>
               <span>We only onboard 3 new businesses per month to guarantee results.</span>
@@ -130,7 +130,7 @@ export const HeroVideoSection: React.FC = () => {
             </div>
 
             {/* Subtext */}
-            <p className="text-xs font-mono text-paper/60">
+            <p className="text-xs font-mono text-editorial-muted">
               No contract. No credit card. Just 30 minutes.
             </p>
           </div>
