@@ -10,57 +10,57 @@ export const Hero: React.FC = () => {
       <Container>
         <div className="flex flex-col items-start max-w-4xl relative z-10">
           
-          {/* Eyebrow / Agency Focus Pillars */}
+          {/* Eyebrow Tags */}
           <div className="flex flex-wrap items-center gap-2 mb-6">
-            <span className="px-2.5 py-1 bg-studio-surface border border-studio-border rounded-sm text-[11px] font-mono font-bold text-editorial uppercase tracking-wider">
-              Custom Websites
+            <span className="px-3 py-1 bg-studio-surface border border-studio-border rounded-sm text-xs font-mono font-bold text-editorial uppercase tracking-wider">
+              Websites for Bakeries
             </span>
             <span className="text-terracotta font-mono font-bold">•</span>
-            <span className="px-2.5 py-1 bg-studio-surface border border-studio-border rounded-sm text-[11px] font-mono font-bold text-editorial uppercase tracking-wider">
-              Custom Web Systems
+            <span className="px-3 py-1 bg-studio-surface border border-studio-border rounded-sm text-xs font-mono font-bold text-editorial uppercase tracking-wider">
+              Booking Systems for Tours
             </span>
             <span className="text-terracotta font-mono font-bold">•</span>
-            <span className="px-2.5 py-1 bg-studio-surface border border-studio-border rounded-sm text-[11px] font-mono font-bold text-editorial uppercase tracking-wider">
-              AI & Automation
+            <span className="px-3 py-1 bg-studio-surface border border-studio-border rounded-sm text-xs font-mono font-bold text-editorial uppercase tracking-wider">
+              Simple Automation
             </span>
           </div>
 
-          {/* Main Headline */}
+          {/* Headline */}
           <h1 className="text-3xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-editorial font-sans leading-[1.1] mb-6">
-            Digital Engineering Studio Building Systems Behind Businesses.
+            Websites & Systems That Get You More Orders and Bookings
           </h1>
 
-          {/* Supporting Copy */}
-          <p className="text-base sm:text-xl text-editorial-muted leading-relaxed max-w-3xl font-normal mb-8">
-            We design, build, and operate high-converting business websites, custom web applications, and automated operational workflows for companies ready to modernize their digital infrastructure.
+          {/* Subheadline */}
+          <p className="text-base sm:text-xl text-editorial-muted leading-relaxed max-w-3xl font-normal mb-8 font-sans">
+            We build high-converting websites and simple systems for bakeries and tour operators — so you get more customers and spend less time on admin.
           </p>
 
-          {/* Business Outcome Highlights */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10 w-full max-w-3xl text-xs font-mono">
-            <div className="flex items-center gap-2 text-editorial font-semibold">
+          {/* Checks */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10 w-full max-w-3xl text-xs sm:text-sm font-mono">
+            <div className="flex items-center gap-2 text-editorial font-bold">
               <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0" />
-              <span>High-Conversion Design</span>
+              <span>Online ordering & booking</span>
             </div>
-            <div className="flex items-center gap-2 text-editorial font-semibold">
+            <div className="flex items-center gap-2 text-editorial font-bold">
               <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0" />
-              <span>Streamlined Operations</span>
+              <span>Clean, fast design that converts</span>
             </div>
-            <div className="flex items-center gap-2 text-editorial font-semibold">
+            <div className="flex items-center gap-2 text-editorial font-bold">
               <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0" />
-              <span>100% Code Ownership</span>
+              <span>You own the code — no lock-in</span>
             </div>
           </div>
 
-          {/* Primary & Secondary CTAs */}
+          {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-10">
             <a
               href={siteConfig.zcalUrl}
               target="_blank"
               rel="noreferrer"
-              className="px-6 py-3.5 bg-terracotta hover:bg-terracotta/90 text-paper rounded-sm font-mono text-xs uppercase tracking-wider font-bold transition-all flex items-center justify-center gap-2 shadow-md"
+              className="px-6 py-3.5 bg-terracotta hover:bg-terracotta-hover text-paper rounded-full font-mono text-xs uppercase tracking-wider font-bold transition-all flex items-center justify-center gap-2 shadow-md"
             >
               <Calendar className="w-4 h-4" />
-              <span>Book a Free Consultation</span>
+              <span>Book a Free Call</span>
             </a>
             
             <Button
