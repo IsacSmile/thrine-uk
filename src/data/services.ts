@@ -13,76 +13,76 @@ export const services: Service[] = [
     id: "business-websites",
     number: "01",
     title: "Business Websites",
-    shortDescription: "High-converting, bespoke marketing websites engineered to capture qualified business leads and articulate your value proposition.",
-    fullDescription: "A modern, high-performance website built with editorial typography and custom code. Designed to eliminate buyer friction, load instantaneously, and convert anonymous web traffic into active inquiries.",
+    shortDescription: "Clean, fast websites designed to turn visitors into customers.",
+    fullDescription: "Clean, fast websites designed to turn visitors into customers.",
     deliverables: [
-      "Bespoke High-Conversion UI/UX Design",
-      "Mobile-Optimized Responsive Architecture",
-      "SEO Structure & Metadata Infrastructure",
-      "Lead Capture & Inquiry Funnels",
-      "Content Management & Performance Optimization"
+      "Modern design that loads quickly on mobile",
+      "Clear calls-to-action so people order or enquire",
+      "Easy for you to update content yourself",
+      "Built to rank on Google",
+      "Fully owned by you — no lock-in"
     ],
     idealFor: [
-      "B2B service providers",
-      "Consultancies & professional agencies",
-      "Businesses replacing template websites"
+      "Boutique bakeries & cake shops",
+      "Tour & activity operators",
+      "Local service businesses"
     ]
   },
   {
     id: "custom-web-systems",
     number: "02",
-    title: "Custom Web Systems",
-    shortDescription: "Purpose-built web applications, customer portals, and internal admin control panels that digitize core operations.",
-    fullDescription: "Bespoke internal software designed to replace spreadsheets and fragmented messaging. We build tailored web applications and operational dashboards that digitize your end-to-end business workflows.",
+    title: "Custom Systems",
+    shortDescription: "Simple tools that replace messy spreadsheets, WhatsApp chats, and manual work.",
+    fullDescription: "Simple tools that replace messy spreadsheets, WhatsApp chats, and manual work.",
     deliverables: [
-      "Admin Control Panels & Management Dashboards",
-      "Client Self-Service & Status Portals",
-      "Database Schema Setup & REST APIs",
-      "Role-Based Access & Authentication",
-      "Third-Party System Integrations"
+      "Admin dashboard so you control everything in one place",
+      "Customer portal if needed",
+      "Automatic order or booking tracking",
+      "Secure login for you and your team",
+      "Connects with the tools you already use"
     ],
     idealFor: [
-      "Companies with complex operational workflows",
-      "Operations teams needing custom dashboards",
-      "Businesses outgrowing off-the-shelf SaaS limits"
+      "Bakeries managing custom cake orders",
+      "Tour operators handling guest manifests",
+      "Businesses outgrowing WhatsApp chaos"
     ]
   },
   {
     id: "ai-automation",
     number: "03",
-    title: "AI & Automation",
-    shortDescription: "Automated inquiry handlers, workflow pipelines, CRM synchronization, and AI-assisted data tools.",
-    fullDescription: "Connect your customer touchpoints to automated back-office workflows. We implement practical AI inquiry processing, automated email/CRM synchronization, and system notifications that save hours of manual effort.",
+    title: "Simple Automation",
+    shortDescription: "We remove repetitive tasks so you spend less time on admin.",
+    fullDescription: "We remove repetitive tasks so you spend less time on admin.",
     deliverables: [
-      "AI-Assisted Customer Inquiry Processing",
-      "Automated WhatsApp & Email Notifications",
-      "CRM & Lead Pipeline Synchronization",
-      "Data Extraction & Document Automation",
-      "Operational Bot & Webhook Workflows"
+      "Auto-replies to common customer questions",
+      "Automatic order or booking notifications",
+      "Less copy-pasting between WhatsApp, email and spreadsheets",
+      "Simple workflows that save you hours every week",
+      "Easy to adjust as your business grows"
     ],
     idealFor: [
-      "Businesses with high inquiry volumes",
-      "Teams spending hours on manual data entry",
-      "Companies automating lead routing & follow-ups"
+      "Businesses dealing with repeat customer inquiries",
+      "Owners spending hours sending manual confirmations",
+      "Teams needing instant WhatsApp & email alerts"
     ]
   },
   {
     id: "booking-ordering-systems",
     number: "04",
     title: "Booking & Ordering Systems",
-    shortDescription: "End-to-end reservation platforms, outlet ordering portals, real-time availability calendars, and payment checkouts.",
-    fullDescription: "Tailored booking and order processing systems designed to eliminate manual scheduling back-and-forth. Built with custom seat/outlet selection, instant confirmation, and real-time inventory management.",
+    shortDescription: "Let customers order or book online without calling or messaging you.",
+    fullDescription: "Let customers order or book online without calling or messaging you.",
     deliverables: [
-      "Multi-Tier Booking & Reservation Portals",
-      "Online Outlet & Product Ordering Dashboards",
-      "Stripe / Payment Gateway Integrations",
-      "Real-Time Seat & Inventory Lock Engine",
-      "Instant Email & SMS Receipt Dispatch"
+      "Online ordering for bakeries",
+      "Tour booking with availability",
+      "Real-time seat or product availability",
+      "Payment collection if needed",
+      "Everything goes straight into your dashboard"
     ],
     idealFor: [
-      "Tour & hospitality operators",
-      "Boutique bakeries & cloud kitchens",
-      "Service businesses managing appointments"
+      "Tour & excursion operators",
+      "Boutique bakeries & custom cake bakers",
+      "Local businesses accepting online reservations"
     ]
   }
 ];
