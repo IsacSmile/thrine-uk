@@ -63,7 +63,7 @@ export const projects: Project[] = [
     id: "travel-platform",
     slug: "travel",
     title: "Travel & Hault — Tour Booking Platform",
-    tagline: "Custom travel platform for presenting tour packages, handling customer enquiries, and managing booking workflows.",
+    tagline: "A booking system for a tour operator. Customers can view trips, check availability, and send booking requests. The business manages everything from one simple dashboard.",
     category: "Travel & Tourism",
     industry: "Travel & Tourism",
     type: "Customer Platform & Booking System",
@@ -80,7 +80,7 @@ export const projects: Project[] = [
       "Enquiry Management System"
     ],
     technologies: ["React", "TypeScript", "Tailwind CSS", "REST APIs", "Node.js"],
-    summary: "A custom travel platform for presenting tour packages, handling customer enquiries, and managing the booking workflow.",
+    summary: "A booking system for a tour operator. Customers can view trips, check availability, and send booking requests. The business manages everything from one simple dashboard.",
     challenge: {
       overview: "Managing all customer inquiries manually across WhatsApp messages, spreadsheets, and phone calls created peak season backlogs, misquoted rates, and delayed booking confirmations.",
       painPoints: [
@@ -182,7 +182,7 @@ export const projects: Project[] = [
     id: "bakery-ordering",
     slug: "bakery",
     title: "My Homely Cakes — Custom Bakery System",
-    tagline: "Online ordering hub and interactive custom cake build engine for artisanal bakeries.",
+    tagline: "An online ordering system for a local bakery. Customers can browse the menu, place orders, and the bakery receives everything in one place — no more WhatsApp chaos.",
     category: "Food & Hospitality",
     industry: "Food & Hospitality",
     type: "Online Ordering & Kitchen System",
@@ -199,7 +199,7 @@ export const projects: Project[] = [
       "Kitchen Order Queue Dashboard"
     ],
     technologies: ["React", "TypeScript", "Tailwind CSS", "Local Storage API", "REST APIs"],
-    summary: "An online ordering hub and step-by-step custom cake builder that automates order collection, provides instant price calculations, and organizes kitchen order queues.",
+    summary: "An online ordering system for a local bakery. Customers can browse the menu, place orders, and the bakery receives everything in one place — no more WhatsApp chaos.",
     challenge: {
       overview: "Taking complex custom cake requests over Instagram DMs and phone calls led to miscalculated quotes, unrecorded customer details, and orders arriving during kitchen closures.",
       painPoints: [
