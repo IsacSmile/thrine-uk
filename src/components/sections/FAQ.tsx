@@ -17,7 +17,7 @@ export const FAQ: React.FC = () => {
         <SectionHeading
           eyebrow="09 / FREQUENTLY ASKED"
           title="Frequently Asked Questions"
-          subtitle="Everything you need to know about working with our studio on custom business systems and conversion websites."
+          subtitle="Straight answers about working with us."
           align="center"
         />
 

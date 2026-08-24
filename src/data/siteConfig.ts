@@ -23,7 +23,7 @@ export const siteConfig = {
   title: "Thrine Studio — We build the digital systems behind businesses.",
   tagline: "We build the digital systems behind businesses.",
   location: "Kerala, India · Remote Worldwide",
-  positioning: "Independent digital engineering studio designing and building websites, booking platforms, ordering systems, and internal business tools for growing service companies.",
+  positioning: "Independent studio building websites, booking systems, and simple automation for bakeries and tour operators.",
   availability: "Available for international engagements",
   status: "Accepting new project engagements",
   calendlyUrl: import.meta.env.VITE_CALENDLY_URL || "https://calendly.com/faiz-studio/30min",

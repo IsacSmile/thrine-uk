@@ -22,10 +22,10 @@ export const About: React.FC = () => {
 
             <div className="space-y-4 text-editorial-muted text-sm sm:text-base leading-relaxed font-normal">
               <p>
-                We work with growing businesses to replace fragmented manual workflows with purpose-built digital systems.
+                We build clean websites and simple systems for bakeries and tour operators.
               </p>
               <p>
-                Whether designing customer-facing booking portals or engineering internal admin tools, our focus is delivering software that solves real operational bottlenecks for real businesses.
+                Whether you need an online booking portal, cake order builder, or an easy dashboard to manage daily orders, we build tools that save you time and help your business get more customers.
               </p>
             </div>
 

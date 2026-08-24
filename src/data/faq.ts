@@ -14,11 +14,11 @@ export const faqItems: FAQItem[] = [
   },
   {
     question: "How long does a typical project take?",
-    answer: "Conversion-focused business websites take approximately 3 to 5 weeks from discovery to launch. Custom business systems (such as booking platforms, customer portals, or ordering engines with admin dashboards) take 6 to 8 weeks depending on operational scope."
+    answer: "Websites take approximately 3 to 5 weeks from discovery to launch. Custom booking or ordering systems take 6 to 8 weeks depending on your scope."
   },
   {
     question: "Do you build custom booking and ordering systems?",
-    answer: "Yes. Tailored booking engines, multi-vehicle seat selectors, custom product configurators, inquiry routing, and internal admin dashboards are core engineering specializations of the studio."
+    answer: "Yes. Tailored booking engines, multi-vehicle seat selectors, custom product configurators, inquiry routing, and admin dashboards are core systems we build."
   },
   {
     question: "Can you integrate payment providers?",

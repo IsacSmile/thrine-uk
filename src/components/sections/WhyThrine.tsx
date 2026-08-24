@@ -8,27 +8,27 @@ export const WhyThrine: React.FC = () => {
     {
       icon: <Code className="w-5 h-5 text-terracotta" />,
       title: "100% Custom-Built",
-      description: "No bloated WordPress plugins or restrictive SaaS page builders. Every system is custom-engineered with clean code, tailored precisely to your operational workflow."
+      description: "No templates or locked platforms. Everything is built specifically for your bakery or tour business."
     },
     {
       icon: <Target className="w-5 h-5 text-terracotta" />,
-      title: "Business-Focused Outcomes",
-      description: "We don't build software simply to look futuristic. Every feature, layout, and database schema is designed around qualified lead conversion and operational efficiency."
+      title: "Focused on Real Results",
+      description: "We design for more orders, more bookings, and less admin — not just pretty websites."
     },
     {
       icon: <Cpu className="w-5 h-5 text-terracotta" />,
-      title: "Modern Engineering Stack",
-      description: "Built with high-performance frameworks (React, TypeScript, Next.js, Cloud APIs) ensuring instantaneous page loads, bank-grade security, and zero downtime."
+      title: "Clean & Fast",
+      description: "Sites that load quickly on mobile and are easy for your customers to use."
     },
     {
       icon: <TrendingUp className="w-5 h-5 text-terracotta" />,
-      title: "Scalable Architecture",
-      description: "Designed from day one to handle business growth — from early-stage single-outlet operations to high-traffic multi-location platforms without needing full rebuilds."
+      title: "Built to Grow With You",
+      description: "Starts simple and can expand as your business grows — no full rebuild needed."
     },
     {
       icon: <Headphones className="w-5 h-5 text-terracotta" />,
-      title: "100% Ownership & Long-Term Support",
-      description: "Upon project completion, 100% of the source code, design assets, and IP belong to your business, backed by ongoing technical maintenance and support."
+      title: "You Own Everything",
+      description: "100% of the code and design belong to you. We stay available for support after launch."
     }
   ];
 
@@ -37,8 +37,8 @@ export const WhyThrine: React.FC = () => {
       <Container>
         <SectionHeading
           eyebrow="04 / WHY THRINE"
-          title="Why Work With Us"
-          subtitle="Why growing businesses trust Thrine to build their core digital systems."
+          title="Why Businesses Choose Us"
+          subtitle="Why growing bakeries and tour operators trust Thrine to build their websites and systems."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
