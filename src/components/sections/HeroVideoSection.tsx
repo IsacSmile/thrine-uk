@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { Container } from '../ui/Container';
 import { Play, CheckCircle2 } from 'lucide-react';
 import { useVideoStore } from '../../utils/videoStore';
-import { siteConfig } from '../../data/siteConfig';
+import { ZCalModal } from '../booking/ZCalModal';
 
 export const HeroVideoSection: React.FC = () => {
   const { videoSettings, getEmbedUrl } = useVideoStore();
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   if (!videoSettings.enabled) {
     return null;
@@ -118,15 +119,14 @@ export const HeroVideoSection: React.FC = () => {
 
             {/* Thrine Studio Demo Pill Button */}
             <div className="pt-1">
-              <a
-                href={siteConfig.zcalUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-3.5 sm:py-4 bg-terracotta hover:bg-terracotta-hover text-paper rounded-full font-mono text-xs sm:text-sm uppercase tracking-widest font-bold transition-all shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-95 group"
+              <button
+                type="button"
+                onClick={() => setIsBookingModalOpen(true)}
+                className="inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-3.5 sm:py-4 bg-terracotta hover:bg-terracotta-hover text-paper rounded-full font-mono text-xs sm:text-sm uppercase tracking-widest font-bold transition-all shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-95 group cursor-pointer"
               >
                 <span>Book My Free Demo</span>
                 <span className="font-mono text-sm font-normal opacity-90 transition-transform group-hover:translate-x-1">→ ↗</span>
-              </a>
+              </button>
             </div>
 
             {/* Subtext */}
@@ -137,6 +137,12 @@ export const HeroVideoSection: React.FC = () => {
         </div>
 
       </Container>
+
+      {/* ZCal Interactive Booking Modal */}
+      <ZCalModal
+        isOpen={isBookingModalOpen}
+        onClose={() => setIsBookingModalOpen(false)}
+      />
     </section>
   );
 };

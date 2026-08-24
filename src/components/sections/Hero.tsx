@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowRight, Calendar, CheckCircle2 } from 'lucide-react';
 import { Container } from '../ui/Container';
 import { Button } from '../ui/Button';
-import { siteConfig } from '../../data/siteConfig';
+import { ZCalModal } from '../booking/ZCalModal';
 
 export const Hero: React.FC = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
   return (
     <section className="relative pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden bg-paper border-b border-studio-border">
       <Container>
@@ -53,15 +55,14 @@ export const Hero: React.FC = () => {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-10">
-            <a
-              href={siteConfig.zcalUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="px-6 py-3.5 bg-terracotta hover:bg-terracotta-hover text-paper rounded-full font-mono text-xs uppercase tracking-wider font-bold transition-all flex items-center justify-center gap-2 shadow-md"
+            <button
+              type="button"
+              onClick={() => setIsBookingModalOpen(true)}
+              className="px-6 py-3.5 bg-terracotta hover:bg-terracotta-hover text-paper rounded-full font-mono text-xs uppercase tracking-wider font-bold transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer"
             >
               <Calendar className="w-4 h-4" />
               <span>Book a Free Call</span>
-            </a>
+            </button>
             
             <Button
               href="#work"
@@ -80,6 +81,12 @@ export const Hero: React.FC = () => {
           </div>
         </div>
       </Container>
+
+      {/* ZCal Booking Modal */}
+      <ZCalModal
+        isOpen={isBookingModalOpen}
+        onClose={() => setIsBookingModalOpen(false)}
+      />
     </section>
   );
 };
