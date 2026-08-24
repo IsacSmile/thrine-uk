@@ -8,9 +8,9 @@ export const SolutionsGrid: React.FC = () => {
     <section className="py-20 bg-paper border-b border-studio-border">
       <Container>
         <SectionHeading
-          eyebrow="04 / DOMAIN EXPERTISE"
-          title="What I Build For Business Workflows"
-          subtitle="Concrete digital software solutions designed around real operational challenges in tourism and boutique food industries."
+          eyebrow="04 / WHO IT’S FOR"
+          title="Built for Bakeries & Tour Operators"
+          subtitle="Specific systems we build for two types of businesses."
         />
 
         <div className="space-y-12">
