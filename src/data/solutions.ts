@@ -16,23 +16,23 @@ export const solutionsData: SolutionCategory[] = [
     description: "Digital platforms built to simplify itinerary exploration and automate booking inquiries.",
     solutions: [
       {
-        title: "Tour Package Showcases",
-        description: "Filterable destination catalogs with day-by-day itineraries, pricing tiers, and visual highlights.",
+        title: "Tour Package Showcase",
+        description: "Show your trips clearly with prices and itineraries",
         icon: "Compass"
       },
       {
         title: "Multi-Vehicle Seat Selection",
-        description: "Interactive fleet maps allowing travelers to pick specific vehicle seats across multiple cars.",
+        description: "Let customers choose seats across different vehicles",
         icon: "Car"
       },
       {
-        title: "Inquiry Management Systems",
-        description: "Direct WhatsApp and email dispatch pre-populated with exact passenger metadata and dates.",
+        title: "Enquiry Management System",
+        description: "All booking requests land in one organised place",
         icon: "Send"
       },
       {
         title: "Admin Tour Manager",
-        description: "Backend interface to update prices, itinerary details, and seasonal tour availability instantly.",
+        description: "Manage trips, availability and bookings from one dashboard",
         icon: "LayoutDashboard"
       }
     ]
@@ -43,23 +43,23 @@ export const solutionsData: SolutionCategory[] = [
     description: "E-commerce engines designed to take the friction out of custom food & cake ordering.",
     solutions: [
       {
-        title: "Visual Cake Builders",
-        description: "Step-by-step custom cake configurator for size, sponge, fillings, text, and photo uploads.",
+        title: "Visual Cake Builder",
+        description: "Customers design custom cakes step by step",
         icon: "Cake"
       },
       {
-        title: "Dynamic Price Calculators",
-        description: "Instant cost feedback as customers toggle custom options, modifiers, and rush delivery.",
+        title: "Dynamic Price Calculator",
+        description: "Instant accurate pricing as they customise",
         icon: "Calculator"
       },
       {
         title: "Outlet Location Badging",
-        description: "Store status indicators dynamically informing clients of open ordering windows and locations.",
+        description: "Show which store the order is for",
         icon: "MapPin"
       },
       {
-        title: "Kitchen Queue Dashboards",
-        description: "Prioritized order queue screen for kitchen staff to manage pending custom orders.",
+        title: "Kitchen Queue Dashboard",
+        description: "Kitchen sees every order clearly and in order",
         icon: "ChefHat"
       }
     ]
