@@ -12,16 +12,15 @@ export const WorkPage: React.FC = () => {
         <div className="w-full mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-studio-surface border border-studio-border text-terracotta text-xs font-mono font-bold tracking-widest uppercase mb-3 shadow-sm">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>02 / PORTFOLIO SHOWCASE</span>
+            <span>02 / OUR WORK</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold text-editorial tracking-tight font-sans mb-3 leading-[1.1]">
-            Selected Client Work & Case <br className="hidden sm:block" />
-            <span>Studies</span>
+            Real Projects We’ve Built
           </h1>
 
           <p className="text-sm sm:text-base text-editorial-muted leading-relaxed font-sans max-w-3xl mb-4">
-            Explore real business software systems engineered for client growth, custom bookings, digitized workflows, and high-conversion ordering platforms.
+            Websites and booking systems we’ve built for tour operators and bakeries.
           </p>
 
           {/* Quick Capability Highlights Strip */}
