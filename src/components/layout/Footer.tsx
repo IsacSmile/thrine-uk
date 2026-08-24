@@ -111,7 +111,7 @@ export const Footer: React.FC = () => {
             </button>
           </div>
           <div>
-            © 2026 Thrine Media - Built with Intent.
+            © 2026 Thrine Media - Built with Intent. All client work 100% owned by clients.
           </div>
         </div>
       </Container>
