@@ -38,7 +38,7 @@ export const WhyThrine: React.FC = () => {
         <SectionHeading
           eyebrow="04 / WHY THRINE"
           title="Why Businesses Choose Us"
-          subtitle="Why growing bakeries and tour operators trust Thrine to build their websites and systems."
+          subtitle="Clear reasons bakery and tour owners work with us."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
