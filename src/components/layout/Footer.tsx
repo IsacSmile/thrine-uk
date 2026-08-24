@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
 
             <div className="flex items-center gap-2 text-xs font-mono text-paper/60 pt-1">
               <MapPin className="w-3.5 h-3.5 text-terracotta shrink-0" />
-              <span>India · Worldwide</span>
+              <span>Kerala, India · Remote Worldwide</span>
             </div>
           </div>
 

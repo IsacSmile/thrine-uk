@@ -33,7 +33,7 @@ export const About: React.FC = () => {
             <div className="p-4 bg-studio-surface border border-studio-border rounded-sm flex items-center justify-between text-xs font-mono">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-terracotta shrink-0" />
-                <span className="font-bold text-editorial">Based in India · Working worldwide</span>
+                <span className="font-bold text-editorial">Kerala, India · Remote Worldwide</span>
               </div>
               <span className="text-editorial-muted hidden sm:inline">Async & Remote Model</span>
             </div>
