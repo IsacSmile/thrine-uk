@@ -75,8 +75,8 @@ export const Hero: React.FC = () => {
 
           {/* Studio Guarantee Badge */}
           <div className="pt-6 border-t border-studio-border/80 w-full text-xs font-mono text-editorial-muted uppercase tracking-wider flex items-center justify-between flex-wrap gap-2">
-            <span>Custom-Built Software · Zero Platform Lock-in</span>
-            <span className="text-editorial font-bold">Production-Ready Digital Systems</span>
+            <span>Built for bakeries & tour operators · You own everything</span>
+            <span className="text-editorial font-bold">Simple. Fast. No lock-in.</span>
           </div>
         </div>
       </Container>
