@@ -35,19 +35,19 @@ export const Hero: React.FC = () => {
             We build high-converting websites and simple systems for bakeries and tour operators — so you get more customers and spend less time on admin.
           </p>
 
-          {/* Checks (Shortened & Kept on One Straight Line) */}
+          {/* Checks (Vertical Center Aligned & Micro-Sized Check Icon) */}
           <div className="flex flex-wrap items-center gap-x-6 sm:gap-x-8 gap-y-3 mb-10 w-full text-xs sm:text-sm font-mono">
-            <div className="flex items-center gap-2 text-editorial font-bold whitespace-nowrap">
-              <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0" />
-              <span>Online Ordering & Booking</span>
+            <div className="inline-flex items-center gap-2 text-editorial font-bold whitespace-nowrap">
+              <CheckCircle2 className="w-[14px] h-[14px] sm:w-[15px] sm:h-[15px] text-terracotta shrink-0" />
+              <span className="leading-none">Online Ordering & Booking</span>
             </div>
-            <div className="flex items-center gap-2 text-editorial font-bold whitespace-nowrap">
-              <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0" />
-              <span>High-Converting Design</span>
+            <div className="inline-flex items-center gap-2 text-editorial font-bold whitespace-nowrap">
+              <CheckCircle2 className="w-[14px] h-[14px] sm:w-[15px] sm:h-[15px] text-terracotta shrink-0" />
+              <span className="leading-none">High-Converting Design</span>
             </div>
-            <div className="flex items-center gap-2 text-editorial font-bold whitespace-nowrap">
-              <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0" />
-              <span>100% Code Ownership</span>
+            <div className="inline-flex items-center gap-2 text-editorial font-bold whitespace-nowrap">
+              <CheckCircle2 className="w-[14px] h-[14px] sm:w-[15px] sm:h-[15px] text-terracotta shrink-0" />
+              <span className="leading-none">100% Code Ownership</span>
             </div>
           </div>
 
