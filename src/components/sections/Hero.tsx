@@ -35,19 +35,19 @@ export const Hero: React.FC = () => {
             We build high-converting websites and simple systems for bakeries and tour operators — so you get more customers and spend less time on admin.
           </p>
 
-          {/* Checks */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10 w-full max-w-3xl text-xs sm:text-sm font-mono">
-            <div className="flex items-center gap-2 text-editorial font-bold">
+          {/* Checks (Shortened & Kept on One Straight Line) */}
+          <div className="flex flex-wrap items-center gap-x-6 sm:gap-x-8 gap-y-3 mb-10 w-full text-xs sm:text-sm font-mono">
+            <div className="flex items-center gap-2 text-editorial font-bold whitespace-nowrap">
               <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0" />
-              <span>Online ordering & booking</span>
+              <span>Online Ordering & Booking</span>
             </div>
-            <div className="flex items-center gap-2 text-editorial font-bold">
+            <div className="flex items-center gap-2 text-editorial font-bold whitespace-nowrap">
               <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0" />
-              <span>Clean, fast design that converts</span>
+              <span>High-Converting Design</span>
             </div>
-            <div className="flex items-center gap-2 text-editorial font-bold">
+            <div className="flex items-center gap-2 text-editorial font-bold whitespace-nowrap">
               <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0" />
-              <span>You own the code — no lock-in</span>
+              <span>100% Code Ownership</span>
             </div>
           </div>
 
