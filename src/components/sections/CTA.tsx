@@ -18,8 +18,15 @@ export const CTA: React.FC = () => {
             We build websites and systems for bakeries and tour operators. Simple process. You own everything.
           </p>
 
+          {/* Soft Pricing Signal */}
+          <div className="inline-flex flex-col sm:flex-row items-center gap-1.5 sm:gap-3 px-4 py-2 rounded-sm border border-paper/15 bg-paper/5 text-paper/80 text-xs font-mono">
+            <span className="font-bold text-paper">Projects typically range from $700 – $1,450 USD</span>
+            <span className="hidden sm:inline text-paper/40">•</span>
+            <span className="text-terracotta font-semibold">(Includes one year of free hosting)</span>
+          </div>
+
           {/* Availability Guarantee Badge (Thrine Terracotta Theme) */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-terracotta/40 bg-terracotta/10 text-terracotta text-xs font-mono tracking-wide font-medium mt-4 shadow-sm">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-terracotta/40 bg-terracotta/10 text-terracotta text-xs font-mono tracking-wide font-medium shadow-sm">
             <span className="w-2 h-2 rounded-full bg-terracotta animate-pulse shrink-0"></span>
             <span>We only onboard 3 new businesses per month to guarantee results.</span>
           </div>
