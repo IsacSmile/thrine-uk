@@ -7,32 +7,32 @@ export const Process: React.FC = () => {
     {
       number: "01",
       title: "Discover",
-      riskNote: "We learn how your bakery or tour business actually works."
+      riskNote: "We take the time to properly understand how your bakery or tour business runs."
     },
     {
       number: "02",
       title: "Plan",
-      riskNote: "We agree on exactly what will be built and the price."
+      riskNote: "You get a clear scope, fixed price, and timeline — no surprises later."
     },
     {
       number: "03",
       title: "Design",
-      riskNote: "You see and approve the design before anything is coded."
+      riskNote: "You review and approve the full design before any development begins."
     },
     {
       number: "04",
       title: "Build",
-      riskNote: "We build your website or booking system."
+      riskNote: "We carefully build your website or booking system to a high standard."
     },
     {
       number: "05",
       title: "Launch",
-      riskNote: "We test everything and go live."
+      riskNote: "Everything is thoroughly tested and launched smoothly."
     },
     {
       number: "06",
       title: "Support",
-      riskNote: "We stay available for fixes and small updates."
+      riskNote: "Ongoing support is available whenever you need small changes or fixes."
     }
   ];
 
