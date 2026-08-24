@@ -40,7 +40,7 @@ export const ZCalModal: React.FC<ZCalModalProps> = ({
 
   if (!isOpen) return null;
 
-  const zcalEmbedUrl = `${siteConfig.zcalUrl}?embed=1`;
+  const zcalEmbedUrl = `${siteConfig.zcalUrl}?embed=1&embedType=iframe`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 animate-fade-in">
@@ -51,7 +51,7 @@ export const ZCalModal: React.FC<ZCalModalProps> = ({
       />
 
       {/* Centered Modal Content Box (Fits cleanly in viewport without outer scrolling) */}
-      <div className="relative bg-paper border border-studio-border rounded-xl shadow-2xl w-full max-w-4xl h-[90vh] max-h-[750px] flex flex-col overflow-hidden z-10 font-sans my-auto">
+      <div className="relative bg-paper border border-studio-border rounded-xl shadow-2xl w-full max-w-5xl h-[92vh] max-h-[800px] flex flex-col overflow-hidden z-10 font-sans my-auto">
         
         {/* Compact Header */}
         <div className="px-5 py-3.5 border-b border-studio-border bg-studio-surface flex items-center justify-between gap-4 shrink-0">
@@ -95,13 +95,16 @@ export const ZCalModal: React.FC<ZCalModalProps> = ({
           </a>
         </div>
 
-        {/* Modal Body - ZCal Iframe Embed (Fills remaining height without scrolling container) */}
+        {/* Modal Body - Exact ZCal Iframe Embed */}
         <div className="flex-1 w-full bg-paper relative overflow-hidden flex items-center justify-center">
           <iframe
             src={zcalEmbedUrl}
+            id="zcal-invite"
             title="Schedule a Meeting with Thrine Studio"
-            className="w-full h-full border-0"
-            allow="camera; microphone; autoplay; encrypted-media;"
+            loading="lazy"
+            scrolling="no"
+            className="w-full h-full border-0 min-w-[320px]"
+            style={{ border: 'none' }}
           />
         </div>
       </div>
