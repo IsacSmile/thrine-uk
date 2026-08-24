@@ -18,8 +18,8 @@ export const defaultVideoSettings: VideoSettings = {
   youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
   fileUrl: '',
   fileName: '',
-  title: 'How Thrine Engineers Custom Business Systems',
-  subtitle: "Watch this video breakdown before booking your consultation call. It shows the exact system architecture we build for your business.",
+  title: 'See Exactly How We Build Your System',
+  subtitle: 'Watch this short breakdown before your call. It shows how we create websites and booking systems for bakeries and tour operators.',
   enabled: true,
 };
 
@@ -60,7 +60,14 @@ export const getVideoSettings = (): VideoSettings => {
     if (stored) {
       const parsed = JSON.parse(stored);
       if (parsed) {
-        return { ...defaultVideoSettings, ...parsed };
+        const settings = { ...defaultVideoSettings, ...parsed };
+        if (!settings.title || settings.title === 'How Thrine Engineers Custom Business Systems') {
+          settings.title = defaultVideoSettings.title;
+        }
+        if (!settings.subtitle || settings.subtitle.includes('Watch this video breakdown before')) {
+          settings.subtitle = defaultVideoSettings.subtitle;
+        }
+        return settings;
       }
     }
   } catch (e) {

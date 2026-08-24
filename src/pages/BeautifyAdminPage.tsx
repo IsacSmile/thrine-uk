@@ -405,7 +405,7 @@ export const BeautifyAdminPage: React.FC = () => {
                 type="text"
                 value={videoSettings.title}
                 onChange={(e) => updateVideoSettings({ title: e.target.value })}
-                placeholder="How Thrine Engineers Custom Business Systems"
+                placeholder="See Exactly How We Build Your System"
                 className="w-full p-2.5 bg-paper border border-studio-border rounded-sm font-mono text-xs text-editorial focus:border-red-600 focus:outline-none"
               />
             </div>
@@ -419,7 +419,7 @@ export const BeautifyAdminPage: React.FC = () => {
                 type="text"
                 value={videoSettings.subtitle}
                 onChange={(e) => updateVideoSettings({ subtitle: e.target.value })}
-                placeholder="Watch this video breakdown before booking your consultation call."
+                placeholder="Watch this short breakdown before your call. It shows how we create websites and booking systems for bakeries and tour operators."
                 className="w-full p-2.5 bg-paper border border-studio-border rounded-sm font-mono text-xs text-editorial focus:border-red-600 focus:outline-none"
               />
             </div>
