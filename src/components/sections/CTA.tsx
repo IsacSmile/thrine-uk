@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from '../ui/Container';
-import { siteConfig } from '../../data/siteConfig';
+import { ZCalModal } from '../booking/ZCalModal';
 
 export const CTA: React.FC = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
   return (
     <section className="py-20 bg-dark text-paper border-t border-dark-border relative overflow-hidden font-sans">
       <Container size="md" className="relative z-10">
         <div className="text-center space-y-6 max-w-3xl mx-auto flex flex-col items-center">
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-paper tracking-tight font-sans leading-tight">
-            Have a business idea or process that needs a better digital system?
+            Ready to get more orders or bookings?
           </h2>
 
           <p className="text-base sm:text-lg text-paper/70 leading-relaxed font-normal max-w-2xl">
-            Whether you need a high-converting website, a custom booking portal, or an automated workflow, we engineer software that drives real business growth.
+            We build websites and systems for bakeries and tour operators. Simple process. You own everything.
           </p>
 
           {/* Availability Guarantee Badge (Thrine Terracotta Theme) */}
@@ -24,15 +26,14 @@ export const CTA: React.FC = () => {
 
           {/* Thrine Studio Demo Pill Button */}
           <div className="pt-2 pb-1">
-            <a
-              href={siteConfig.zcalUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-3.5 sm:py-4 bg-terracotta hover:bg-terracotta-hover text-paper rounded-full font-mono text-xs sm:text-sm uppercase tracking-widest font-bold transition-all shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-95 group"
+            <button
+              type="button"
+              onClick={() => setIsBookingModalOpen(true)}
+              className="inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-3.5 sm:py-4 bg-terracotta hover:bg-terracotta-hover text-paper rounded-full font-mono text-xs sm:text-sm uppercase tracking-widest font-bold transition-all shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-95 group cursor-pointer"
             >
               <span>Book My Free Demo</span>
               <span className="font-mono text-sm font-normal opacity-90 transition-transform group-hover:translate-x-1">→ ↗</span>
-            </a>
+            </button>
           </div>
 
           {/* Subtext */}
@@ -42,6 +43,12 @@ export const CTA: React.FC = () => {
 
         </div>
       </Container>
+
+      {/* ZCal Booking Modal */}
+      <ZCalModal
+        isOpen={isBookingModalOpen}
+        onClose={() => setIsBookingModalOpen(false)}
+      />
     </section>
   );
 };
