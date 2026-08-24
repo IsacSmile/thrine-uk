@@ -47,9 +47,9 @@ export const Process: React.FC = () => {
     <section id="process" className="py-20 bg-paper border-b border-studio-border font-sans">
       <Container>
         <SectionHeading
-          eyebrow="05 / HOW WE WORK"
-          title="Our Agency Process"
-          subtitle="A structured 6-step engineering workflow designed to reduce risk and deliver reliable business software on time."
+          eyebrow="05 / HOW IT WORKS"
+          title="How We Work With You"
+          subtitle="A simple 6-step process from first call to launch and support."
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
