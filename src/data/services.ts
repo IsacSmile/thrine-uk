@@ -13,14 +13,13 @@ export const services: Service[] = [
     id: "business-websites",
     number: "01",
     title: "Business Websites",
-    shortDescription: "Clean, fast websites designed to turn visitors into customers.",
-    fullDescription: "Clean, fast websites designed to turn visitors into customers.",
+    shortDescription: "High-converting websites built to get you more customers.",
+    fullDescription: "High-converting websites built to get you more customers.",
     deliverables: [
-      "Modern design that loads quickly on mobile",
-      "Clear calls-to-action so people order or enquire",
-      "Easy for you to update content yourself",
-      "Built to rank on Google",
-      "Fully owned by you — no lock-in"
+      "Clean, fast design that works perfectly on mobile",
+      "Clear calls-to-action that turn visitors into orders",
+      "Easy for you to update yourself",
+      "Fully owned by you — no platform lock-in"
     ],
     idealFor: [
       "Boutique bakeries & cake shops",
@@ -32,14 +31,13 @@ export const services: Service[] = [
     id: "custom-web-systems",
     number: "02",
     title: "Custom Systems",
-    shortDescription: "Simple tools that replace messy spreadsheets, WhatsApp chats, and manual work.",
-    fullDescription: "Simple tools that replace messy spreadsheets, WhatsApp chats, and manual work.",
+    shortDescription: "Simple tools that replace WhatsApp chaos and spreadsheets.",
+    fullDescription: "Simple tools that replace WhatsApp chaos and spreadsheets.",
     deliverables: [
-      "Admin dashboard so you control everything in one place",
-      "Customer portal if needed",
+      "One dashboard to manage everything",
       "Automatic order or booking tracking",
-      "Secure login for you and your team",
-      "Connects with the tools you already use"
+      "Secure access for you and your team",
+      "Built around how your business actually works"
     ],
     idealFor: [
       "Bakeries managing custom cake orders",
@@ -51,14 +49,13 @@ export const services: Service[] = [
     id: "ai-automation",
     number: "03",
     title: "Simple Automation",
-    shortDescription: "We remove repetitive tasks so you spend less time on admin.",
-    fullDescription: "We remove repetitive tasks so you spend less time on admin.",
+    shortDescription: "We remove repetitive admin so you get time back.",
+    fullDescription: "We remove repetitive admin so you get time back.",
     deliverables: [
-      "Auto-replies to common customer questions",
-      "Automatic order or booking notifications",
-      "Less copy-pasting between WhatsApp, email and spreadsheets",
-      "Simple workflows that save you hours every week",
-      "Easy to adjust as your business grows"
+      "Automatic replies to common questions",
+      "Instant notifications for new orders or bookings",
+      "Less manual work between WhatsApp, email and sheets",
+      "Easy to adjust as you grow"
     ],
     idealFor: [
       "Businesses dealing with repeat customer inquiries",
@@ -69,15 +66,14 @@ export const services: Service[] = [
   {
     id: "booking-ordering-systems",
     number: "04",
-    title: "Booking & Ordering Systems",
-    shortDescription: "Let customers order or book online without calling or messaging you.",
-    fullDescription: "Let customers order or book online without calling or messaging you.",
+    title: "Booking & Ordering",
+    shortDescription: "Let customers order or book online without calling you.",
+    fullDescription: "Let customers order or book online without calling you.",
     deliverables: [
       "Online ordering for bakeries",
-      "Tour booking with availability",
-      "Real-time seat or product availability",
-      "Payment collection if needed",
-      "Everything goes straight into your dashboard"
+      "Tour bookings with live availability",
+      "Payments collected automatically (if needed)",
+      "Everything lands cleanly in your dashboard"
     ],
     idealFor: [
       "Tour & excursion operators",
