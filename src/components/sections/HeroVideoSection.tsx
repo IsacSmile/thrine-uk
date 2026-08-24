@@ -12,6 +12,7 @@ export const HeroVideoSection: React.FC = () => {
   }
 
   const embedUrl = getEmbedUrl();
+  const isUploadedFile = videoSettings.videoType === 'file' && videoSettings.fileUrl;
 
   return (
     <section className="py-12 bg-paper border-b border-studio-border font-sans relative overflow-hidden">
@@ -33,17 +34,28 @@ export const HeroVideoSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Responsive YouTube Video Container */}
+        {/* Video Player Box */}
         <div className="max-w-4xl mx-auto">
           <div className="relative bg-dark border border-studio-border rounded-sm shadow-2xl overflow-hidden aspect-video group">
             {isPlaying ? (
-              <iframe
-                src={embedUrl}
-                title={videoSettings.title}
-                className="w-full h-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
+              isUploadedFile ? (
+                <video
+                  src={videoSettings.fileUrl}
+                  controls
+                  autoPlay
+                  className="w-full h-full object-contain bg-black"
+                >
+                  Your browser does not support video playback.
+                </video>
+              ) : (
+                <iframe
+                  src={embedUrl}
+                  title={videoSettings.title}
+                  className="w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              )
             ) : (
               <div 
                 onClick={() => setIsPlaying(true)}
@@ -57,12 +69,12 @@ export const HeroVideoSection: React.FC = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="px-2 py-0.5 bg-red-600/20 text-red-400 border border-red-500/30 rounded-sm font-bold text-[11px] font-mono">
-                      YOUTUBE DEMO
+                      {isUploadedFile ? 'UPLOADED VIDEO FILE' : 'YOUTUBE DEMO'}
                     </span>
                   </div>
                 </div>
 
-                {/* Center Content & Big YouTube Play Overlay */}
+                {/* Center Content & Big Play Button Overlay */}
                 <div className="flex flex-col items-center justify-center my-auto text-center space-y-5">
                   <div className="relative group-hover:scale-110 transition-transform duration-300">
                     <div className="absolute -inset-4 bg-terracotta/30 rounded-full blur-md group-hover:bg-terracotta/50 transition-all"></div>
@@ -76,7 +88,7 @@ export const HeroVideoSection: React.FC = () => {
                       {videoSettings.title}
                     </h3>
                     <p className="text-xs text-paper/70 max-w-lg mx-auto font-mono">
-                      Click to play YouTube system walkthrough breakdown
+                      {isUploadedFile ? 'Click to play custom video file' : 'Click to play YouTube system walkthrough breakdown'}
                     </p>
                   </div>
                 </div>

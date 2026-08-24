@@ -273,7 +273,7 @@ export const BeautifyAdminPage: React.FC = () => {
           </div>
         )}
 
-        {/* 🎬 HOMEPAGE HERO YOUTUBE VIDEO MANAGER */}
+        {/* 🎬 HOMEPAGE HERO SYSTEM VIDEO MANAGER */}
         <div className="bg-studio-surface border border-studio-border p-5 rounded-2xl mb-8 space-y-4 shadow-sm">
           <div className="flex items-center justify-between border-b border-studio-border pb-3">
             <div className="flex items-center gap-2">
@@ -282,10 +282,10 @@ export const BeautifyAdminPage: React.FC = () => {
               </div>
               <div>
                 <h2 className="text-base font-extrabold text-editorial font-sans">
-                  Homepage YouTube System Video Manager
+                  Homepage System Video Manager
                 </h2>
                 <p className="text-xs text-editorial-muted">
-                  Update the embedded YouTube video URL, title, or visibility for the section right below the Hero.
+                  Upload a custom video file (.mp4/.webm) or embed a YouTube URL for the section right below the Hero.
                 </p>
               </div>
             </div>
@@ -309,23 +309,92 @@ export const BeautifyAdminPage: React.FC = () => {
             </div>
           </div>
 
+          {/* Source Selector: YouTube vs Direct File Upload */}
+          <div className="flex items-center gap-3 bg-paper p-2 rounded-sm border border-studio-border text-xs font-mono">
+            <span className="font-bold text-editorial uppercase text-[10px] text-terracotta">VIDEO SOURCE:</span>
+            <button
+              type="button"
+              onClick={() => updateVideoSettings({ videoType: 'youtube' })}
+              className={`px-3 py-1 rounded-sm font-bold transition-all ${
+                videoSettings.videoType === 'youtube'
+                  ? 'bg-red-600 text-white shadow-sm'
+                  : 'bg-studio-surface text-editorial border border-studio-border hover:bg-paper'
+              }`}
+            >
+              YouTube Link
+            </button>
+            <button
+              type="button"
+              onClick={() => updateVideoSettings({ videoType: 'file' })}
+              className={`px-3 py-1 rounded-sm font-bold transition-all ${
+                videoSettings.videoType === 'file'
+                  ? 'bg-red-600 text-white shadow-sm'
+                  : 'bg-studio-surface text-editorial border border-studio-border hover:bg-paper'
+              }`}
+            >
+              Upload Custom Video File
+            </button>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-            {/* YouTube URL Input */}
-            <div className="md:col-span-6 space-y-1.5 font-mono text-xs">
-              <label className="font-bold text-editorial text-[11px] block">
-                YOUTUBE VIDEO URL / SHARE LINK / EMBED ID:
-              </label>
-              <input
-                type="text"
-                value={videoSettings.youtubeUrl}
-                onChange={(e) => updateVideoSettings({ youtubeUrl: e.target.value })}
-                placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                className="w-full p-2.5 bg-paper border border-studio-border rounded-sm font-mono text-xs text-editorial focus:border-red-600 focus:outline-none"
-              />
-              <span className="text-[10px] text-editorial-muted block">
-                Paste any YouTube link (standard watch link, short link, or embed URL).
-              </span>
-            </div>
+            {videoSettings.videoType === 'youtube' ? (
+              /* YouTube URL Input */
+              <div className="md:col-span-6 space-y-1.5 font-mono text-xs">
+                <label className="font-bold text-editorial text-[11px] block">
+                  YOUTUBE VIDEO URL / SHARE LINK / EMBED ID:
+                </label>
+                <input
+                  type="text"
+                  value={videoSettings.youtubeUrl}
+                  onChange={(e) => updateVideoSettings({ youtubeUrl: e.target.value })}
+                  placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                  className="w-full p-2.5 bg-paper border border-studio-border rounded-sm font-mono text-xs text-editorial focus:border-red-600 focus:outline-none"
+                />
+                <span className="text-[10px] text-editorial-muted block">
+                  Paste any YouTube link (standard watch link, short link, or embed URL).
+                </span>
+              </div>
+            ) : (
+              /* Local Video File Uploader */
+              <div className="md:col-span-6 space-y-1.5 font-mono text-xs">
+                <label className="font-bold text-editorial text-[11px] block">
+                  UPLOAD VIDEO FILE FROM COMPUTER (.MP4 / .WEBM):
+                </label>
+                <div className="flex items-center gap-2">
+                  <label className="px-4 py-2 bg-dark hover:bg-terracotta text-paper rounded-sm text-xs font-mono font-bold transition-colors cursor-pointer flex items-center gap-1.5 shrink-0">
+                    <Upload className="w-3.5 h-3.5" />
+                    <span>Choose Video File</span>
+                    <input
+                      type="file"
+                      accept="video/mp4,video/webm,video/ogg"
+                      onChange={(e) => {
+                        const file = e.target.files?.[0];
+                        if (!file) return;
+                        const reader = new FileReader();
+                        reader.onloadend = () => {
+                          updateVideoSettings({
+                            videoType: 'file',
+                            fileUrl: reader.result as string,
+                            fileName: file.name
+                          });
+                          triggerSuccessNotification('Video file uploaded successfully!');
+                        };
+                        reader.readAsDataURL(file);
+                      }}
+                      className="hidden"
+                    />
+                  </label>
+                  {videoSettings.fileName && (
+                    <span className="text-[11px] text-emerald-600 font-bold truncate max-w-[200px] bg-emerald-50 border border-emerald-200 px-2 py-1 rounded-sm">
+                      ✓ {videoSettings.fileName}
+                    </span>
+                  )}
+                </div>
+                <span className="text-[10px] text-editorial-muted block">
+                  Select an mp4 or webm video file directly from your local computer files.
+                </span>
+              </div>
+            )}
 
             {/* Video Section Title */}
             <div className="md:col-span-6 space-y-1.5 font-mono text-xs">
@@ -364,7 +433,7 @@ export const BeautifyAdminPage: React.FC = () => {
             <button
               type="button"
               onClick={() => {
-                triggerSuccessNotification('YouTube video settings saved successfully!');
+                triggerSuccessNotification('Video settings saved successfully!');
               }}
               className="px-4 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded-sm font-bold transition-colors cursor-pointer"
             >

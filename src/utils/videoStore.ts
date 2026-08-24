@@ -1,17 +1,23 @@
 import { useState, useEffect } from 'react';
 
 export interface VideoSettings {
+  videoType: 'youtube' | 'file';
   youtubeUrl: string;
+  fileUrl: string;
+  fileName?: string;
   title: string;
   subtitle: string;
   enabled: boolean;
 }
 
-const VIDEO_STORAGE_KEY = 'thrine_hero_video_settings_v1';
+const VIDEO_STORAGE_KEY = 'thrine_hero_video_settings_v2';
 const VIDEO_EVENT_NAME = 'thrine_hero_video_updated';
 
 export const defaultVideoSettings: VideoSettings = {
+  videoType: 'youtube',
   youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+  fileUrl: '',
+  fileName: '',
   title: 'How Thrine Engineers Custom Business Systems',
   subtitle: "Watch this video breakdown before booking your consultation call. It shows the exact system architecture we build for your business.",
   enabled: true,
@@ -53,7 +59,7 @@ export const getVideoSettings = (): VideoSettings => {
     const stored = localStorage.getItem(VIDEO_STORAGE_KEY);
     if (stored) {
       const parsed = JSON.parse(stored);
-      if (parsed && typeof parsed.youtubeUrl === 'string') {
+      if (parsed) {
         return { ...defaultVideoSettings, ...parsed };
       }
     }
