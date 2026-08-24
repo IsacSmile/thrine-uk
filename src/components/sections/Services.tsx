@@ -5,7 +5,17 @@ import { CheckCircle2, ArrowRight, Globe, Server, Bot, CalendarCheck } from 'luc
 import { Button } from '../ui/Button';
 import { services } from '../../data/services';
 
-export const Services: React.FC = () => {
+interface ServicesProps {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+}
+
+export const Services: React.FC<ServicesProps> = ({
+  eyebrow = "03 / WHAT WE BUILD",
+  title = "What We Actually Build",
+  subtitle = "Four clear services for bakeries and tour operators.",
+}) => {
   const serviceIcons: Record<string, React.ReactNode> = {
     'business-websites': <Globe className="w-5 h-5 text-terracotta" />,
     'custom-web-systems': <Server className="w-5 h-5 text-terracotta" />,
@@ -17,9 +27,9 @@ export const Services: React.FC = () => {
     <section id="services" className="py-20 bg-paper border-b border-studio-border font-sans">
       <Container>
         <SectionHeading
-          eyebrow="03 / SERVICES"
-          title="Engineering Capabilities"
-          subtitle="We specialize in four primary areas of digital engineering designed around direct commercial outcomes."
+          eyebrow={eyebrow}
+          title={title}
+          subtitle={subtitle}
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

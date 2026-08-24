@@ -22,7 +22,10 @@ export const ServicesPage: React.FC = () => {
         </div>
       </Container>
 
-      <Services />
+      <Services
+        title="Our Four Services"
+        subtitle="Clear services with clear outcomes for bakeries and tour operators."
+      />
       <SolutionsGrid />
       <Process />
       <CTA />
