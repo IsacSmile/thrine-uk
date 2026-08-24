@@ -103,13 +103,12 @@ export const SocialProof: React.FC = () => {
             <span>SOCIAL PROOF</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-editorial font-sans tracking-tight uppercase">
-            REAL BUSINESSES. <br className="hidden sm:inline" />
-            <span className="text-terracotta">REAL RESULTS.</span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-editorial font-sans tracking-tight">
+            Real Feedback from Real Businesses
           </h2>
 
           <p className="text-sm sm:text-base text-editorial-muted font-normal leading-relaxed">
-            Verified client feedback, project updates, and operational results from active businesses running on Thrine systems.
+            What bakery and tour operators say after using their new systems.
           </p>
         </div>
 
