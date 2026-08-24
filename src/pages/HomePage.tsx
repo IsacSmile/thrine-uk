@@ -1,5 +1,6 @@
 import React from 'react';
 import { Hero } from '../components/sections/Hero';
+import { HeroVideoSection } from '../components/sections/HeroVideoSection';
 import { TrustBar } from '../components/sections/TrustBar';
 import { SelectedWork } from '../components/sections/SelectedWork';
 import { SocialProof } from '../components/sections/SocialProof';
@@ -16,31 +17,34 @@ export const HomePage: React.FC = () => {
       {/* 01 — Hero */}
       <Hero />
 
-      {/* 02 — Agency Trust & Capabilities Matrix */}
+      {/* 02 — Video Demonstration Breakdown */}
+      <HeroVideoSection />
+
+      {/* 03 — Agency Trust & Capabilities Matrix */}
       <TrustBar />
 
-      {/* 03 — Featured Case Studies (Bakery & Tours Platforms) */}
+      {/* 04 — Featured Case Studies (Bakery & Tours Platforms) */}
       <SelectedWork />
 
-      {/* 04 — Social Proof (Real Businesses. Real Results.) */}
+      {/* 05 — Social Proof (Real Businesses. Real Results.) */}
       <SocialProof />
 
-      {/* 05 — Core Engineering Services (4 Pillars) */}
+      {/* 06 — Core Engineering Services (4 Pillars) */}
       <Services />
 
-      {/* 06 — Why Thrine (5 Agency Trust Pillars) */}
+      {/* 07 — Why Thrine (5 Agency Trust Pillars) */}
       <WhyThrine />
 
-      {/* 07 — 6-Step Agency Delivery Process */}
+      {/* 08 — 6-Step Agency Delivery Process */}
       <Process />
 
-      {/* 08 — Studio Team Profile */}
+      {/* 09 — Studio Team Profile */}
       <About />
 
-      {/* 09 — Commercial Buyer FAQ */}
+      {/* 10 — Commercial Buyer FAQ */}
       <FAQ />
 
-      {/* 10 — Final Conversion Call to Action */}
+      {/* 11 — Final Conversion Call to Action */}
       <CTA />
     </div>
   );
