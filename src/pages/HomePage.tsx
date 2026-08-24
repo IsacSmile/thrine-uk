@@ -2,6 +2,7 @@ import React from 'react';
 import { Hero } from '../components/sections/Hero';
 import { TrustBar } from '../components/sections/TrustBar';
 import { SelectedWork } from '../components/sections/SelectedWork';
+import { SocialProof } from '../components/sections/SocialProof';
 import { Services } from '../components/sections/Services';
 import { WhyThrine } from '../components/sections/WhyThrine';
 import { Process } from '../components/sections/Process';
@@ -21,22 +22,25 @@ export const HomePage: React.FC = () => {
       {/* 03 — Featured Case Studies (Bakery & Tours Platforms) */}
       <SelectedWork />
 
-      {/* 04 — Core Engineering Services (4 Pillars) */}
+      {/* 04 — Social Proof (Real Businesses. Real Results.) */}
+      <SocialProof />
+
+      {/* 05 — Core Engineering Services (4 Pillars) */}
       <Services />
 
-      {/* 05 — Why Thrine (5 Agency Trust Pillars) */}
+      {/* 06 — Why Thrine (5 Agency Trust Pillars) */}
       <WhyThrine />
 
-      {/* 06 — 6-Step Agency Delivery Process */}
+      {/* 07 — 6-Step Agency Delivery Process */}
       <Process />
 
-      {/* 07 — Studio Team Profile */}
+      {/* 08 — Studio Team Profile */}
       <About />
 
-      {/* 08 — Commercial Buyer FAQ */}
+      {/* 09 — Commercial Buyer FAQ */}
       <FAQ />
 
-      {/* 09 — Final Conversion Call to Action */}
+      {/* 10 — Final Conversion Call to Action */}
       <CTA />
     </div>
   );
