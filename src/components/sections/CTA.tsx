@@ -19,10 +19,10 @@ export const CTA: React.FC = () => {
           </p>
 
           {/* Soft Pricing Signal */}
-          <div className="inline-flex flex-col sm:flex-row items-center gap-1.5 sm:gap-3 px-4 py-2 rounded-sm border border-paper/15 bg-paper/5 text-paper/80 text-xs font-mono">
-            <span className="font-bold text-paper">Projects typically range from $700 – $1,450 USD</span>
+          <div className="inline-flex flex-col sm:flex-row items-center gap-1.5 sm:gap-3 px-4 py-2.5 rounded-sm border border-paper/15 bg-paper/5 text-paper/80 text-xs font-mono text-center">
+            <span className="font-bold text-paper">Projects: $700 – $1,450 USD (one-time)</span>
             <span className="hidden sm:inline text-paper/40">•</span>
-            <span className="text-terracotta font-semibold">(Includes one year of free hosting)</span>
+            <span className="text-terracotta font-semibold">$200 USD/mo for ongoing maintenance & hosting</span>
           </div>
 
           {/* Availability Guarantee Badge (Thrine Terracotta Theme) */}

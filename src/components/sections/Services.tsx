@@ -79,10 +79,10 @@ export const Services: React.FC<ServicesProps> = ({
         {/* Soft Pricing Signal */}
         <div className="mt-10 p-4 sm:p-5 bg-studio-surface border border-studio-border rounded-sm max-w-xl mx-auto text-center space-y-1">
           <p className="text-xs sm:text-sm font-sans font-bold text-editorial">
-            Projects typically range from $700 – $1,450 USD
+            Projects typically range from $700 – $1,450 USD (one-time build)
           </p>
           <p className="text-xs font-mono text-terracotta font-medium">
-            (Includes one year of free hosting)
+            $200 USD/month for ongoing maintenance & support (includes hosting)
           </p>
         </div>
 
