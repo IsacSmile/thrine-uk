@@ -11,13 +11,13 @@ export const ServicesPage: React.FC = () => {
       <Container>
         <div className="max-w-3xl mb-12">
           <span className="text-xs font-mono uppercase tracking-widest text-terracotta bg-studio-surface border border-studio-border px-3 py-1 rounded-sm font-semibold">
-            03 / CAPABILITIES & ARCHITECTURE
+            01 / SERVICES
           </span>
           <h1 className="text-4xl sm:text-6xl font-extrabold text-editorial tracking-tight font-sans mt-4 mb-4">
-            Services & Systems Architecture
+            What We Build
           </h1>
           <p className="text-lg text-editorial-muted leading-relaxed">
-            I build high-converting business websites and custom internal tools that replace operational friction with automated software.
+            Websites, booking systems, and simple automation for bakeries and tour operators.
           </p>
         </div>
       </Container>
