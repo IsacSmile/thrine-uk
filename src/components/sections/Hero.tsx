@@ -32,7 +32,7 @@ export const Hero: React.FC = () => {
 
           {/* Subheadline */}
           <p className="text-base sm:text-xl text-editorial-muted leading-relaxed max-w-3xl font-normal mb-8 font-sans">
-            We build high-converting websites and simple systems for bakeries and tour operators — so you get more customers and spend less time on admin.
+            We build high-converting websites and simple systems for bakeries and tour operators — more customers, less admin.
           </p>
 
           {/* Checks (Vertical Center Aligned & Micro-Sized Check Icon) */}
