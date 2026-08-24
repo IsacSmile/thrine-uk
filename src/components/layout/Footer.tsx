@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { Mail, ArrowUpRight, Globe, MapPin, X } from 'lucide-react';
 import { siteConfig } from '../../data/siteConfig';
 import { Container } from '../ui/Container';
+import { ZCalModal } from '../booking/ZCalModal';
 
 export const Footer: React.FC = () => {
   const [activeModal, setActiveModal] = useState<'privacy' | 'terms' | null>(null);
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   return (
     <footer className="bg-dark border-t border-dark-border text-paper/70 pt-16 pb-12 font-sans relative">
@@ -48,14 +50,13 @@ export const Footer: React.FC = () => {
                 <a href="/#about" className="hover:text-paper transition-colors">About</a>
               </li>
               <li>
-                <a
-                  href={siteConfig.zcalUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-paper transition-colors text-terracotta font-bold"
+                <button
+                  type="button"
+                  onClick={() => setIsBookingModalOpen(true)}
+                  className="hover:text-paper transition-colors text-terracotta font-bold text-left cursor-pointer"
                 >
                   Book a Call
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -166,6 +167,12 @@ export const Footer: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* ZCal Booking Modal */}
+      <ZCalModal
+        isOpen={isBookingModalOpen}
+        onClose={() => setIsBookingModalOpen(false)}
+      />
     </footer>
   );
 };

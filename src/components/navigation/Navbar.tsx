@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
-import { siteConfig } from '../../data/siteConfig';
+import { ZCalModal } from '../booking/ZCalModal';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -87,14 +88,13 @@ export const Navbar: React.FC = () => {
 
         {/* Desktop Primary CTA */}
         <div className="hidden md:flex items-center gap-4 shrink-0">
-          <a
-            href={siteConfig.zcalUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="px-5 py-2 bg-dark hover:bg-terracotta text-paper rounded-full text-xs font-mono font-bold transition-all flex items-center shadow-sm whitespace-nowrap"
+          <button
+            type="button"
+            onClick={() => setIsBookingModalOpen(true)}
+            className="px-5 py-2 bg-dark hover:bg-terracotta text-paper rounded-full text-xs font-mono font-bold transition-all flex items-center shadow-sm whitespace-nowrap cursor-pointer"
           >
             <span>Book a call</span>
-          </a>
+          </button>
         </div>
 
         {/* Mobile Hamburger Toggle Button */}
@@ -112,7 +112,7 @@ export const Navbar: React.FC = () => {
         </button>
       </div>
 
-      {/* Mobile Drawer Menu with Smooth Slide & Fade Transition */}
+      {/* Mobile Drawer Menu */}
       <div
         className={`md:hidden fixed inset-x-4 top-[68px] sm:top-[76px] max-w-lg mx-auto bg-paper/98 backdrop-blur-xl border border-studio-border/80 rounded-2xl p-5 sm:p-6 shadow-2xl transition-all duration-300 ease-out transform ${
           mobileMenuOpen
@@ -146,18 +146,25 @@ export const Navbar: React.FC = () => {
           ))}
 
           <div className="pt-2">
-            <a
-              href={siteConfig.zcalUrl}
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-3 bg-dark hover:bg-terracotta text-paper rounded-full text-xs font-mono font-bold transition-all flex items-center justify-center shadow-md"
+            <button
+              type="button"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setIsBookingModalOpen(true);
+              }}
+              className="w-full py-3 bg-dark hover:bg-terracotta text-paper rounded-full text-xs font-mono font-bold transition-all flex items-center justify-center shadow-md cursor-pointer"
             >
               <span>Book a call</span>
-            </a>
+            </button>
           </div>
         </nav>
       </div>
+
+      {/* ZCal Booking Modal */}
+      <ZCalModal
+        isOpen={isBookingModalOpen}
+        onClose={() => setIsBookingModalOpen(false)}
+      />
     </header>
   );
 };
