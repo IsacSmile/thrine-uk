@@ -6,7 +6,6 @@ import { WorkPage } from './pages/WorkPage';
 import { TravelCaseStudy } from './pages/TravelCaseStudy';
 import { BakeryCaseStudy } from './pages/BakeryCaseStudy';
 import { ServicesPage } from './pages/ServicesPage';
-import { ContactPage } from './pages/ContactPage';
 import { BeautifyAdminPage } from './pages/BeautifyAdminPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
@@ -20,8 +19,6 @@ export const App: React.FC = () => {
           <Route path="/work/travel" element={<TravelCaseStudy />} />
           <Route path="/work/bakery" element={<BakeryCaseStudy />} />
           <Route path="/services" element={<ServicesPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/book" element={<ContactPage />} />
           <Route path="/beautify" element={<BeautifyAdminPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

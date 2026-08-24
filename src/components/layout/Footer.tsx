@@ -48,7 +48,14 @@ export const Footer: React.FC = () => {
                 <a href="/#about" className="hover:text-paper transition-colors">About</a>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-paper transition-colors">Contact</Link>
+                <a
+                  href={siteConfig.zcalUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-paper transition-colors text-terracotta font-bold"
+                >
+                  Book a Call
+                </a>
               </li>
             </ul>
           </div>

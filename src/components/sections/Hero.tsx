@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Calendar, CheckCircle2 } from 'lucide-react';
 import { Container } from '../ui/Container';
 import { Button } from '../ui/Button';
+import { siteConfig } from '../../data/siteConfig';
 
 export const Hero: React.FC = () => {
   return (
@@ -52,14 +53,15 @@ export const Hero: React.FC = () => {
 
           {/* Primary & Secondary CTAs */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-10">
-            <Button
-              href="/contact"
-              variant="primary"
-              size="lg"
-              icon={<Calendar className="w-4 h-4" />}
+            <a
+              href={siteConfig.zcalUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="px-6 py-3.5 bg-terracotta hover:bg-terracotta/90 text-paper rounded-sm font-mono text-xs uppercase tracking-wider font-bold transition-all flex items-center justify-center gap-2 shadow-md"
             >
-              Book a Free Consultation
-            </Button>
+              <Calendar className="w-4 h-4" />
+              <span>Book a Free Consultation</span>
+            </a>
             
             <Button
               href="#work"

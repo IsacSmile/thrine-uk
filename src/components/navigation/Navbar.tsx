@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Calendar, ArrowRight, MapPin } from 'lucide-react';
+import { Menu, X, Calendar, ArrowRight } from 'lucide-react';
+import { siteConfig } from '../../data/siteConfig';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,7 +31,6 @@ export const Navbar: React.FC = () => {
     { name: 'Services', href: '/services' },
     { name: 'Process', href: '/#process' },
     { name: 'About', href: '/#about' },
-    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -85,19 +85,17 @@ export const Navbar: React.FC = () => {
           })}
         </nav>
 
-        {/* Desktop Location Badge & Primary CTA */}
+        {/* Desktop Primary CTA */}
         <div className="hidden md:flex items-center gap-4 shrink-0">
-          <span className="text-[11px] font-mono text-editorial-muted hidden xl:inline-flex items-center gap-1 shrink-0 whitespace-nowrap">
-            <MapPin className="w-3 h-3 text-terracotta shrink-0" />
-            <span>Kerala, India · Remote Worldwide</span>
-          </span>
-          <Link
-            to="/contact"
+          <a
+            href={siteConfig.zcalUrl}
+            target="_blank"
+            rel="noreferrer"
             className="px-5 py-2 bg-dark hover:bg-terracotta text-paper rounded-full text-xs font-mono font-bold transition-all flex items-center gap-1.5 shadow-sm whitespace-nowrap"
           >
             <Calendar className="w-3.5 h-3.5" />
             <span>Book a call</span>
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Hamburger Toggle Button */}
@@ -148,23 +146,17 @@ export const Navbar: React.FC = () => {
             </React.Fragment>
           ))}
 
-          <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between text-xs font-mono text-editorial-muted gap-1 border-t border-studio-border/60">
-            <span>Location:</span>
-            <span className="font-bold text-editorial flex items-center gap-1 text-[11px] sm:text-xs">
-              <MapPin className="w-3 h-3 text-terracotta shrink-0" />
-              <span>Kerala, India · Remote Worldwide</span>
-            </span>
-          </div>
-
           <div className="pt-2">
-            <Link
-              to="/contact"
+            <a
+              href={siteConfig.zcalUrl}
+              target="_blank"
+              rel="noreferrer"
               onClick={() => setMobileMenuOpen(false)}
               className="w-full py-3 bg-dark hover:bg-terracotta text-paper rounded-full text-xs font-mono font-bold transition-all flex items-center justify-center gap-2 shadow-md"
             >
               <Calendar className="w-4 h-4" />
               <span>Book a Call</span>
-            </Link>
+            </a>
           </div>
         </nav>
       </div>

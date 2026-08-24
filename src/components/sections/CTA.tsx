@@ -2,6 +2,7 @@ import React from 'react';
 import { Calendar, ArrowRight } from 'lucide-react';
 import { Container } from '../ui/Container';
 import { Button } from '../ui/Button';
+import { siteConfig } from '../../data/siteConfig';
 
 export const CTA: React.FC = () => {
   return (
@@ -22,14 +23,15 @@ export const CTA: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Button
-              href="/contact"
-              variant="dark"
-              size="lg"
-              icon={<Calendar className="w-4 h-4" />}
+            <a
+              href={siteConfig.zcalUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="px-6 py-3.5 bg-terracotta hover:bg-terracotta/90 text-paper rounded-sm font-mono text-xs uppercase tracking-wider font-bold transition-all flex items-center justify-center gap-2 shadow-md"
             >
-              Book a Free Consultation
-            </Button>
+              <Calendar className="w-4 h-4" />
+              <span>Book a Free Consultation</span>
+            </a>
 
             <Button
               href="#work"
