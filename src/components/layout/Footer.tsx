@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
             </Link>
             
             <p className="text-xs sm:text-sm text-paper/70 leading-relaxed max-w-md">
-              Websites and booking systems for bakeries and tour operators.
+              We build websites and booking systems for bakeries and tour operators.
             </p>
 
             <div className="flex items-center gap-2 text-xs font-mono text-paper/60 pt-1">
