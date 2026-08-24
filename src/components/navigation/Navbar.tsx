@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Calendar, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { siteConfig } from '../../data/siteConfig';
 
 export const Navbar: React.FC = () => {
@@ -91,9 +91,8 @@ export const Navbar: React.FC = () => {
             href={siteConfig.zcalUrl}
             target="_blank"
             rel="noreferrer"
-            className="px-5 py-2 bg-dark hover:bg-terracotta text-paper rounded-full text-xs font-mono font-bold transition-all flex items-center gap-1.5 shadow-sm whitespace-nowrap"
+            className="px-5 py-2 bg-dark hover:bg-terracotta text-paper rounded-full text-xs font-mono font-bold transition-all flex items-center shadow-sm whitespace-nowrap"
           >
-            <Calendar className="w-3.5 h-3.5" />
             <span>Book a call</span>
           </a>
         </div>
@@ -152,10 +151,9 @@ export const Navbar: React.FC = () => {
               target="_blank"
               rel="noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-3 bg-dark hover:bg-terracotta text-paper rounded-full text-xs font-mono font-bold transition-all flex items-center justify-center gap-2 shadow-md"
+              className="w-full py-3 bg-dark hover:bg-terracotta text-paper rounded-full text-xs font-mono font-bold transition-all flex items-center justify-center shadow-md"
             >
-              <Calendar className="w-4 h-4" />
-              <span>Book a Call</span>
+              <span>Book a call</span>
             </a>
           </div>
         </nav>
