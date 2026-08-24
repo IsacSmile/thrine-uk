@@ -11,20 +11,20 @@ interface SelectedWorkProps {
 
 export const SelectedWork: React.FC<SelectedWorkProps> = ({ 
   showHeading = true,
-  className = "py-20 bg-paper border-b border-studio-border"
+  className = "py-20 bg-paper border-b border-studio-border font-sans"
 }) => {
   return (
     <section id="work" className={className}>
       <Container>
         {showHeading && (
           <SectionHeading
-            eyebrow="02 / SELECTED WORK"
-            title="Selected Work"
-            subtitle="Case studies engineered as verified business evidence — connecting customer-facing experiences directly to operational business systems."
+            eyebrow="02 / FEATURED CASE STUDIES"
+            title="Featured Business Systems"
+            subtitle="Detailed case studies demonstrating Thrine's capability in building customer booking portals, product ordering platforms, and back-office administrative control systems."
           />
         )}
 
-        <div className="space-y-12">
+        <div className="space-y-16">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}

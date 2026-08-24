@@ -1,68 +1,50 @@
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
 import { Container } from '../ui/Container';
+import { Layers, Users, Cpu } from 'lucide-react';
 
 export const TrustBar: React.FC = () => {
-  const clients = [
-    {
-      name: "Travel & Hault",
-      industry: "Travel & Tourism",
-      location: "Dubai & Kerala",
-      liveUrl: "https://travelhault.com",
-      logo: "/images/client-travel-halt-logo.png"
-    },
-    {
-      name: "My Homely Cakes",
-      industry: "Food & Hospitality",
-      location: "Trivandrum",
-      liveUrl: "https://yourbakery.com",
-      logo: "/images/client-homely-cakes-logo.png"
-    }
-  ];
-
   return (
-    <section className="py-6 bg-paper border-b border-studio-border font-sans">
+    <section className="py-10 bg-studio-surface border-b border-studio-border font-sans">
       <Container>
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 text-xs">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          {/* Heading */}
-          <div className="flex items-center gap-3 shrink-0">
-            <span className="text-xs font-mono uppercase tracking-widest text-terracotta font-bold">
-              Selected work
-            </span>
-            <span className="text-studio-border hidden sm:inline">•</span>
-            <span className="text-editorial-muted hidden md:inline font-mono text-[11px]">
-              Production systems engineered for active clients
-            </span>
+          {/* Column 1: What We Build */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-terracotta font-bold">
+              <Layers className="w-4 h-4 text-terracotta" />
+              <span>What We Build</span>
+            </div>
+            <p className="text-xs text-editorial-muted leading-relaxed font-sans">
+              High-converting business websites, custom web applications, booking & reservation engines, customer portals, and internal admin software.
+            </p>
           </div>
 
-          {/* Client Entries */}
-          <div className="flex flex-wrap items-center gap-6 sm:gap-8">
-            {clients.map((client) => (
-              <div key={client.name} className="flex items-center gap-3 py-1">
-                {client.logo && (
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    className="h-6 w-auto object-contain opacity-90"
-                  />
-                )}
-                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                  <span className="font-bold text-editorial text-xs">{client.name}</span>
-                  <span className="text-[11px] font-mono text-editorial-muted">({client.industry})</span>
-                </div>
-                <a
-                  href={client.liveUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1 text-[11px] font-mono font-bold text-terracotta hover:underline ml-1"
-                >
-                  <span>Visit live website</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
-            ))}
+          {/* Column 2: Who We Build For */}
+          <div className="space-y-3 md:border-l md:border-studio-border md:pl-8">
+            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-editorial font-bold">
+              <Users className="w-4 h-4 text-terracotta" />
+              <span>Who We Build For</span>
+            </div>
+            <p className="text-xs text-editorial-muted leading-relaxed font-sans">
+              B2B service companies, hospitality & tour operators, local food outlets, cloud kitchens, and operational teams replacing manual workflows.
+            </p>
           </div>
+
+          {/* Column 3: Technologies & Capabilities */}
+          <div className="space-y-3 md:border-l md:border-studio-border md:pl-8">
+            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-editorial font-bold">
+              <Cpu className="w-4 h-4 text-terracotta" />
+              <span>Core Stack & Capabilities</span>
+            </div>
+            <div className="flex flex-wrap gap-1.5 pt-0.5">
+              {['React', 'TypeScript', 'Next.js', 'Node.js', 'PostgreSQL', 'Tailwind', 'Python', 'AI APIs'].map((tech) => (
+                <span key={tech} className="px-2 py-0.5 bg-paper border border-studio-border rounded-sm text-[11px] font-mono text-editorial font-semibold">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
         </div>
       </Container>
     </section>

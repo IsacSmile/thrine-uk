@@ -2,12 +2,10 @@ import React from 'react';
 import { Hero } from '../components/sections/Hero';
 import { TrustBar } from '../components/sections/TrustBar';
 import { SelectedWork } from '../components/sections/SelectedWork';
-import { HowItWorks } from '../components/sections/HowItWorks';
-import { WhoThisIsFor } from '../components/sections/WhoThisIsFor';
 import { Services } from '../components/sections/Services';
+import { WhyThrine } from '../components/sections/WhyThrine';
+import { Process } from '../components/sections/Process';
 import { About } from '../components/sections/About';
-import { WhatHappensNext } from '../components/sections/WhatHappensNext';
-import { TechStack } from '../components/sections/TechStack';
 import { FAQ } from '../components/sections/FAQ';
 import { CTA } from '../components/sections/CTA';
 
@@ -17,34 +15,28 @@ export const HomePage: React.FC = () => {
       {/* 01 — Hero */}
       <Hero />
 
-      {/* 02 — Client Proof Strip */}
+      {/* 02 — Agency Trust & Capabilities Matrix */}
       <TrustBar />
 
-      {/* 03 — Selected Work (Outcome & Workflow Case Studies) */}
+      {/* 03 — Featured Case Studies (Bakery & Tours Platforms) */}
       <SelectedWork />
 
-      {/* 04 — How The System Works (Interactive Customer vs Admin Walkthrough) */}
-      <HowItWorks initialProject="travel" />
-
-      {/* 05 — Who We Build For (3 Editorial Industry Columns) */}
-      <WhoThisIsFor />
-
-      {/* 06 — Core Capabilities (2 Major Service Groups) */}
+      {/* 04 — Core Engineering Services (4 Pillars) */}
       <Services />
 
-      {/* 07 — Meet The Studio (Founder Profile & Remote Model) */}
+      {/* 05 — Why Thrine (5 Agency Trust Pillars) */}
+      <WhyThrine />
+
+      {/* 06 — 6-Step Agency Delivery Process */}
+      <Process />
+
+      {/* 07 — Studio Team Profile */}
       <About />
 
-      {/* 08 — What Happens Next & Scope Transparency */}
-      <WhatHappensNext />
-
-      {/* 09 — Technical Trust */}
-      <TechStack />
-
-      {/* 10 — Commercial FAQ */}
+      {/* 08 — Commercial Buyer FAQ */}
       <FAQ />
 
-      {/* 11 — Final Call to Action */}
+      {/* 09 — Final Conversion Call to Action */}
       <CTA />
     </div>
   );

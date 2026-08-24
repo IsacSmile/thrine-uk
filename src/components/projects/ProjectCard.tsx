@@ -41,11 +41,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         </div>
 
         <div>
-          <span className="text-terracotta uppercase tracking-wider block text-[10px] font-bold">Location</span>
-          <span className="font-bold text-editorial">{project.clientLocation}</span>
-        </div>
-
-        <div>
           <span className="text-terracotta uppercase tracking-wider block text-[10px] font-bold">Timeline</span>
           <span className="font-bold text-editorial">{project.timeline}</span>
         </div>
