@@ -18,9 +18,9 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
       <Container>
         {showHeading && (
           <SectionHeading
-            eyebrow="02 / FEATURED CASE STUDIES"
-            title="Featured Business Systems"
-            subtitle="Detailed case studies demonstrating Thrine's capability in building customer booking portals, product ordering platforms, and back-office administrative control systems."
+            eyebrow="02 / REAL WORK"
+            title="Real Projects We’ve Built"
+            subtitle="Real examples of websites and booking systems we’ve built for tour operators and local businesses."
           />
         )}
 
